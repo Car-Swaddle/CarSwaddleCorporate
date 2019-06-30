@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ipe-sl-7If">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Authorities-->
+        <scene sceneID="g59-iT-vlr">
+            <objects>
+                <viewController title="Authorities" id="Ipe-sl-7If" customClass="AuthoritiesViewController" customModule="CarSwaddleCoupons" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LPG-WT-WLv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0yT-zC-b2d">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ipe-sl-7If" id="TaO-FE-ePA"/>
+                                    <outlet property="delegate" destination="Ipe-sl-7If" id="VeX-je-xd5"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3h-qG-5qa" customClass="ActionButton" customModule="CarSwaddleUI">
+                                <rect key="frame" x="0.0" y="816" width="414" height="30"/>
+                                <state key="normal" title="Request Authority"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0yT-zC-b2d" firstAttribute="trailing" secondItem="LPG-WT-WLv" secondAttribute="trailing" id="209-4m-QY5"/>
+                            <constraint firstItem="q1m-e4-Wva" firstAttribute="bottom" secondItem="i3h-qG-5qa" secondAttribute="bottom" constant="16" placeholder="YES" id="OrW-05-vNZ"/>
+                            <constraint firstItem="0yT-zC-b2d" firstAttribute="top" secondItem="LPG-WT-WLv" secondAttribute="top" id="ZmY-Uy-g48"/>
+                            <constraint firstItem="0yT-zC-b2d" firstAttribute="leading" secondItem="LPG-WT-WLv" secondAttribute="leading" id="p2a-uG-SdU"/>
+                            <constraint firstAttribute="bottom" secondItem="0yT-zC-b2d" secondAttribute="bottom" id="pW8-7P-7Fw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q1m-e4-Wva"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Authorities" id="dN6-xM-It0">
+                        <barButtonItem key="rightBarButtonItem" title="Requests" id="KxN-nF-OAW">
+                            <connections>
+                                <action selector="didTapRequests" destination="Ipe-sl-7If" id="QQ6-1T-TsF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="requestButton" destination="i3h-qG-5qa" id="cbA-hE-DeO"/>
+                        <outlet property="tableView" destination="0yT-zC-b2d" id="Hbx-Kv-KHo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHA-Uj-N1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756.52173913043487" y="128.57142857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nYp-jC-rVP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7bS-la-Efw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NsJ-Oe-v1l">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ipe-sl-7If" kind="relationship" relationship="rootViewController" id="bDE-Is-B1S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWE-fF-xIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79.710144927536234" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+</document>

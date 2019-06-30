@@ -1,0 +1,1000 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		998984E322A385B300E4B25A /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998984E222A385B300E4B25A /* Navigator.swift */; };
+		998984E522A385D700E4B25A /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998984E422A385D700E4B25A /* Logout.swift */; };
+		998984E722A3864700E4B25A /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998984E622A3864700E4B25A /* PushNotificationController.swift */; };
+		998984E922A3868F00E4B25A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998984E822A3868F00E4B25A /* UIColorExtension.swift */; };
+		998984EB22A3879A00E4B25A /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998984EA22A3879A00E4B25A /* FontExtension.swift */; };
+		9989851222A387D500E4B25A /* Montserrat-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984EE22A387D500E4B25A /* Montserrat-MediumItalic.otf */; };
+		9989851322A387D500E4B25A /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984EF22A387D500E4B25A /* Montserrat-Bold.otf */; };
+		9989851422A387D500E4B25A /* Montserrat-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984F022A387D500E4B25A /* Montserrat-BlackItalic.otf */; };
+		9989851522A387D500E4B25A /* MontserratAlternates-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984F122A387D500E4B25A /* MontserratAlternates-Black.otf */; };
+		9989851622A387D500E4B25A /* MontserratAlternates-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984F222A387D500E4B25A /* MontserratAlternates-LightItalic.otf */; };
+		9989851722A387D500E4B25A /* MontserratAlternates-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984F322A387D500E4B25A /* MontserratAlternates-Medium.otf */; };
+		9989851822A387D500E4B25A /* Montserrat-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984F422A387D500E4B25A /* Montserrat-BoldItalic.otf */; };
+		9989851922A387D500E4B25A /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984F522A387D500E4B25A /* Montserrat-Light.otf */; };
+		9989851A22A387D500E4B25A /* Montserrat-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984F622A387D500E4B25A /* Montserrat-ThinItalic.otf */; };
+		9989851B22A387D500E4B25A /* Montserrat-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984F722A387D500E4B25A /* Montserrat-Thin.otf */; };
+		9989851C22A387D500E4B25A /* MontserratAlternates-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984F822A387D500E4B25A /* MontserratAlternates-MediumItalic.otf */; };
+		9989851D22A387D500E4B25A /* Montserrat-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984F922A387D500E4B25A /* Montserrat-ExtraLight.otf */; };
+		9989851E22A387D500E4B25A /* MontserratAlternates-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984FA22A387D500E4B25A /* MontserratAlternates-BlackItalic.otf */; };
+		9989851F22A387D500E4B25A /* MontserratAlternates-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984FB22A387D500E4B25A /* MontserratAlternates-Bold.otf */; };
+		9989852022A387D500E4B25A /* MontserratAlternates-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984FC22A387D500E4B25A /* MontserratAlternates-ExtraLightItalic.otf */; };
+		9989852122A387D500E4B25A /* MontserratAlternates-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984FD22A387D500E4B25A /* MontserratAlternates-Thin.otf */; };
+		9989852222A387D500E4B25A /* Montserrat-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984FE22A387D500E4B25A /* Montserrat-LightItalic.otf */; };
+		9989852322A387D500E4B25A /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 998984FF22A387D500E4B25A /* Montserrat-Medium.otf */; };
+		9989852422A387D500E4B25A /* MontserratAlternates-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850022A387D500E4B25A /* MontserratAlternates-SemiBoldItalic.otf */; };
+		9989852522A387D500E4B25A /* Montserrat-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850122A387D500E4B25A /* Montserrat-SemiBoldItalic.otf */; };
+		9989852622A387D500E4B25A /* Montserrat-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850222A387D500E4B25A /* Montserrat-ExtraBoldItalic.otf */; };
+		9989852722A387D500E4B25A /* Montserrat-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850322A387D500E4B25A /* Montserrat-Italic.otf */; };
+		9989852822A387D500E4B25A /* MontserratAlternates-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850422A387D500E4B25A /* MontserratAlternates-SemiBold.otf */; };
+		9989852922A387D500E4B25A /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850522A387D500E4B25A /* Montserrat-Regular.otf */; };
+		9989852A22A387D500E4B25A /* MontserratAlternates-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850622A387D500E4B25A /* MontserratAlternates-ExtraBold.otf */; };
+		9989852B22A387D500E4B25A /* MontserratAlternates-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850722A387D500E4B25A /* MontserratAlternates-BoldItalic.otf */; };
+		9989852C22A387D500E4B25A /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850822A387D500E4B25A /* Montserrat-ExtraBold.otf */; };
+		9989852D22A387D500E4B25A /* Montserrat-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850922A387D500E4B25A /* Montserrat-ExtraLightItalic.otf */; };
+		9989852E22A387D500E4B25A /* MontserratAlternates-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850A22A387D500E4B25A /* MontserratAlternates-Light.otf */; };
+		9989852F22A387D500E4B25A /* MontserratAlternates-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850B22A387D500E4B25A /* MontserratAlternates-ExtraLight.otf */; };
+		9989853022A387D500E4B25A /* MontserratAlternates-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850C22A387D500E4B25A /* MontserratAlternates-Regular.otf */; };
+		9989853122A387D500E4B25A /* MontserratAlternates-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850D22A387D500E4B25A /* MontserratAlternates-ThinItalic.otf */; };
+		9989853222A387D500E4B25A /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850E22A387D500E4B25A /* Montserrat-Black.otf */; };
+		9989853322A387D500E4B25A /* MontserratAlternates-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989850F22A387D500E4B25A /* MontserratAlternates-ExtraBoldItalic.otf */; };
+		9989853422A387D500E4B25A /* MontserratAlternates-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989851022A387D500E4B25A /* MontserratAlternates-Italic.otf */; };
+		9989853522A387D500E4B25A /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9989851122A387D500E4B25A /* Montserrat-SemiBold.otf */; };
+		9989853722A38AD300E4B25A /* AuthoritiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989853622A38AD300E4B25A /* AuthoritiesViewController.swift */; };
+		9989853922A38AE000E4B25A /* AuthoritiesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9989853822A38AE000E4B25A /* AuthoritiesViewController.storyboard */; };
+		9989853B22A38B4D00E4B25A /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989853A22A38B4D00E4B25A /* CouponsViewController.swift */; };
+		9989853D22A38B5600E4B25A /* CouponsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9989853C22A38B5600E4B25A /* CouponsViewController.storyboard */; };
+		9989853F22A39E9000E4B25A /* UserActivityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989853E22A39E9000E4B25A /* UserActivityHandler.swift */; };
+		9989854122A3A12400E4B25A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9989854022A3A11300E4B25A /* Colors.xcassets */; };
+		9989854422A623F500E4B25A /* AuthorityNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989854222A623F500E4B25A /* AuthorityNameCell.swift */; };
+		9989854522A623F500E4B25A /* AuthorityNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9989854322A623F500E4B25A /* AuthorityNameCell.xib */; };
+		9989856122BC787700E4B25A /* AuthorityRequestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989856022BC787700E4B25A /* AuthorityRequestListViewController.swift */; };
+		9989856322BC788600E4B25A /* AuthorityRequestListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9989856222BC788600E4B25A /* AuthorityRequestListViewController.storyboard */; };
+		9989856622BC7AC100E4B25A /* AuthorityRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989856422BC7AC100E4B25A /* AuthorityRequestCell.swift */; };
+		9989856722BC7AC100E4B25A /* AuthorityRequestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9989856522BC7AC100E4B25A /* AuthorityRequestCell.xib */; };
+		9989856922C097D800E4B25A /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989856822C097D700E4B25A /* DataController.swift */; };
+		9989856B22C1E82500E4B25A /* RequestAuthorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989856A22C1E82500E4B25A /* RequestAuthorityViewController.swift */; };
+		9989856D22C1E83600E4B25A /* RequestAuthorityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9989856C22C1E83600E4B25A /* RequestAuthorityViewController.storyboard */; };
+		9989857022C1EC2300E4B25A /* RequestAuthorityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989856E22C1EC2300E4B25A /* RequestAuthorityCell.swift */; };
+		9989857122C1EC2300E4B25A /* RequestAuthorityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9989856F22C1EC2300E4B25A /* RequestAuthorityCell.xib */; };
+		9989857322C3224E00E4B25A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989857222C3224E00E4B25A /* SettingsViewController.swift */; };
+		9989857522C3225C00E4B25A /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9989857422C3225C00E4B25A /* SettingsViewController.storyboard */; };
+		9989857722C73D1F00E4B25A /* FetchedResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989857622C73D1F00E4B25A /* FetchedResultsViewController.swift */; };
+		9989857922C7484800E4B25A /* MechanicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989857822C7484800E4B25A /* MechanicListViewController.swift */; };
+		9989857C22C74B9B00E4B25A /* MechanicListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989857A22C74B9B00E4B25A /* MechanicListCell.swift */; };
+		9989857D22C74B9B00E4B25A /* MechanicListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9989857B22C74B9B00E4B25A /* MechanicListCell.xib */; };
+		999860F522852D4800113536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999860F422852D4800113536 /* AppDelegate.swift */; };
+		999860F722852D4800113536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999860F622852D4800113536 /* ViewController.swift */; };
+		999860FA22852D4800113536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999860F822852D4800113536 /* Main.storyboard */; };
+		999860FD22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 999860FB22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld */; };
+		999860FF22852D4900113536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999860FE22852D4900113536 /* Assets.xcassets */; };
+		9998610222852D4900113536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9998610022852D4900113536 /* LaunchScreen.storyboard */; };
+		9998610D22852D4900113536 /* CarSwaddleCouponsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998610C22852D4900113536 /* CarSwaddleCouponsTests.swift */; };
+		9998611822852D4900113536 /* CarSwaddleCouponsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998611722852D4900113536 /* CarSwaddleCouponsUITests.swift */; };
+		999861282285381300113536 /* CarSwaddleData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999861272285381300113536 /* CarSwaddleData.framework */; };
+		999861302285382200113536 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999861292285382200113536 /* Lottie.framework */; };
+		999861312285382200113536 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998612A2285382200113536 /* KeychainAccess.framework */; };
+		999861322285382200113536 /* CarSwaddleNetworkRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998612B2285382200113536 /* CarSwaddleNetworkRequest.framework */; };
+		999861332285382200113536 /* Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998612C2285382200113536 /* Store.framework */; };
+		999861342285382200113536 /* CarSwaddleUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998612D2285382200113536 /* CarSwaddleUI.framework */; };
+		999861352285382300113536 /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998612E2285382200113536 /* Authentication.framework */; };
+		999861362285382300113536 /* NetworkRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998612F2285382200113536 /* NetworkRequest.framework */; };
+		99986138228538C200113536 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99986137228538C200113536 /* ServiceRequest.swift */; };
+		9998613A2285408C00113536 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999861392285408C00113536 /* LoginViewController.swift */; };
+		9998613C2285409900113536 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9998613B2285409900113536 /* LoginViewController.storyboard */; };
+		9998613E2285456900113536 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998613D2285456900113536 /* Store.swift */; };
+		999861402286B27100113536 /* TweakValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998613F2286B27100113536 /* TweakValues.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9998610922852D4900113536 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 999860E922852D4800113536 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 999860F022852D4800113536;
+			remoteInfo = CarSwaddleCoupons;
+		};
+		9998611422852D4900113536 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 999860E922852D4800113536 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 999860F022852D4800113536;
+			remoteInfo = CarSwaddleCoupons;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		998984E122A332D700E4B25A /* CarSwaddleCoupons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarSwaddleCoupons.entitlements; sourceTree = "<group>"; };
+		998984E222A385B300E4B25A /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		998984E422A385D700E4B25A /* Logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
+		998984E622A3864700E4B25A /* PushNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationController.swift; sourceTree = "<group>"; };
+		998984E822A3868F00E4B25A /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		998984EA22A3879A00E4B25A /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		998984EE22A387D500E4B25A /* Montserrat-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.otf"; sourceTree = "<group>"; };
+		998984EF22A387D500E4B25A /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		998984F022A387D500E4B25A /* Montserrat-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.otf"; sourceTree = "<group>"; };
+		998984F122A387D500E4B25A /* MontserratAlternates-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Black.otf"; sourceTree = "<group>"; };
+		998984F222A387D500E4B25A /* MontserratAlternates-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-LightItalic.otf"; sourceTree = "<group>"; };
+		998984F322A387D500E4B25A /* MontserratAlternates-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Medium.otf"; sourceTree = "<group>"; };
+		998984F422A387D500E4B25A /* Montserrat-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.otf"; sourceTree = "<group>"; };
+		998984F522A387D500E4B25A /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		998984F622A387D500E4B25A /* Montserrat-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.otf"; sourceTree = "<group>"; };
+		998984F722A387D500E4B25A /* Montserrat-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.otf"; sourceTree = "<group>"; };
+		998984F822A387D500E4B25A /* MontserratAlternates-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-MediumItalic.otf"; sourceTree = "<group>"; };
+		998984F922A387D500E4B25A /* Montserrat-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.otf"; sourceTree = "<group>"; };
+		998984FA22A387D500E4B25A /* MontserratAlternates-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-BlackItalic.otf"; sourceTree = "<group>"; };
+		998984FB22A387D500E4B25A /* MontserratAlternates-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Bold.otf"; sourceTree = "<group>"; };
+		998984FC22A387D500E4B25A /* MontserratAlternates-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-ExtraLightItalic.otf"; sourceTree = "<group>"; };
+		998984FD22A387D500E4B25A /* MontserratAlternates-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Thin.otf"; sourceTree = "<group>"; };
+		998984FE22A387D500E4B25A /* Montserrat-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.otf"; sourceTree = "<group>"; };
+		998984FF22A387D500E4B25A /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		9989850022A387D500E4B25A /* MontserratAlternates-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		9989850122A387D500E4B25A /* Montserrat-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		9989850222A387D500E4B25A /* Montserrat-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		9989850322A387D500E4B25A /* Montserrat-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.otf"; sourceTree = "<group>"; };
+		9989850422A387D500E4B25A /* MontserratAlternates-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-SemiBold.otf"; sourceTree = "<group>"; };
+		9989850522A387D500E4B25A /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		9989850622A387D500E4B25A /* MontserratAlternates-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-ExtraBold.otf"; sourceTree = "<group>"; };
+		9989850722A387D500E4B25A /* MontserratAlternates-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-BoldItalic.otf"; sourceTree = "<group>"; };
+		9989850822A387D500E4B25A /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		9989850922A387D500E4B25A /* Montserrat-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.otf"; sourceTree = "<group>"; };
+		9989850A22A387D500E4B25A /* MontserratAlternates-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Light.otf"; sourceTree = "<group>"; };
+		9989850B22A387D500E4B25A /* MontserratAlternates-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-ExtraLight.otf"; sourceTree = "<group>"; };
+		9989850C22A387D500E4B25A /* MontserratAlternates-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Regular.otf"; sourceTree = "<group>"; };
+		9989850D22A387D500E4B25A /* MontserratAlternates-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-ThinItalic.otf"; sourceTree = "<group>"; };
+		9989850E22A387D500E4B25A /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
+		9989850F22A387D500E4B25A /* MontserratAlternates-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		9989851022A387D500E4B25A /* MontserratAlternates-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Italic.otf"; sourceTree = "<group>"; };
+		9989851122A387D500E4B25A /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		9989853622A38AD300E4B25A /* AuthoritiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthoritiesViewController.swift; sourceTree = "<group>"; };
+		9989853822A38AE000E4B25A /* AuthoritiesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthoritiesViewController.storyboard; sourceTree = "<group>"; };
+		9989853A22A38B4D00E4B25A /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
+		9989853C22A38B5600E4B25A /* CouponsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CouponsViewController.storyboard; sourceTree = "<group>"; };
+		9989853E22A39E9000E4B25A /* UserActivityHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityHandler.swift; sourceTree = "<group>"; };
+		9989854022A3A11300E4B25A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		9989854222A623F500E4B25A /* AuthorityNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityNameCell.swift; sourceTree = "<group>"; };
+		9989854322A623F500E4B25A /* AuthorityNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorityNameCell.xib; sourceTree = "<group>"; };
+		9989856022BC787700E4B25A /* AuthorityRequestListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityRequestListViewController.swift; sourceTree = "<group>"; };
+		9989856222BC788600E4B25A /* AuthorityRequestListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthorityRequestListViewController.storyboard; sourceTree = "<group>"; };
+		9989856422BC7AC100E4B25A /* AuthorityRequestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityRequestCell.swift; sourceTree = "<group>"; };
+		9989856522BC7AC100E4B25A /* AuthorityRequestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorityRequestCell.xib; sourceTree = "<group>"; };
+		9989856822C097D700E4B25A /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		9989856A22C1E82500E4B25A /* RequestAuthorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAuthorityViewController.swift; sourceTree = "<group>"; };
+		9989856C22C1E83600E4B25A /* RequestAuthorityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RequestAuthorityViewController.storyboard; sourceTree = "<group>"; };
+		9989856E22C1EC2300E4B25A /* RequestAuthorityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAuthorityCell.swift; sourceTree = "<group>"; };
+		9989856F22C1EC2300E4B25A /* RequestAuthorityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestAuthorityCell.xib; sourceTree = "<group>"; };
+		9989857222C3224E00E4B25A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9989857422C3225C00E4B25A /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		9989857622C73D1F00E4B25A /* FetchedResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedResultsViewController.swift; sourceTree = "<group>"; };
+		9989857822C7484800E4B25A /* MechanicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicListViewController.swift; sourceTree = "<group>"; };
+		9989857A22C74B9B00E4B25A /* MechanicListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicListCell.swift; sourceTree = "<group>"; };
+		9989857B22C74B9B00E4B25A /* MechanicListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MechanicListCell.xib; sourceTree = "<group>"; };
+		999860F122852D4800113536 /* CarSwaddleCoupons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSwaddleCoupons.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		999860F422852D4800113536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		999860F622852D4800113536 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		999860F922852D4800113536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		999860FC22852D4800113536 /* CarSwaddleCoupons.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarSwaddleCoupons.xcdatamodel; sourceTree = "<group>"; };
+		999860FE22852D4900113536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9998610122852D4900113536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9998610322852D4900113536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9998610822852D4900113536 /* CarSwaddleCouponsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarSwaddleCouponsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9998610C22852D4900113536 /* CarSwaddleCouponsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSwaddleCouponsTests.swift; sourceTree = "<group>"; };
+		9998610E22852D4900113536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9998611322852D4900113536 /* CarSwaddleCouponsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarSwaddleCouponsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9998611722852D4900113536 /* CarSwaddleCouponsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSwaddleCouponsUITests.swift; sourceTree = "<group>"; };
+		9998611922852D4900113536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		999861272285381300113536 /* CarSwaddleData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarSwaddleData.framework; path = Carthage/Build/iOS/CarSwaddleData.framework; sourceTree = "<group>"; };
+		999861292285382200113536 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
+		9998612A2285382200113536 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		9998612B2285382200113536 /* CarSwaddleNetworkRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarSwaddleNetworkRequest.framework; path = Carthage/Build/iOS/CarSwaddleNetworkRequest.framework; sourceTree = "<group>"; };
+		9998612C2285382200113536 /* Store.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Store.framework; path = Carthage/Build/iOS/Store.framework; sourceTree = "<group>"; };
+		9998612D2285382200113536 /* CarSwaddleUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarSwaddleUI.framework; path = Carthage/Build/iOS/CarSwaddleUI.framework; sourceTree = "<group>"; };
+		9998612E2285382200113536 /* Authentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Authentication.framework; path = Carthage/Build/iOS/Authentication.framework; sourceTree = "<group>"; };
+		9998612F2285382200113536 /* NetworkRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkRequest.framework; path = Carthage/Build/iOS/NetworkRequest.framework; sourceTree = "<group>"; };
+		99986137228538C200113536 /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		999861392285408C00113536 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9998613B2285409900113536 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		9998613D2285456900113536 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9998613F2286B27100113536 /* TweakValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakValues.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		999860EE22852D4800113536 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				999861282285381300113536 /* CarSwaddleData.framework in Frameworks */,
+				999861302285382200113536 /* Lottie.framework in Frameworks */,
+				999861312285382200113536 /* KeychainAccess.framework in Frameworks */,
+				999861322285382200113536 /* CarSwaddleNetworkRequest.framework in Frameworks */,
+				999861332285382200113536 /* Store.framework in Frameworks */,
+				999861342285382200113536 /* CarSwaddleUI.framework in Frameworks */,
+				999861352285382300113536 /* Authentication.framework in Frameworks */,
+				999861362285382300113536 /* NetworkRequest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9998610522852D4900113536 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9998611022852D4900113536 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		998984EC22A387D500E4B25A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				998984ED22A387D500E4B25A /* Montserrat */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		998984ED22A387D500E4B25A /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				998984EE22A387D500E4B25A /* Montserrat-MediumItalic.otf */,
+				998984EF22A387D500E4B25A /* Montserrat-Bold.otf */,
+				998984F022A387D500E4B25A /* Montserrat-BlackItalic.otf */,
+				998984F122A387D500E4B25A /* MontserratAlternates-Black.otf */,
+				998984F222A387D500E4B25A /* MontserratAlternates-LightItalic.otf */,
+				998984F322A387D500E4B25A /* MontserratAlternates-Medium.otf */,
+				998984F422A387D500E4B25A /* Montserrat-BoldItalic.otf */,
+				998984F522A387D500E4B25A /* Montserrat-Light.otf */,
+				998984F622A387D500E4B25A /* Montserrat-ThinItalic.otf */,
+				998984F722A387D500E4B25A /* Montserrat-Thin.otf */,
+				998984F822A387D500E4B25A /* MontserratAlternates-MediumItalic.otf */,
+				998984F922A387D500E4B25A /* Montserrat-ExtraLight.otf */,
+				998984FA22A387D500E4B25A /* MontserratAlternates-BlackItalic.otf */,
+				998984FB22A387D500E4B25A /* MontserratAlternates-Bold.otf */,
+				998984FC22A387D500E4B25A /* MontserratAlternates-ExtraLightItalic.otf */,
+				998984FD22A387D500E4B25A /* MontserratAlternates-Thin.otf */,
+				998984FE22A387D500E4B25A /* Montserrat-LightItalic.otf */,
+				998984FF22A387D500E4B25A /* Montserrat-Medium.otf */,
+				9989850022A387D500E4B25A /* MontserratAlternates-SemiBoldItalic.otf */,
+				9989850122A387D500E4B25A /* Montserrat-SemiBoldItalic.otf */,
+				9989850222A387D500E4B25A /* Montserrat-ExtraBoldItalic.otf */,
+				9989850322A387D500E4B25A /* Montserrat-Italic.otf */,
+				9989850422A387D500E4B25A /* MontserratAlternates-SemiBold.otf */,
+				9989850522A387D500E4B25A /* Montserrat-Regular.otf */,
+				9989850622A387D500E4B25A /* MontserratAlternates-ExtraBold.otf */,
+				9989850722A387D500E4B25A /* MontserratAlternates-BoldItalic.otf */,
+				9989850822A387D500E4B25A /* Montserrat-ExtraBold.otf */,
+				9989850922A387D500E4B25A /* Montserrat-ExtraLightItalic.otf */,
+				9989850A22A387D500E4B25A /* MontserratAlternates-Light.otf */,
+				9989850B22A387D500E4B25A /* MontserratAlternates-ExtraLight.otf */,
+				9989850C22A387D500E4B25A /* MontserratAlternates-Regular.otf */,
+				9989850D22A387D500E4B25A /* MontserratAlternates-ThinItalic.otf */,
+				9989850E22A387D500E4B25A /* Montserrat-Black.otf */,
+				9989850F22A387D500E4B25A /* MontserratAlternates-ExtraBoldItalic.otf */,
+				9989851022A387D500E4B25A /* MontserratAlternates-Italic.otf */,
+				9989851122A387D500E4B25A /* Montserrat-SemiBold.otf */,
+			);
+			path = Montserrat;
+			sourceTree = "<group>";
+		};
+		999860E822852D4800113536 = {
+			isa = PBXGroup;
+			children = (
+				999860F322852D4800113536 /* CarSwaddleCoupons */,
+				9998610B22852D4900113536 /* CarSwaddleCouponsTests */,
+				9998611622852D4900113536 /* CarSwaddleCouponsUITests */,
+				999860F222852D4800113536 /* Products */,
+				999861262285381300113536 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		999860F222852D4800113536 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				999860F122852D4800113536 /* CarSwaddleCoupons.app */,
+				9998610822852D4900113536 /* CarSwaddleCouponsTests.xctest */,
+				9998611322852D4900113536 /* CarSwaddleCouponsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		999860F322852D4800113536 /* CarSwaddleCoupons */ = {
+			isa = PBXGroup;
+			children = (
+				998984E122A332D700E4B25A /* CarSwaddleCoupons.entitlements */,
+				999860F422852D4800113536 /* AppDelegate.swift */,
+				999860F622852D4800113536 /* ViewController.swift */,
+				9989856822C097D700E4B25A /* DataController.swift */,
+				999860F822852D4800113536 /* Main.storyboard */,
+				999861392285408C00113536 /* LoginViewController.swift */,
+				9998613B2285409900113536 /* LoginViewController.storyboard */,
+				9989853622A38AD300E4B25A /* AuthoritiesViewController.swift */,
+				9989853822A38AE000E4B25A /* AuthoritiesViewController.storyboard */,
+				9989856022BC787700E4B25A /* AuthorityRequestListViewController.swift */,
+				9989856222BC788600E4B25A /* AuthorityRequestListViewController.storyboard */,
+				9989856422BC7AC100E4B25A /* AuthorityRequestCell.swift */,
+				9989856522BC7AC100E4B25A /* AuthorityRequestCell.xib */,
+				9989854222A623F500E4B25A /* AuthorityNameCell.swift */,
+				9989854322A623F500E4B25A /* AuthorityNameCell.xib */,
+				9989853A22A38B4D00E4B25A /* CouponsViewController.swift */,
+				9989853C22A38B5600E4B25A /* CouponsViewController.storyboard */,
+				9989856A22C1E82500E4B25A /* RequestAuthorityViewController.swift */,
+				9989856C22C1E83600E4B25A /* RequestAuthorityViewController.storyboard */,
+				9989856E22C1EC2300E4B25A /* RequestAuthorityCell.swift */,
+				9989856F22C1EC2300E4B25A /* RequestAuthorityCell.xib */,
+				99986137228538C200113536 /* ServiceRequest.swift */,
+				9989857222C3224E00E4B25A /* SettingsViewController.swift */,
+				9989857422C3225C00E4B25A /* SettingsViewController.storyboard */,
+				9989857822C7484800E4B25A /* MechanicListViewController.swift */,
+				9989857A22C74B9B00E4B25A /* MechanicListCell.swift */,
+				9989857B22C74B9B00E4B25A /* MechanicListCell.xib */,
+				9989857622C73D1F00E4B25A /* FetchedResultsViewController.swift */,
+				9998613F2286B27100113536 /* TweakValues.swift */,
+				9998613D2285456900113536 /* Store.swift */,
+				998984E222A385B300E4B25A /* Navigator.swift */,
+				998984E422A385D700E4B25A /* Logout.swift */,
+				998984E622A3864700E4B25A /* PushNotificationController.swift */,
+				9989853E22A39E9000E4B25A /* UserActivityHandler.swift */,
+				998984E822A3868F00E4B25A /* UIColorExtension.swift */,
+				9989854022A3A11300E4B25A /* Colors.xcassets */,
+				998984EA22A3879A00E4B25A /* FontExtension.swift */,
+				998984EC22A387D500E4B25A /* Fonts */,
+				999860FE22852D4900113536 /* Assets.xcassets */,
+				9998610022852D4900113536 /* LaunchScreen.storyboard */,
+				9998610322852D4900113536 /* Info.plist */,
+				999860FB22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld */,
+			);
+			path = CarSwaddleCoupons;
+			sourceTree = "<group>";
+		};
+		9998610B22852D4900113536 /* CarSwaddleCouponsTests */ = {
+			isa = PBXGroup;
+			children = (
+				9998610C22852D4900113536 /* CarSwaddleCouponsTests.swift */,
+				9998610E22852D4900113536 /* Info.plist */,
+			);
+			path = CarSwaddleCouponsTests;
+			sourceTree = "<group>";
+		};
+		9998611622852D4900113536 /* CarSwaddleCouponsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9998611722852D4900113536 /* CarSwaddleCouponsUITests.swift */,
+				9998611922852D4900113536 /* Info.plist */,
+			);
+			path = CarSwaddleCouponsUITests;
+			sourceTree = "<group>";
+		};
+		999861262285381300113536 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9998612E2285382200113536 /* Authentication.framework */,
+				9998612B2285382200113536 /* CarSwaddleNetworkRequest.framework */,
+				9998612D2285382200113536 /* CarSwaddleUI.framework */,
+				9998612A2285382200113536 /* KeychainAccess.framework */,
+				999861292285382200113536 /* Lottie.framework */,
+				9998612F2285382200113536 /* NetworkRequest.framework */,
+				9998612C2285382200113536 /* Store.framework */,
+				999861272285381300113536 /* CarSwaddleData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		999860F022852D4800113536 /* CarSwaddleCoupons */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9998611C22852D4900113536 /* Build configuration list for PBXNativeTarget "CarSwaddleCoupons" */;
+			buildPhases = (
+				999860ED22852D4800113536 /* Sources */,
+				999860EE22852D4800113536 /* Frameworks */,
+				999860EF22852D4800113536 /* Resources */,
+				999861252285376E00113536 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CarSwaddleCoupons;
+			productName = CarSwaddleCoupons;
+			productReference = 999860F122852D4800113536 /* CarSwaddleCoupons.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9998610722852D4900113536 /* CarSwaddleCouponsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9998611F22852D4900113536 /* Build configuration list for PBXNativeTarget "CarSwaddleCouponsTests" */;
+			buildPhases = (
+				9998610422852D4900113536 /* Sources */,
+				9998610522852D4900113536 /* Frameworks */,
+				9998610622852D4900113536 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9998610A22852D4900113536 /* PBXTargetDependency */,
+			);
+			name = CarSwaddleCouponsTests;
+			productName = CarSwaddleCouponsTests;
+			productReference = 9998610822852D4900113536 /* CarSwaddleCouponsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9998611222852D4900113536 /* CarSwaddleCouponsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9998612222852D4900113536 /* Build configuration list for PBXNativeTarget "CarSwaddleCouponsUITests" */;
+			buildPhases = (
+				9998610F22852D4900113536 /* Sources */,
+				9998611022852D4900113536 /* Frameworks */,
+				9998611122852D4900113536 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9998611522852D4900113536 /* PBXTargetDependency */,
+			);
+			name = CarSwaddleCouponsUITests;
+			productName = CarSwaddleCouponsUITests;
+			productReference = 9998611322852D4900113536 /* CarSwaddleCouponsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		999860E922852D4800113536 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Kyle;
+				TargetAttributes = {
+					999860F022852D4800113536 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
+					};
+					9998610722852D4900113536 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 999860F022852D4800113536;
+					};
+					9998611222852D4900113536 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 999860F022852D4800113536;
+					};
+				};
+			};
+			buildConfigurationList = 999860EC22852D4800113536 /* Build configuration list for PBXProject "CarSwaddleCoupons" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 999860E822852D4800113536;
+			productRefGroup = 999860F222852D4800113536 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				999860F022852D4800113536 /* CarSwaddleCoupons */,
+				9998610722852D4900113536 /* CarSwaddleCouponsTests */,
+				9998611222852D4900113536 /* CarSwaddleCouponsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		999860EF22852D4800113536 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9989857522C3225C00E4B25A /* SettingsViewController.storyboard in Resources */,
+				9989852A22A387D500E4B25A /* MontserratAlternates-ExtraBold.otf in Resources */,
+				9989852C22A387D500E4B25A /* Montserrat-ExtraBold.otf in Resources */,
+				9989853222A387D500E4B25A /* Montserrat-Black.otf in Resources */,
+				9989856D22C1E83600E4B25A /* RequestAuthorityViewController.storyboard in Resources */,
+				9989856722BC7AC100E4B25A /* AuthorityRequestCell.xib in Resources */,
+				9989851222A387D500E4B25A /* Montserrat-MediumItalic.otf in Resources */,
+				9989853022A387D500E4B25A /* MontserratAlternates-Regular.otf in Resources */,
+				9989851522A387D500E4B25A /* MontserratAlternates-Black.otf in Resources */,
+				9989852D22A387D500E4B25A /* Montserrat-ExtraLightItalic.otf in Resources */,
+				9989853922A38AE000E4B25A /* AuthoritiesViewController.storyboard in Resources */,
+				9998610222852D4900113536 /* LaunchScreen.storyboard in Resources */,
+				9989857122C1EC2300E4B25A /* RequestAuthorityCell.xib in Resources */,
+				9989851E22A387D500E4B25A /* MontserratAlternates-BlackItalic.otf in Resources */,
+				9989853522A387D500E4B25A /* Montserrat-SemiBold.otf in Resources */,
+				9998613C2285409900113536 /* LoginViewController.storyboard in Resources */,
+				9989851822A387D500E4B25A /* Montserrat-BoldItalic.otf in Resources */,
+				9989853122A387D500E4B25A /* MontserratAlternates-ThinItalic.otf in Resources */,
+				9989851A22A387D500E4B25A /* Montserrat-ThinItalic.otf in Resources */,
+				9989854122A3A12400E4B25A /* Colors.xcassets in Resources */,
+				9989854522A623F500E4B25A /* AuthorityNameCell.xib in Resources */,
+				9989851722A387D500E4B25A /* MontserratAlternates-Medium.otf in Resources */,
+				9989851C22A387D500E4B25A /* MontserratAlternates-MediumItalic.otf in Resources */,
+				9989851D22A387D500E4B25A /* Montserrat-ExtraLight.otf in Resources */,
+				999860FF22852D4900113536 /* Assets.xcassets in Resources */,
+				9989852322A387D500E4B25A /* Montserrat-Medium.otf in Resources */,
+				9989852022A387D500E4B25A /* MontserratAlternates-ExtraLightItalic.otf in Resources */,
+				9989853322A387D500E4B25A /* MontserratAlternates-ExtraBoldItalic.otf in Resources */,
+				9989851622A387D500E4B25A /* MontserratAlternates-LightItalic.otf in Resources */,
+				9989852722A387D500E4B25A /* Montserrat-Italic.otf in Resources */,
+				9989852222A387D500E4B25A /* Montserrat-LightItalic.otf in Resources */,
+				9989851B22A387D500E4B25A /* Montserrat-Thin.otf in Resources */,
+				9989852122A387D500E4B25A /* MontserratAlternates-Thin.otf in Resources */,
+				9989852E22A387D500E4B25A /* MontserratAlternates-Light.otf in Resources */,
+				9989852622A387D500E4B25A /* Montserrat-ExtraBoldItalic.otf in Resources */,
+				9989852922A387D500E4B25A /* Montserrat-Regular.otf in Resources */,
+				999860FA22852D4800113536 /* Main.storyboard in Resources */,
+				9989851322A387D500E4B25A /* Montserrat-Bold.otf in Resources */,
+				9989853D22A38B5600E4B25A /* CouponsViewController.storyboard in Resources */,
+				9989851422A387D500E4B25A /* Montserrat-BlackItalic.otf in Resources */,
+				9989852F22A387D500E4B25A /* MontserratAlternates-ExtraLight.otf in Resources */,
+				9989852B22A387D500E4B25A /* MontserratAlternates-BoldItalic.otf in Resources */,
+				9989851F22A387D500E4B25A /* MontserratAlternates-Bold.otf in Resources */,
+				9989856322BC788600E4B25A /* AuthorityRequestListViewController.storyboard in Resources */,
+				9989853422A387D500E4B25A /* MontserratAlternates-Italic.otf in Resources */,
+				9989852522A387D500E4B25A /* Montserrat-SemiBoldItalic.otf in Resources */,
+				9989852822A387D500E4B25A /* MontserratAlternates-SemiBold.otf in Resources */,
+				9989852422A387D500E4B25A /* MontserratAlternates-SemiBoldItalic.otf in Resources */,
+				9989851922A387D500E4B25A /* Montserrat-Light.otf in Resources */,
+				9989857D22C74B9B00E4B25A /* MechanicListCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9998610622852D4900113536 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9998611122852D4900113536 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		999861252285376E00113536 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/NetworkRequest.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Authentication.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CarSwaddleNetworkRequest.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Store.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CarSwaddleUI.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CarSwaddleData.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NetworkRequest.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Authentication.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CarSwaddleNetworkRequest.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Store.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CarSwaddleUI.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CarSwaddleData.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Lottie.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		999860ED22852D4800113536 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9989856122BC787700E4B25A /* AuthorityRequestListViewController.swift in Sources */,
+				999860FD22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld in Sources */,
+				998984E522A385D700E4B25A /* Logout.swift in Sources */,
+				9989856622BC7AC100E4B25A /* AuthorityRequestCell.swift in Sources */,
+				99986138228538C200113536 /* ServiceRequest.swift in Sources */,
+				999860F722852D4800113536 /* ViewController.swift in Sources */,
+				9989853F22A39E9000E4B25A /* UserActivityHandler.swift in Sources */,
+				9989857C22C74B9B00E4B25A /* MechanicListCell.swift in Sources */,
+				998984E722A3864700E4B25A /* PushNotificationController.swift in Sources */,
+				9989853722A38AD300E4B25A /* AuthoritiesViewController.swift in Sources */,
+				9998613E2285456900113536 /* Store.swift in Sources */,
+				998984EB22A3879A00E4B25A /* FontExtension.swift in Sources */,
+				9989856922C097D800E4B25A /* DataController.swift in Sources */,
+				999861402286B27100113536 /* TweakValues.swift in Sources */,
+				9989857322C3224E00E4B25A /* SettingsViewController.swift in Sources */,
+				998984E322A385B300E4B25A /* Navigator.swift in Sources */,
+				998984E922A3868F00E4B25A /* UIColorExtension.swift in Sources */,
+				9989854422A623F500E4B25A /* AuthorityNameCell.swift in Sources */,
+				9989856B22C1E82500E4B25A /* RequestAuthorityViewController.swift in Sources */,
+				9998613A2285408C00113536 /* LoginViewController.swift in Sources */,
+				9989857022C1EC2300E4B25A /* RequestAuthorityCell.swift in Sources */,
+				9989857922C7484800E4B25A /* MechanicListViewController.swift in Sources */,
+				9989853B22A38B4D00E4B25A /* CouponsViewController.swift in Sources */,
+				9989857722C73D1F00E4B25A /* FetchedResultsViewController.swift in Sources */,
+				999860F522852D4800113536 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9998610422852D4900113536 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9998610D22852D4900113536 /* CarSwaddleCouponsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9998610F22852D4900113536 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9998611822852D4900113536 /* CarSwaddleCouponsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9998610A22852D4900113536 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 999860F022852D4800113536 /* CarSwaddleCoupons */;
+			targetProxy = 9998610922852D4900113536 /* PBXContainerItemProxy */;
+		};
+		9998611522852D4900113536 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 999860F022852D4800113536 /* CarSwaddleCoupons */;
+			targetProxy = 9998611422852D4900113536 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		999860F822852D4800113536 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				999860F922852D4800113536 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9998610022852D4900113536 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9998610122852D4900113536 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9998611A22852D4900113536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9998611B22852D4900113536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9998611D22852D4900113536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CarSwaddleCoupons/CarSwaddleCoupons.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 977533WLK8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = CarSwaddleCoupons/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.carswaddle.carswaddleadmin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9998611E22852D4900113536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CarSwaddleCoupons/CarSwaddleCoupons.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 977533WLK8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = CarSwaddleCoupons/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.carswaddle.carswaddleadmin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9998612022852D4900113536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 977533WLK8;
+				INFOPLIST_FILE = CarSwaddleCouponsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.carswaddle.CarSwaddleCouponsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarSwaddleCoupons.app/CarSwaddleCoupons";
+			};
+			name = Debug;
+		};
+		9998612122852D4900113536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 977533WLK8;
+				INFOPLIST_FILE = CarSwaddleCouponsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.carswaddle.CarSwaddleCouponsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CarSwaddleCoupons.app/CarSwaddleCoupons";
+			};
+			name = Release;
+		};
+		9998612322852D4900113536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 977533WLK8;
+				INFOPLIST_FILE = CarSwaddleCouponsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.carswaddle.CarSwaddleCouponsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CarSwaddleCoupons;
+			};
+			name = Debug;
+		};
+		9998612422852D4900113536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 977533WLK8;
+				INFOPLIST_FILE = CarSwaddleCouponsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.carswaddle.CarSwaddleCouponsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CarSwaddleCoupons;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		999860EC22852D4800113536 /* Build configuration list for PBXProject "CarSwaddleCoupons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9998611A22852D4900113536 /* Debug */,
+				9998611B22852D4900113536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9998611C22852D4900113536 /* Build configuration list for PBXNativeTarget "CarSwaddleCoupons" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9998611D22852D4900113536 /* Debug */,
+				9998611E22852D4900113536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9998611F22852D4900113536 /* Build configuration list for PBXNativeTarget "CarSwaddleCouponsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9998612022852D4900113536 /* Debug */,
+				9998612122852D4900113536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9998612222852D4900113536 /* Build configuration list for PBXNativeTarget "CarSwaddleCouponsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9998612322852D4900113536 /* Debug */,
+				9998612422852D4900113536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		999860FB22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				999860FC22852D4800113536 /* CarSwaddleCoupons.xcdatamodel */,
+			);
+			currentVersion = 999860FC22852D4800113536 /* CarSwaddleCoupons.xcdatamodel */;
+			path = CarSwaddleCoupons.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 999860E922852D4800113536 /* Project object */;
+}

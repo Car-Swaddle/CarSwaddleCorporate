@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bAP-w2-OwR">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Authority Requests-->
+        <scene sceneID="VnY-UU-ITH">
+            <objects>
+                <viewController id="bAP-w2-OwR" customClass="AuthorityRequestListViewController" customModule="CarSwaddleCoupons" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="muX-fi-0Uh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AvQ-sA-AcN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bAP-w2-OwR" id="S48-Pr-eUf"/>
+                                    <outlet property="delegate" destination="bAP-w2-OwR" id="Swm-6L-NUN"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9u-Mf-tNf">
+                                <rect key="frame" x="131" y="813" width="156" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <state key="normal" title="Request Authority"/>
+                                <connections>
+                                    <action selector="didTapRequestAuthority" destination="bAP-w2-OwR" eventType="touchUpInside" id="NYi-2T-Fqw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AvQ-sA-AcN" firstAttribute="leading" secondItem="muX-fi-0Uh" secondAttribute="leading" id="2ta-6j-lje"/>
+                            <constraint firstAttribute="trailing" secondItem="AvQ-sA-AcN" secondAttribute="trailing" id="5lS-pL-Bag"/>
+                            <constraint firstAttribute="bottom" secondItem="AvQ-sA-AcN" secondAttribute="bottom" id="7tp-vZ-rNh"/>
+                            <constraint firstItem="AvQ-sA-AcN" firstAttribute="top" secondItem="muX-fi-0Uh" secondAttribute="top" id="QbY-2v-Mt0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="njP-qN-Dfc"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Authority Requests" id="bRx-hh-O9K"/>
+                    <connections>
+                        <outlet property="actionButton" destination="w9u-Mf-tNf" id="jmJ-Ie-5wv"/>
+                        <outlet property="tableView" destination="AvQ-sA-AcN" id="WJN-qG-eo7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I0a-Ky-Odf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="153"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k7c-nH-HKO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kRj-Wt-Eom" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aN2-3c-da8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bAP-w2-OwR" kind="relationship" relationship="rootViewController" id="Dbo-QN-W7S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zdu-qB-KGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.666666666666671" y="152.67857142857142"/>
+        </scene>
+    </scenes>
+</document>
