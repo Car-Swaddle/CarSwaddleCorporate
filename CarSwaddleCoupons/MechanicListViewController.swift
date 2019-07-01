@@ -12,14 +12,17 @@ import CarSwaddleUI
 import Store
 import CoreData
 
+
+private let disallowTitle = NSLocalizedString("Disallow", comment: "reject title")
+private let allowTitle = NSLocalizedString("Allow", comment: "reject title")
+
 class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = NSLocalizedString("Mechanics", comment: "Title of mechanic list")
-        requestData()
         tableView.register(MechanicListCell.self)
+        requestData()
+//        tableView.delegate = self
     }
     
     private var mechanicNetwork: MechanicNetwork = MechanicNetwork(serviceRequest: serviceRequest)
@@ -62,8 +65,65 @@ class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
         }
     }
     
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected row")
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if let action = self.rowAction(for: indexPath) {
+            return UISwipeActionsConfiguration(actions: [action])
+        } else {
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if let action = self.rowAction(for: indexPath) {
+            return UISwipeActionsConfiguration(actions: [action])
+        } else {
+            return nil
+        }
+    }
+    
+    private func rowAction(for indexPath: IndexPath) -> UIContextualAction? {
+        if object(at: indexPath).isAllowed {
+            return self.disallowAction(indexPath: indexPath)
+        } else {
+            return self.allowAction(indexPath: indexPath)
+        }
+    }
+    
+    private func disallowAction(indexPath: IndexPath) -> UIContextualAction? {
+        guard currentUserCanEditMechanic else { return nil }
+        return self.action(title: disallowTitle, isAllowed: false, backgroundColor: .red5, indexPath: indexPath)
+    }
+    
+    private func allowAction(indexPath: IndexPath) -> UIContextualAction? {
+        guard currentUserCanEditMechanic else { return nil }
+        return self.action(title: allowTitle, isAllowed: true, backgroundColor: .blue5, indexPath: indexPath)
+    }
+    
+    private func action(title: String, isAllowed: Bool, backgroundColor: UIColor, indexPath: IndexPath) -> UIContextualAction? {
+        let mechanicID = object(at: indexPath).identifier
+        let action = UIContextualAction(style: .normal, title: title) { [weak self] action, view, completion in
+            store.privateContext{ privateContext in
+                self?.mechanicNetwork.updateMechanicCorperate(mechanicID: mechanicID, isAllowed: isAllowed, in: privateContext) { mechanicObjectID, error in
+                    print("update")
+                    DispatchQueue.main.async {
+                        completion(error == nil)
+                    }
+                }
+            }
+        }
+        action.backgroundColor = backgroundColor
+        return action
+    }
+    
+    
+    private var currentUserCanEditMechanic: Bool {
+        return Authority.currentUser(has: .editAuthorities, in: store.mainContext)
     }
     
 }

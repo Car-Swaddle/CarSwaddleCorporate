@@ -14,15 +14,11 @@ import Store
 
 extension Navigator {
     
-    enum Tab: Int {
+    enum Tab: Int, CaseIterable {
         case coupons
         case authorities
-        case settings
         case mechanics
-        
-        static var all: [Tab] {
-            return [.coupons, .authorities, .mechanics, .settings]
-        }
+        case settings
         
         fileprivate var name: String {
             switch self {
@@ -163,7 +159,7 @@ final class Navigator: NSObject, NotificationObserver {
         }
         
         var viewControllers: [UIViewController] = []
-        for tab in Tab.all {
+        for tab in Tab.allCases {
             guard tabIsAllowed(tab: tab) else { continue }
             let viewController = self.viewController(for: tab)
             viewControllers.append(viewController.inNavigationController())
@@ -329,6 +325,7 @@ final class Navigator: NSObject, NotificationObserver {
         let mechanicsViewController = MechanicListViewController()
         let title = NSLocalizedString("Mechanics", comment: "Title of tab item.")
         mechanicsViewController.tabBarItem = UITabBarItem(title: title, image: nil, selectedImage: nil)
+        mechanicsViewController.title = title
         _mechanicsViewController = mechanicsViewController
         return mechanicsViewController
     }

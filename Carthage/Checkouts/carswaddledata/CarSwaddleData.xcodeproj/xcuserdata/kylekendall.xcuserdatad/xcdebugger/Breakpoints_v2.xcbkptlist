@@ -51,22 +51,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CarSwaddleData/Mechanic+Requests.swift"
-            timestampString = "583481675.660453"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "setProfileImage(fileURL:in:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "CarSwaddleDataTests/AuthTestCase.swift"
             timestampString = "570217199.604491"
             startingColumnNumber = "9223372036854775807"
@@ -84,7 +68,7 @@
                   moduleName = "CarSwaddleDataTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kylekendall/Projects/carswaddledata/CarSwaddleDataTests/AuthTestCase.swift"
-                  timestampString = "583481676.543985"
+                  timestampString = "583632569.363351"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -99,7 +83,7 @@
                   moduleName = "CarSwaddleDataTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kylekendall/Projects/carswaddledata/CarSwaddleDataTests/AuthTestCase.swift"
-                  timestampString = "583481676.5462641"
+                  timestampString = "583632569.364889"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -116,7 +100,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarSwaddleDataTests/MechanicTests.swift"
-            timestampString = "583481675.66061"
+            timestampString = "583632568.724104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "283"
@@ -132,7 +116,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarSwaddleDataTests/MechanicTests.swift"
-            timestampString = "583481675.660985"
+            timestampString = "583632568.724584"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "277"
@@ -148,7 +132,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarSwaddleDataTests/MechanicTests.swift"
-            timestampString = "583481675.661239"
+            timestampString = "583632568.72488"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "298"
@@ -164,7 +148,7 @@
                   moduleName = "CarSwaddleDataTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kylekendall/Projects/carswaddledata/CarSwaddleDataTests/MechanicTests.swift"
-                  timestampString = "583481676.555218"
+                  timestampString = "583632569.3712879"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "298"
@@ -179,7 +163,7 @@
                   moduleName = "CarSwaddleDataTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kylekendall/Projects/carswaddledata/CarSwaddleDataTests/MechanicTests.swift"
-                  timestampString = "583481676.557327"
+                  timestampString = "583632569.372749"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "299"
@@ -266,6 +250,54 @@
             startingLineNumber = "70"
             endingLineNumber = "70"
             landmarkName = "testRejectAuthority()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CarSwaddleDataTests/MechanicTests.swift"
+            timestampString = "583632568.725291"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
+            landmarkName = "testUpdateMechanicCorperate()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CarSwaddleData/Mechanic+Requests.swift"
+            timestampString = "583632568.725559"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
+            landmarkName = "updateMechanicCorperate(mechanicID:isAllowed:in:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CarSwaddleData/Mechanic+Requests.swift"
+            timestampString = "583632568.725606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "completeMechanic(json:error:in:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

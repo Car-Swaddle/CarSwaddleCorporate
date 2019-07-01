@@ -326,4 +326,23 @@ class MechanicTests: LoginTestCase {
         waitForExpectations(timeout: 40, handler: nil)
     }
     
+    
+    func testUpdateMechanicCorperate() {
+        let exp = expectation(description: "\(#function)\(#line)")
+        let mechanicID = "39895440-8fd8-11e9-a0b9-ff60380afd50"
+        let isAllowed = false
+        store.privateContext { [weak self] context in
+            self?.mechanicNetwork.updateMechanicCorperate(mechanicID: mechanicID, isAllowed: isAllowed, in: context) { mechanicObjectID, error in
+                context.perform {
+                    XCTAssert(mechanicObjectID != nil, "Should have a mechanic")
+                    let mechanic = (context.object(with: mechanicObjectID!) as! Mechanic)
+                    XCTAssert(mechanic.isAllowed == isAllowed, "Should have isAllowed \(isAllowed), got: \(mechanic.isAllowed)")
+                    exp.fulfill()
+                }
+            }
+        }
+        
+        waitForExpectations(timeout: 40, handler: nil)
+    }
+    
 }

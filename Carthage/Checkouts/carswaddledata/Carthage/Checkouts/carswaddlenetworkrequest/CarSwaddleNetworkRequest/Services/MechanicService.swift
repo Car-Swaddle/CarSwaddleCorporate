@@ -14,6 +14,7 @@ extension NetworkRequest.Request.Endpoint {
     fileprivate static let currentMechanic = Request.Endpoint(rawValue: "/api/current-mechanic")
     fileprivate static let stats = Request.Endpoint(rawValue: "/api/stats")
     fileprivate static let mechanics = Request.Endpoint(rawValue: "/api/mechanics")
+    fileprivate static let updateMechanicCorperate = Request.Endpoint(rawValue: "/api/update-mechanic/corperate")
 }
 
 final public class MechanicService: Service {
@@ -96,6 +97,20 @@ final public class MechanicService: Service {
         guard let urlRequest = serviceRequest.get(with: .mechanics, queryItems: queryItems) else { return nil }
         return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
             self?.completeWithJSONArray(data: data, error: error, completion: completion)
+        }
+    }
+    
+    @discardableResult
+    public func updateMechanicCorperate(mechanicID: String, isAllowed: Bool? = nil, completion: @escaping JSONCompletion) -> URLSessionDataTask? {
+        let queryItems: [URLQueryItem] = [URLQueryItem(name: "mechanicID", value: "\(mechanicID)")]
+        var bodyJSON: JSONObject = [:]
+        if let isAllowed = isAllowed {
+            bodyJSON["isAllowed"] = isAllowed.stringValue
+        }
+        guard let body = (try? JSONSerialization.data(withJSONObject: bodyJSON, options: [])),
+            let urlRequest = serviceRequest.post(with: .updateMechanicCorperate, queryItems: queryItems, body: body, contentType: .applicationJSON) else { return nil }
+        return sendWithAuthentication(urlRequest: urlRequest) { [weak self] data, error in
+            self?.completeWithJSON(data: data, error: error, completion: completion)
         }
     }
     

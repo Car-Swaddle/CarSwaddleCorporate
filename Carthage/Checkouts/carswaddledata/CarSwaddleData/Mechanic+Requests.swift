@@ -215,6 +215,13 @@ public final class MechanicNetwork: Network {
         }
     }
     
+    @discardableResult
+    public func updateMechanicCorperate(mechanicID: String, isAllowed: Bool? = nil, in context: NSManagedObjectContext, completion: @escaping ObjectIDCompletion) -> URLSessionDataTask? {
+        return mechanicService.updateMechanicCorperate(mechanicID: mechanicID, isAllowed: isAllowed) { [weak self] json, error in
+            self?.completeMechanic(json: json, error: error, in: context, completion: completion)
+        }
+    }
+    
 }
 
 

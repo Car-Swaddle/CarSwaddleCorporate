@@ -211,7 +211,7 @@ open class TableViewController: UIViewController, UITableViewDataSource, UITable
         return nil
     }
     open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return false
+        return true
     }
     open func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return false
@@ -226,5 +226,8 @@ open class TableViewController: UIViewController, UITableViewDataSource, UITable
     open func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) { }
     
     
+    public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return nil
+    }
 }
 

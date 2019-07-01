@@ -6,12 +6,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Montserrat-Regular.otf">
             <string>Montserrat-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.otf">
+            <string>Montserrat-SemiBold</string>
         </array>
     </customFonts>
     <objects>
@@ -24,29 +28,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="370" height="122.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jmb-nf-l77">
-                        <rect key="frame" x="16" y="8" width="338" height="283.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jmb-nf-l77">
+                        <rect key="frame" x="16" y="8" width="338" height="106.5"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="255" verticalHuggingPriority="254" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="9C7-R5-WjN">
-                                <rect key="frame" x="0.0" y="0.0" width="283.5" height="283.5"/>
+                                <rect key="frame" x="0.0" y="21.5" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9C7-R5-WjN" secondAttribute="height" multiplier="1:1" id="9uo-0T-llE"/>
                                     <constraint firstAttribute="height" constant="64" id="9xh-K8-K0g"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="184-zb-F0q">
-                                <rect key="frame" x="291.5" y="0.0" width="46.5" height="283.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="184-zb-F0q">
+                                <rect key="frame" x="72" y="23" width="266" height="61"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJM-et-ZPZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="46.5" height="21"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="266" height="21"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kle-6H-YWH">
-                                        <rect key="frame" x="0.0" y="29" width="46.5" height="254.5"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="25" width="266" height="16"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                                        <color key="textColor" name="textColor3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rke-GC-ME8">
+                                        <rect key="frame" x="0.0" y="45" width="266" height="16"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                                        <color key="textColor" red="0.63072183100000001" green="0.58877090669999999" blue="0.52068661969999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -63,6 +73,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="isMechanicAllowedLabel" destination="Rke-GC-ME8" id="x6Q-2T-EMY"/>
                 <outlet property="mechanicEmailLabel" destination="kle-6H-YWH" id="V6W-MC-1vK"/>
                 <outlet property="mechanicImageView" destination="9C7-R5-WjN" id="C0P-jq-Eml"/>
                 <outlet property="mechanicNameLabel" destination="pJM-et-ZPZ" id="ujI-kA-XeE"/>
@@ -70,4 +81,9 @@
             <point key="canvasLocation" x="110.14492753623189" y="168.41517857142856"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="textColor3">
+            <color white="0.68599998950958252" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+    </resources>
 </document>

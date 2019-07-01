@@ -63,6 +63,7 @@ public final class Mechanic: NSManagedObject, NSManagedObjectFetchable, JSONInit
         hasSetAvailability = json["hasSetAvailability"] as? Bool ?? false
         hasSetServiceRegion = json["hasSetServiceRegion"] as? Bool ?? false
         isAllowed = json["isAllowed"] as? Bool ?? true
+        
         if let creationDateString = json["createdAt"] as? String,
             let creationDate = serverDateFormatter.date(from: creationDateString) {
             self.creationDate = creationDate
