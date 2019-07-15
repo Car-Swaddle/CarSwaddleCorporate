@@ -31,3 +31,11 @@ extension UIFont.FontType {
     static let monoSpaced: UIFont.FontType = UIFont.FontType(rawValue: "Montserrat-Monospaced")
     
 }
+
+extension UIFont {
+    
+    public static let detail: UIFont = UIFont.appFont(type: .regular, size: 14)
+    public static let title: UIFont = UIFont.appFont(type: .regular, size: 17)
+    public static let large: UIFont = UIFont.appFont(type: .semiBold, size: 17)
+    
+}

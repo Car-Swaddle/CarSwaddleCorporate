@@ -16,6 +16,9 @@ import CoreData
 private let disallowTitle = NSLocalizedString("Disallow", comment: "reject title")
 private let allowTitle = NSLocalizedString("Allow", comment: "reject title")
 
+private let pageLimit: Int = 30
+private let pageIndexOffset = 4
+
 class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
 
     override func viewDidLoad() {
@@ -26,6 +29,10 @@ class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
     }
     
     private var mechanicNetwork: MechanicNetwork = MechanicNetwork(serviceRequest: serviceRequest)
+    
+    private var currentOffset: Int = 0
+    private var isRequesting: Bool = false
+    private var reachedPagingEnd: Bool = false
     
     override var fetchRequest: NSFetchRequest<Mechanic>! {
         return createFetchRequest()
@@ -49,37 +56,43 @@ class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
     }
     
     override func didRefresh() {
-        requestData { [weak self] in
+        requestData(resetOffset: true) { [weak self] in
             DispatchQueue.main.async {
                 self?.refreshControl.endRefreshing()
             }
         }
     }
     
-    private func requestData(completion: @escaping () -> Void = {}) {
+    private func requestData(resetOffset: Bool = false, completion: @escaping () -> Void = {}) {
+        guard !isRequesting && !reachedPagingEnd else { return }
+        isRequesting = true
+        if resetOffset {
+            currentOffset = 0
+        }
+        let offset = self.currentOffset
         store.privateContext { [weak self] context in
-            self?.mechanicNetwork.getMechanics(limit: 30, offset: 0, sortType: .descending, in: context) { mechanicIDs, error in
-                print("done: \(mechanicIDs.count)")
+            self?.mechanicNetwork.getMechanics(limit: pageLimit, offset: offset, sortType: .descending, in: context) { mechanicIDs, error in
+                guard let self = self else { return }
+                self.currentOffset += mechanicIDs.count
+                if mechanicIDs.count == 0 {
+                    self.reachedPagingEnd = true
+                }
                 completion()
             }
         }
     }
     
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected row")
-    }
-    
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        if let action = self.rowAction(for: indexPath) {
-            return UISwipeActionsConfiguration(actions: [action])
-        } else {
-            return nil
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if !isRequesting && !reachedPagingEnd && indexPath.row >= currentOffset - pageIndexOffset {
+            requestData()
         }
     }
     
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if let action = self.rowAction(for: indexPath) {
             return UISwipeActionsConfiguration(actions: [action])
         } else {
@@ -110,7 +123,6 @@ class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
         let action = UIContextualAction(style: .normal, title: title) { [weak self] action, view, completion in
             store.privateContext{ privateContext in
                 self?.mechanicNetwork.updateMechanicCorperate(mechanicID: mechanicID, isAllowed: isAllowed, in: privateContext) { mechanicObjectID, error in
-                    print("update")
                     DispatchQueue.main.async {
                         completion(error == nil)
                     }

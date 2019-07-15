@@ -30,6 +30,9 @@ final class MechanicListCell: UITableViewCell, NibRegisterable {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        mechanicNameLabel.font = .large
+        mechanicEmailLabel.font = .detail
+        isMechanicAllowedLabel.font = .detail
         mechanicImageView.layer.cornerRadius = 8
     }
     

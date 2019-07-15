@@ -72,8 +72,6 @@
 		9989857C22C74B9B00E4B25A /* MechanicListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989857A22C74B9B00E4B25A /* MechanicListCell.swift */; };
 		9989857D22C74B9B00E4B25A /* MechanicListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9989857B22C74B9B00E4B25A /* MechanicListCell.xib */; };
 		999860F522852D4800113536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999860F422852D4800113536 /* AppDelegate.swift */; };
-		999860F722852D4800113536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999860F622852D4800113536 /* ViewController.swift */; };
-		999860FA22852D4800113536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999860F822852D4800113536 /* Main.storyboard */; };
 		999860FD22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 999860FB22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld */; };
 		999860FF22852D4900113536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999860FE22852D4900113536 /* Assets.xcassets */; };
 		9998610222852D4900113536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9998610022852D4900113536 /* LaunchScreen.storyboard */; };
@@ -92,6 +90,8 @@
 		9998613C2285409900113536 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9998613B2285409900113536 /* LoginViewController.storyboard */; };
 		9998613E2285456900113536 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998613D2285456900113536 /* Store.swift */; };
 		999861402286B27100113536 /* TweakValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998613F2286B27100113536 /* TweakValues.swift */; };
+		99F08C7722DC2C3700317EEA /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C7522DC2C3700317EEA /* CouponCell.swift */; };
+		99F08C7822DC2C3700317EEA /* CouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C7622DC2C3700317EEA /* CouponCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,8 +179,6 @@
 		9989857B22C74B9B00E4B25A /* MechanicListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MechanicListCell.xib; sourceTree = "<group>"; };
 		999860F122852D4800113536 /* CarSwaddleCoupons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSwaddleCoupons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		999860F422852D4800113536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		999860F622852D4800113536 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		999860F922852D4800113536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		999860FC22852D4800113536 /* CarSwaddleCoupons.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarSwaddleCoupons.xcdatamodel; sourceTree = "<group>"; };
 		999860FE22852D4900113536 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9998610122852D4900113536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -204,6 +202,8 @@
 		9998613B2285409900113536 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		9998613D2285456900113536 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9998613F2286B27100113536 /* TweakValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakValues.swift; sourceTree = "<group>"; };
+		99F08C7522DC2C3700317EEA /* CouponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCell.swift; sourceTree = "<group>"; };
+		99F08C7622DC2C3700317EEA /* CouponCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,48 +314,22 @@
 		999860F322852D4800113536 /* CarSwaddleCoupons */ = {
 			isa = PBXGroup;
 			children = (
-				998984E122A332D700E4B25A /* CarSwaddleCoupons.entitlements */,
-				999860F422852D4800113536 /* AppDelegate.swift */,
-				999860F622852D4800113536 /* ViewController.swift */,
-				9989856822C097D700E4B25A /* DataController.swift */,
-				999860F822852D4800113536 /* Main.storyboard */,
-				999861392285408C00113536 /* LoginViewController.swift */,
-				9998613B2285409900113536 /* LoginViewController.storyboard */,
-				9989853622A38AD300E4B25A /* AuthoritiesViewController.swift */,
-				9989853822A38AE000E4B25A /* AuthoritiesViewController.storyboard */,
-				9989856022BC787700E4B25A /* AuthorityRequestListViewController.swift */,
-				9989856222BC788600E4B25A /* AuthorityRequestListViewController.storyboard */,
-				9989856422BC7AC100E4B25A /* AuthorityRequestCell.swift */,
-				9989856522BC7AC100E4B25A /* AuthorityRequestCell.xib */,
-				9989854222A623F500E4B25A /* AuthorityNameCell.swift */,
-				9989854322A623F500E4B25A /* AuthorityNameCell.xib */,
-				9989853A22A38B4D00E4B25A /* CouponsViewController.swift */,
-				9989853C22A38B5600E4B25A /* CouponsViewController.storyboard */,
-				9989856A22C1E82500E4B25A /* RequestAuthorityViewController.swift */,
-				9989856C22C1E83600E4B25A /* RequestAuthorityViewController.storyboard */,
-				9989856E22C1EC2300E4B25A /* RequestAuthorityCell.swift */,
-				9989856F22C1EC2300E4B25A /* RequestAuthorityCell.xib */,
-				99986137228538C200113536 /* ServiceRequest.swift */,
-				9989857222C3224E00E4B25A /* SettingsViewController.swift */,
-				9989857422C3225C00E4B25A /* SettingsViewController.storyboard */,
-				9989857822C7484800E4B25A /* MechanicListViewController.swift */,
-				9989857A22C74B9B00E4B25A /* MechanicListCell.swift */,
-				9989857B22C74B9B00E4B25A /* MechanicListCell.xib */,
-				9989857622C73D1F00E4B25A /* FetchedResultsViewController.swift */,
-				9998613F2286B27100113536 /* TweakValues.swift */,
-				9998613D2285456900113536 /* Store.swift */,
-				998984E222A385B300E4B25A /* Navigator.swift */,
-				998984E422A385D700E4B25A /* Logout.swift */,
-				998984E622A3864700E4B25A /* PushNotificationController.swift */,
-				9989853E22A39E9000E4B25A /* UserActivityHandler.swift */,
-				998984E822A3868F00E4B25A /* UIColorExtension.swift */,
+				99F08C5822D4612E00317EEA /* Navigation */,
+				99F08C5922D4613B00317EEA /* Controls */,
+				99F08C5A22D4615100317EEA /* Data */,
+				99F08C5322D460AA00317EEA /* Login */,
+				99F08C5222D4478300317EEA /* Authorities */,
+				99F08C5622D4611600317EEA /* Coupons */,
+				99F08C5422D460C200317EEA /* Services */,
+				99F08C5722D4612000317EEA /* Settings */,
+				99F08C5522D460DD00317EEA /* Mechanics */,
+				99F08C5B22D4615900317EEA /* Debug */,
 				9989854022A3A11300E4B25A /* Colors.xcassets */,
-				998984EA22A3879A00E4B25A /* FontExtension.swift */,
 				998984EC22A387D500E4B25A /* Fonts */,
 				999860FE22852D4900113536 /* Assets.xcassets */,
 				9998610022852D4900113536 /* LaunchScreen.storyboard */,
+				998984E122A332D700E4B25A /* CarSwaddleCoupons.entitlements */,
 				9998610322852D4900113536 /* Info.plist */,
-				999860FB22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld */,
 			);
 			path = CarSwaddleCoupons;
 			sourceTree = "<group>";
@@ -391,6 +365,120 @@
 				999861272285381300113536 /* CarSwaddleData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99F08C5222D4478300317EEA /* Authorities */ = {
+			isa = PBXGroup;
+			children = (
+				9989853622A38AD300E4B25A /* AuthoritiesViewController.swift */,
+				9989853822A38AE000E4B25A /* AuthoritiesViewController.storyboard */,
+				9989856022BC787700E4B25A /* AuthorityRequestListViewController.swift */,
+				9989856222BC788600E4B25A /* AuthorityRequestListViewController.storyboard */,
+				9989856422BC7AC100E4B25A /* AuthorityRequestCell.swift */,
+				9989856522BC7AC100E4B25A /* AuthorityRequestCell.xib */,
+				9989854222A623F500E4B25A /* AuthorityNameCell.swift */,
+				9989854322A623F500E4B25A /* AuthorityNameCell.xib */,
+				99F08C5C22D6EF3900317EEA /* RequestAuthority */,
+			);
+			path = Authorities;
+			sourceTree = "<group>";
+		};
+		99F08C5322D460AA00317EEA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				999861392285408C00113536 /* LoginViewController.swift */,
+				9998613B2285409900113536 /* LoginViewController.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		99F08C5422D460C200317EEA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				998984E422A385D700E4B25A /* Logout.swift */,
+				99986137228538C200113536 /* ServiceRequest.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		99F08C5522D460DD00317EEA /* Mechanics */ = {
+			isa = PBXGroup;
+			children = (
+				9989857822C7484800E4B25A /* MechanicListViewController.swift */,
+				9989857A22C74B9B00E4B25A /* MechanicListCell.swift */,
+				9989857B22C74B9B00E4B25A /* MechanicListCell.xib */,
+			);
+			path = Mechanics;
+			sourceTree = "<group>";
+		};
+		99F08C5622D4611600317EEA /* Coupons */ = {
+			isa = PBXGroup;
+			children = (
+				9989853A22A38B4D00E4B25A /* CouponsViewController.swift */,
+				9989853C22A38B5600E4B25A /* CouponsViewController.storyboard */,
+				99F08C7522DC2C3700317EEA /* CouponCell.swift */,
+				99F08C7622DC2C3700317EEA /* CouponCell.xib */,
+			);
+			path = Coupons;
+			sourceTree = "<group>";
+		};
+		99F08C5722D4612000317EEA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9989857222C3224E00E4B25A /* SettingsViewController.swift */,
+				9989857422C3225C00E4B25A /* SettingsViewController.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		99F08C5822D4612E00317EEA /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				999860F422852D4800113536 /* AppDelegate.swift */,
+				998984E622A3864700E4B25A /* PushNotificationController.swift */,
+				9989853E22A39E9000E4B25A /* UserActivityHandler.swift */,
+				998984E222A385B300E4B25A /* Navigator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		99F08C5922D4613B00317EEA /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				998984E822A3868F00E4B25A /* UIColorExtension.swift */,
+				9989857622C73D1F00E4B25A /* FetchedResultsViewController.swift */,
+				998984EA22A3879A00E4B25A /* FontExtension.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		99F08C5A22D4615100317EEA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				999860FB22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld */,
+				9998613D2285456900113536 /* Store.swift */,
+				9989856822C097D700E4B25A /* DataController.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		99F08C5B22D4615900317EEA /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				9998613F2286B27100113536 /* TweakValues.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		99F08C5C22D6EF3900317EEA /* RequestAuthority */ = {
+			isa = PBXGroup;
+			children = (
+				9989856A22C1E82500E4B25A /* RequestAuthorityViewController.swift */,
+				9989856C22C1E83600E4B25A /* RequestAuthorityViewController.storyboard */,
+				9989856E22C1EC2300E4B25A /* RequestAuthorityCell.swift */,
+				9989856F22C1EC2300E4B25A /* RequestAuthorityCell.xib */,
+			);
+			path = RequestAuthority;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -524,6 +612,7 @@
 				9989857122C1EC2300E4B25A /* RequestAuthorityCell.xib in Resources */,
 				9989851E22A387D500E4B25A /* MontserratAlternates-BlackItalic.otf in Resources */,
 				9989853522A387D500E4B25A /* Montserrat-SemiBold.otf in Resources */,
+				99F08C7822DC2C3700317EEA /* CouponCell.xib in Resources */,
 				9998613C2285409900113536 /* LoginViewController.storyboard in Resources */,
 				9989851822A387D500E4B25A /* Montserrat-BoldItalic.otf in Resources */,
 				9989853122A387D500E4B25A /* MontserratAlternates-ThinItalic.otf in Resources */,
@@ -545,7 +634,6 @@
 				9989852E22A387D500E4B25A /* MontserratAlternates-Light.otf in Resources */,
 				9989852622A387D500E4B25A /* Montserrat-ExtraBoldItalic.otf in Resources */,
 				9989852922A387D500E4B25A /* Montserrat-Regular.otf in Resources */,
-				999860FA22852D4800113536 /* Main.storyboard in Resources */,
 				9989851322A387D500E4B25A /* Montserrat-Bold.otf in Resources */,
 				9989853D22A38B5600E4B25A /* CouponsViewController.storyboard in Resources */,
 				9989851422A387D500E4B25A /* Montserrat-BlackItalic.otf in Resources */,
@@ -624,7 +712,6 @@
 				998984E522A385D700E4B25A /* Logout.swift in Sources */,
 				9989856622BC7AC100E4B25A /* AuthorityRequestCell.swift in Sources */,
 				99986138228538C200113536 /* ServiceRequest.swift in Sources */,
-				999860F722852D4800113536 /* ViewController.swift in Sources */,
 				9989853F22A39E9000E4B25A /* UserActivityHandler.swift in Sources */,
 				9989857C22C74B9B00E4B25A /* MechanicListCell.swift in Sources */,
 				998984E722A3864700E4B25A /* PushNotificationController.swift in Sources */,
@@ -638,6 +725,7 @@
 				998984E922A3868F00E4B25A /* UIColorExtension.swift in Sources */,
 				9989854422A623F500E4B25A /* AuthorityNameCell.swift in Sources */,
 				9989856B22C1E82500E4B25A /* RequestAuthorityViewController.swift in Sources */,
+				99F08C7722DC2C3700317EEA /* CouponCell.swift in Sources */,
 				9998613A2285408C00113536 /* LoginViewController.swift in Sources */,
 				9989857022C1EC2300E4B25A /* RequestAuthorityCell.swift in Sources */,
 				9989857922C7484800E4B25A /* MechanicListViewController.swift in Sources */,
@@ -679,14 +767,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		999860F822852D4800113536 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				999860F922852D4800113536 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9998610022852D4900113536 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

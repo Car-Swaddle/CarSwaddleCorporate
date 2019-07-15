@@ -183,7 +183,7 @@ final class Navigator: NSObject, NotificationObserver {
         case .authorities:
             return true
         case .coupons:
-            return Authority.currentUser(has: .createCoupons, in: store.mainContext)
+            return Authority.currentUser(has: .editCoupons, in: store.mainContext) || Authority.currentUser(has: .readCoupons, in: store.mainContext)
         case .settings:
             return true
         case .mechanics:
@@ -336,7 +336,7 @@ final class Navigator: NSObject, NotificationObserver {
             return _couponsViewController
         }
         
-        let couponsViewController = CouponsViewController.viewControllerFromStoryboard()
+        let couponsViewController = CouponsViewController()
         let title = NSLocalizedString("Coupons", comment: "Title of tab item.")
         couponsViewController.tabBarItem = UITabBarItem(title: title, image: nil, selectedImage: nil)
         _couponsViewController = couponsViewController
@@ -456,4 +456,3 @@ extension Navigator: NavigationDelegateViewControllerDelegate {
     }
     
 }
-

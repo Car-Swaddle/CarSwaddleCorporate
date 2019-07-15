@@ -29,6 +29,12 @@ class AuthoritiesViewController: UIViewController, StoryboardInstantiating {
         requestData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        requestData()
+    }
+    
     
     
     private lazy var adjuster: ContentInsetAdjuster = ContentInsetAdjuster(tableView: tableView, actionButton: requestButton)

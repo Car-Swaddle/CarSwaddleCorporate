@@ -18,6 +18,9 @@ class AuthorityNameCell: UITableViewCell, NibRegisterable {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        emailLabel.font = .detail
+        authorityNameLabel.font = .large
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

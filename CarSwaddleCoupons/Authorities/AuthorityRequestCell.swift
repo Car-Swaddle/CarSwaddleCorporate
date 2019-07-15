@@ -31,8 +31,15 @@ final class AuthorityRequestCell: UITableViewCell, NibRegisterable {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        authorityName.font = .large
+        nameLabel.font = .title
+        emailLabel.font = .title
+        expirationDateLabel.font = .detail
+        
         requesterImageView.layer.cornerRadius = requesterImageView.frame.height/2
         requesterImageView.isHiddenInStackView = true
+        
+        selectionStyle = .none
     }
     
     func configure(with authorityRequest: AuthorityRequest) {
