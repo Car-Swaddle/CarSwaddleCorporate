@@ -61,7 +61,7 @@
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="scheduledDate" optional="YES" attributeType="Date" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="status" attributeType="String" syncable="YES"/>
-        <relationship name="coupon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coupon" inverseName="autoservice" inverseEntity="Coupon" syncable="YES"/>
+        <relationship name="coupon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coupon" inverseName="autoservices" inverseEntity="Coupon" syncable="YES"/>
         <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="services" inverseEntity="User" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Location" inverseName="autoService" inverseEntity="Location" syncable="YES"/>
         <relationship name="mechanic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mechanic" inverseName="services" inverseEntity="Mechanic" syncable="YES"/>
@@ -107,7 +107,7 @@
         <attribute name="redeemBy" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="redemptions" attributeType="Integer 64" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="updatedAt" attributeType="Date" syncable="YES"/>
-        <relationship name="autoservice" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AutoService" inverseName="coupon" inverseEntity="AutoService" syncable="YES"/>
+        <relationship name="autoservices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AutoService" inverseName="coupon" inverseEntity="AutoService" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="coupons" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">

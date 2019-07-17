@@ -20,7 +20,6 @@ extension Coupon {
     @NSManaged public var identifier: String
     @NSManaged public var creationDate: Date
     @NSManaged public var createdByUserID: String
-    @NSManaged public var autoServiceID: String?
     @NSManaged public var discountBookingFee: Bool
     @NSManaged public var isCorporate: Bool
     @NSManaged public var name: String
@@ -28,6 +27,12 @@ extension Coupon {
     @NSManaged public var redemptions: Int
     @NSManaged public var updatedAt: Date
     @NSManaged public var user: User?
-    @NSManaged public var autoservice: AutoService?
+    @NSManaged public var autoservices: Set<AutoService>
 
 }
+
+
+/*
+ identifier
+ 
+ */

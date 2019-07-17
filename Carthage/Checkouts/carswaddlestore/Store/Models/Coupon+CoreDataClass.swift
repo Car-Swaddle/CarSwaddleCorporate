@@ -17,7 +17,7 @@ struct CouponCodable: Codable {
     public var amountOff: Int?
     public var creationDate: Date
     public var createdByUserID: String
-    public var autoServiceID: String?
+    public var createdByMechanicID: String?
     public var discountBookingFee: Bool
     public var isCorporate: Bool
     public var maxRedemptions: Int?
@@ -29,18 +29,19 @@ struct CouponCodable: Codable {
 }
 
 /*
- amountOff = 30;
- createdAt = "2019-07-14T20:23:57.664Z";
- createdByUserId = "e5f87000-a5f7-11e9-a48b-9d48cebf745e";
- discountBookingFee = 0;
- id = testnoob;
- isCorporate = 0;
- maxRedemptions = 1;
- name = "Marks test 1";
- percentOff = "<null>";
- redeemBy = "2019-07-31T02:38:08.948Z";
- redemptions = 0;
- updatedAt = "2019-07-14T20:23:57.664Z";
+ "id": "testnoob",
+ "amountOff": 30,
+ "percentOff": NSNull(),
+ "redemptions": 0,
+ "maxRedemptions": 1,
+ "name": "Marks test 1",
+ "redeemBy": "2019-07-31T02:38:08.948Z",
+ "discountBookingFee": false,
+ "isCorporate": true,
+ "createdAt": "2019-07-15T05:51:26.008Z",
+ "updatedAt": "2019-07-15T05:51:26.008Z",
+ "createdByUserID": "eaee8570-a6c1-11e9-84f4-dd5b313f5310",
+ "createdByMechanicID": NSNull()
  
  */
 
@@ -65,7 +66,6 @@ final public class Coupon: NSManagedObject, NSManagedObjectFetchable, JSONInitab
         amountOff = codable.amountOff
         creationDate = codable.creationDate
         createdByUserID = codable.createdByUserID
-        autoServiceID = codable.autoServiceID
         discountBookingFee = codable.discountBookingFee
         isCorporate = codable.isCorporate
         maxRedemptions = codable.maxRedemptions
@@ -78,19 +78,13 @@ final public class Coupon: NSManagedObject, NSManagedObjectFetchable, JSONInitab
         guard let context = managedObjectContext else { return }
         
         user = User.fetch(with: createdByUserID, in: context)
-        
-        if let autoServiceID = autoServiceID {
-            autoservice = AutoService.fetch(with: autoServiceID, in: context)
-        } else {
-            autoservice = nil
-        }
     }
     
     private static func values(from json: JSONObject) -> CouponCodable? {
         guard let id = json.identifier,
             let creationDateString = json["createdAt"] as? String,
             let creationDate = serverDateFormatter.date(from: creationDateString),
-            let createdByUserID = json["createdByUserId"] as? String,
+            let createdByUserID = json["createdByUserID"] as? String,
             let discountBookingFee = json["discountBookingFee"] as? Bool,
             let isCorporate = json["isCorporate"] as? Bool,
             let name = json["name"] as? String,
@@ -100,12 +94,12 @@ final public class Coupon: NSManagedObject, NSManagedObjectFetchable, JSONInitab
             let updatedAtString = json["updatedAt"] as? String,
             let updatedAt = serverDateFormatter.date(from: updatedAtString) else { return nil }
         
+        let createdByMechanicID = json["createdByUserID"] as? String
         let amountOff = json["amountOff"] as? Int
         let maxRedemptions = json["maxRedemptions"] as? Int
         let percentOff = json["percentOff"] as? CGFloat
-        let autoServiceID = json["autoServiceID"] as? String
         
-        return CouponCodable(identifier: id, amountOff: amountOff, creationDate: creationDate, createdByUserID: createdByUserID, autoServiceID: autoServiceID, discountBookingFee: discountBookingFee, isCorporate: isCorporate, maxRedemptions: maxRedemptions, name: name, percentOff: percentOff, redeemBy: redeemBy, redemptions: redemptions, updatedAt: updatedAt)
+        return CouponCodable(identifier: id, amountOff: amountOff, creationDate: creationDate, createdByUserID: createdByUserID, createdByMechanicID: createdByMechanicID, discountBookingFee: discountBookingFee, isCorporate: isCorporate, maxRedemptions: maxRedemptions, name: name, percentOff: percentOff, redeemBy: redeemBy, redemptions: redemptions, updatedAt: updatedAt)
     }
     
     

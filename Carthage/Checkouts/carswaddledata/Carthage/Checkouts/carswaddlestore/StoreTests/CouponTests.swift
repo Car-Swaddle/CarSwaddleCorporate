@@ -25,24 +25,24 @@ class CouponTests: XCTestCase {
         XCTAssert(coupon != nil, "Should have coupon")
         
         let result = store.mainContext.persist()
-        
         XCTAssert(result, "Should be true")
     }
     
 }
 
 private let couponJSON: [String: Any] = [
-    "amountOff": 30,
-    "createdAt": "2019-07-14T20:23:57.664Z",
-    "createdByUserId": "e5f87000-a5f7-11e9-a48b-9d48cebf745e",
-    "discountBookingFee": false,
     "id": "testnoob",
-    "isCorporate": false,
+    "amountOff": 30,
+    "percentOff": NSNull(),
+    "redemptions": 0,
     "maxRedemptions": 1,
     "name": "Marks test 1",
-    "percentOff": NSNull(),
     "redeemBy": "2019-07-31T02:38:08.948Z",
-    "redemptions": 0,
-    "updatedAt": "2019-07-14T20:23:57.664Z",
+    "discountBookingFee": false,
+    "isCorporate": true,
+    "createdAt": "2019-07-15T05:51:26.008Z",
+    "updatedAt": "2019-07-15T05:51:26.008Z",
+    "createdByUserID": "eaee8570-a6c1-11e9-84f4-dd5b313f5310",
+    "createdByMechanicID": NSNull()
 ]
 

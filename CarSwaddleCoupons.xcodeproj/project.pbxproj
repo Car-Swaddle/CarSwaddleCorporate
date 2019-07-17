@@ -92,6 +92,7 @@
 		999861402286B27100113536 /* TweakValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998613F2286B27100113536 /* TweakValues.swift */; };
 		99F08C7722DC2C3700317EEA /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C7522DC2C3700317EEA /* CouponCell.swift */; };
 		99F08C7822DC2C3700317EEA /* CouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C7622DC2C3700317EEA /* CouponCell.xib */; };
+		99F08C7A22DD86A700317EEA /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C7922DD83E200317EEA /* Localizable.stringsdict */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +205,7 @@
 		9998613F2286B27100113536 /* TweakValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakValues.swift; sourceTree = "<group>"; };
 		99F08C7522DC2C3700317EEA /* CouponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCell.swift; sourceTree = "<group>"; };
 		99F08C7622DC2C3700317EEA /* CouponCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponCell.xib; sourceTree = "<group>"; };
+		99F08C7922DD83E200317EEA /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +329,7 @@
 				9989854022A3A11300E4B25A /* Colors.xcassets */,
 				998984EC22A387D500E4B25A /* Fonts */,
 				999860FE22852D4900113536 /* Assets.xcassets */,
+				99F08C7922DD83E200317EEA /* Localizable.stringsdict */,
 				9998610022852D4900113536 /* LaunchScreen.storyboard */,
 				998984E122A332D700E4B25A /* CarSwaddleCoupons.entitlements */,
 				9998610322852D4900113536 /* Info.plist */,
@@ -611,6 +614,7 @@
 				9998610222852D4900113536 /* LaunchScreen.storyboard in Resources */,
 				9989857122C1EC2300E4B25A /* RequestAuthorityCell.xib in Resources */,
 				9989851E22A387D500E4B25A /* MontserratAlternates-BlackItalic.otf in Resources */,
+				99F08C7A22DD86A700317EEA /* Localizable.stringsdict in Resources */,
 				9989853522A387D500E4B25A /* Montserrat-SemiBold.otf in Resources */,
 				99F08C7822DC2C3700317EEA /* CouponCell.xib in Resources */,
 				9998613C2285409900113536 /* LoginViewController.storyboard in Resources */,

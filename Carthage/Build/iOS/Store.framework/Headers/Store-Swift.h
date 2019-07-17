@@ -379,7 +379,6 @@ SWIFT_CLASS_NAMED("Coupon")
 @property (nonatomic, copy) NSString * _Nonnull identifier;
 @property (nonatomic, copy) NSDate * _Nonnull creationDate;
 @property (nonatomic, copy) NSString * _Nonnull createdByUserID;
-@property (nonatomic, copy) NSString * _Nullable autoServiceID;
 @property (nonatomic) BOOL discountBookingFee;
 @property (nonatomic) BOOL isCorporate;
 @property (nonatomic, copy) NSString * _Nonnull name;
@@ -387,7 +386,7 @@ SWIFT_CLASS_NAMED("Coupon")
 @property (nonatomic) NSInteger redemptions;
 @property (nonatomic, copy) NSDate * _Nonnull updatedAt;
 @property (nonatomic, strong) User * _Nullable user;
-@property (nonatomic, strong) AutoService * _Nullable autoservice;
+@property (nonatomic, copy) NSSet<AutoService *> * _Nonnull autoservices;
 @end
 
 
@@ -1205,7 +1204,6 @@ SWIFT_CLASS_NAMED("Coupon")
 @property (nonatomic, copy) NSString * _Nonnull identifier;
 @property (nonatomic, copy) NSDate * _Nonnull creationDate;
 @property (nonatomic, copy) NSString * _Nonnull createdByUserID;
-@property (nonatomic, copy) NSString * _Nullable autoServiceID;
 @property (nonatomic) BOOL discountBookingFee;
 @property (nonatomic) BOOL isCorporate;
 @property (nonatomic, copy) NSString * _Nonnull name;
@@ -1213,7 +1211,7 @@ SWIFT_CLASS_NAMED("Coupon")
 @property (nonatomic) NSInteger redemptions;
 @property (nonatomic, copy) NSDate * _Nonnull updatedAt;
 @property (nonatomic, strong) User * _Nullable user;
-@property (nonatomic, strong) AutoService * _Nullable autoservice;
+@property (nonatomic, copy) NSSet<AutoService *> * _Nonnull autoservices;
 @end
 
 

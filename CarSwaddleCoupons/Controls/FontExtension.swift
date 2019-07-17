@@ -36,6 +36,17 @@ extension UIFont {
     
     public static let detail: UIFont = UIFont.appFont(type: .regular, size: 14)
     public static let title: UIFont = UIFont.appFont(type: .regular, size: 17)
-    public static let large: UIFont = UIFont.appFont(type: .semiBold, size: 17)
+    public static let large: UIFont = UIFont.appFont(type: .semiBold, size: 19)
+    
+}
+
+extension UIColor {
+    
+    public static let largeTextColor: UIColor = .gray6
+    public static let titleTextColor: UIColor = .gray6
+    public static let detailTextColor: UIColor = .gray4
+    public static let errorTextColor: UIColor = .appRed
+    
+    public static let selectionColor: UIColor = .appBlue
     
 }
