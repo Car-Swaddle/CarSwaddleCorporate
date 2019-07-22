@@ -93,6 +93,14 @@
 		99F08C7722DC2C3700317EEA /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C7522DC2C3700317EEA /* CouponCell.swift */; };
 		99F08C7822DC2C3700317EEA /* CouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C7622DC2C3700317EEA /* CouponCell.xib */; };
 		99F08C7A22DD86A700317EEA /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C7922DD83E200317EEA /* Localizable.stringsdict */; };
+		99F08C7D22E4376200317EEA /* CreateCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C7C22E4376200317EEA /* CreateCouponViewController.swift */; };
+		99F08C8022E5916F00317EEA /* LabeledTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C7E22E5916F00317EEA /* LabeledTextFieldCell.swift */; };
+		99F08C8122E5916F00317EEA /* LabeledTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C7F22E5916F00317EEA /* LabeledTextFieldCell.xib */; };
+		99F08C8422E59B9E00317EEA /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C8222E59B9E00317EEA /* SwitchCell.swift */; };
+		99F08C8522E59B9E00317EEA /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C8322E59B9E00317EEA /* SwitchCell.xib */; };
+		99F08C8822E5A4C200317EEA /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C8622E5A4C200317EEA /* DatePickerCell.swift */; };
+		99F08C8922E5A4C200317EEA /* DatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C8722E5A4C200317EEA /* DatePickerCell.xib */; };
+		99F08C8C22E5B04800317EEA /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C8B22E5B04800317EEA /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +214,14 @@
 		99F08C7522DC2C3700317EEA /* CouponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCell.swift; sourceTree = "<group>"; };
 		99F08C7622DC2C3700317EEA /* CouponCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponCell.xib; sourceTree = "<group>"; };
 		99F08C7922DD83E200317EEA /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
+		99F08C7C22E4376200317EEA /* CreateCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCouponViewController.swift; sourceTree = "<group>"; };
+		99F08C7E22E5916F00317EEA /* LabeledTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextFieldCell.swift; sourceTree = "<group>"; };
+		99F08C7F22E5916F00317EEA /* LabeledTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabeledTextFieldCell.xib; sourceTree = "<group>"; };
+		99F08C8222E59B9E00317EEA /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		99F08C8322E59B9E00317EEA /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		99F08C8622E5A4C200317EEA /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
+		99F08C8722E5A4C200317EEA /* DatePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerCell.xib; sourceTree = "<group>"; };
+		99F08C8B22E5B04800317EEA /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +332,7 @@
 		999860F322852D4800113536 /* CarSwaddleCoupons */ = {
 			isa = PBXGroup;
 			children = (
+				99F08C8A22E5B03C00317EEA /* Extensions */,
 				99F08C5822D4612E00317EEA /* Navigation */,
 				99F08C5922D4613B00317EEA /* Controls */,
 				99F08C5A22D4615100317EEA /* Data */,
@@ -421,6 +438,7 @@
 				9989853C22A38B5600E4B25A /* CouponsViewController.storyboard */,
 				99F08C7522DC2C3700317EEA /* CouponCell.swift */,
 				99F08C7622DC2C3700317EEA /* CouponCell.xib */,
+				99F08C7B22E4374900317EEA /* Create Coupon */,
 			);
 			path = Coupons;
 			sourceTree = "<group>";
@@ -482,6 +500,28 @@
 				9989856F22C1EC2300E4B25A /* RequestAuthorityCell.xib */,
 			);
 			path = RequestAuthority;
+			sourceTree = "<group>";
+		};
+		99F08C7B22E4374900317EEA /* Create Coupon */ = {
+			isa = PBXGroup;
+			children = (
+				99F08C7C22E4376200317EEA /* CreateCouponViewController.swift */,
+				99F08C7E22E5916F00317EEA /* LabeledTextFieldCell.swift */,
+				99F08C7F22E5916F00317EEA /* LabeledTextFieldCell.xib */,
+				99F08C8222E59B9E00317EEA /* SwitchCell.swift */,
+				99F08C8322E59B9E00317EEA /* SwitchCell.xib */,
+				99F08C8622E5A4C200317EEA /* DatePickerCell.swift */,
+				99F08C8722E5A4C200317EEA /* DatePickerCell.xib */,
+			);
+			path = "Create Coupon";
+			sourceTree = "<group>";
+		};
+		99F08C8A22E5B03C00317EEA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				99F08C8B22E5B04800317EEA /* DateExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,6 +666,7 @@
 				9989851722A387D500E4B25A /* MontserratAlternates-Medium.otf in Resources */,
 				9989851C22A387D500E4B25A /* MontserratAlternates-MediumItalic.otf in Resources */,
 				9989851D22A387D500E4B25A /* Montserrat-ExtraLight.otf in Resources */,
+				99F08C8522E59B9E00317EEA /* SwitchCell.xib in Resources */,
 				999860FF22852D4900113536 /* Assets.xcassets in Resources */,
 				9989852322A387D500E4B25A /* Montserrat-Medium.otf in Resources */,
 				9989852022A387D500E4B25A /* MontserratAlternates-ExtraLightItalic.otf in Resources */,
@@ -643,6 +684,8 @@
 				9989851422A387D500E4B25A /* Montserrat-BlackItalic.otf in Resources */,
 				9989852F22A387D500E4B25A /* MontserratAlternates-ExtraLight.otf in Resources */,
 				9989852B22A387D500E4B25A /* MontserratAlternates-BoldItalic.otf in Resources */,
+				99F08C8122E5916F00317EEA /* LabeledTextFieldCell.xib in Resources */,
+				99F08C8922E5A4C200317EEA /* DatePickerCell.xib in Resources */,
 				9989851F22A387D500E4B25A /* MontserratAlternates-Bold.otf in Resources */,
 				9989856322BC788600E4B25A /* AuthorityRequestListViewController.storyboard in Resources */,
 				9989853422A387D500E4B25A /* MontserratAlternates-Italic.otf in Resources */,
@@ -712,11 +755,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9989856122BC787700E4B25A /* AuthorityRequestListViewController.swift in Sources */,
+				99F08C8C22E5B04800317EEA /* DateExtension.swift in Sources */,
 				999860FD22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld in Sources */,
 				998984E522A385D700E4B25A /* Logout.swift in Sources */,
 				9989856622BC7AC100E4B25A /* AuthorityRequestCell.swift in Sources */,
 				99986138228538C200113536 /* ServiceRequest.swift in Sources */,
 				9989853F22A39E9000E4B25A /* UserActivityHandler.swift in Sources */,
+				99F08C8022E5916F00317EEA /* LabeledTextFieldCell.swift in Sources */,
+				99F08C8822E5A4C200317EEA /* DatePickerCell.swift in Sources */,
 				9989857C22C74B9B00E4B25A /* MechanicListCell.swift in Sources */,
 				998984E722A3864700E4B25A /* PushNotificationController.swift in Sources */,
 				9989853722A38AD300E4B25A /* AuthoritiesViewController.swift in Sources */,
@@ -727,12 +773,14 @@
 				9989857322C3224E00E4B25A /* SettingsViewController.swift in Sources */,
 				998984E322A385B300E4B25A /* Navigator.swift in Sources */,
 				998984E922A3868F00E4B25A /* UIColorExtension.swift in Sources */,
+				99F08C8422E59B9E00317EEA /* SwitchCell.swift in Sources */,
 				9989854422A623F500E4B25A /* AuthorityNameCell.swift in Sources */,
 				9989856B22C1E82500E4B25A /* RequestAuthorityViewController.swift in Sources */,
 				99F08C7722DC2C3700317EEA /* CouponCell.swift in Sources */,
 				9998613A2285408C00113536 /* LoginViewController.swift in Sources */,
 				9989857022C1EC2300E4B25A /* RequestAuthorityCell.swift in Sources */,
 				9989857922C7484800E4B25A /* MechanicListViewController.swift in Sources */,
+				99F08C7D22E4376200317EEA /* CreateCouponViewController.swift in Sources */,
 				9989853B22A38B4D00E4B25A /* CouponsViewController.swift in Sources */,
 				9989857722C73D1F00E4B25A /* FetchedResultsViewController.swift in Sources */,
 				999860F522852D4800113536 /* AppDelegate.swift in Sources */,

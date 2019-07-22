@@ -55,10 +55,10 @@ class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
         return cell
     }
     
-    override func didRefresh() {
+    override func didPullToRefresh() {
         requestData(resetOffset: true) { [weak self] in
             DispatchQueue.main.async {
-                self?.refreshControl.endRefreshing()
+                self?.refreshControl?.endRefreshing()
             }
         }
     }

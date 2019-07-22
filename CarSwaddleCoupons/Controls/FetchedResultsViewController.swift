@@ -44,14 +44,6 @@ open class FetchedResultsTableViewController<T: NSFetchRequestResult>: TableView
         didResetFetchedResultsController()
     }
     
-    lazy public var refreshControl: UIRefreshControl = {
-        let refresh = UIRefreshControl()
-        refresh.addTarget(self, action: #selector(FetchedResultsTableViewController.didRefresh), for: .valueChanged)
-        return refresh
-    }()
-    
-    @objc internal func didRefresh() { }
-    
     private func createFetchedResultsController() -> NSFetchedResultsController<T> {
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: sectionNameKeyPath, cacheName: cacheName)
         fetchedResultsController.delegate = self
@@ -180,6 +172,17 @@ open class TableViewController: UIViewController, UITableViewDataSource, UITable
         return tableView
     }()
     
+    public var refreshControl: UIRefreshControl? {
+        didSet {
+            guard viewIfLoaded != nil else { return }
+            updateRefreshControl()
+        }
+    }
+    
+    @objc open func didPullToRefresh() {
+        
+    }
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -189,12 +192,22 @@ open class TableViewController: UIViewController, UITableViewDataSource, UITable
         tableView.dataSource = self
         tableView.delegate = self
         view.sendSubviewToBack(tableView)
+        
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(TableViewController.didPullToRefresh), for: .valueChanged)
+        self.refreshControl = refresh
+        
+        updateRefreshControl()
+    }
+    
+    private func updateRefreshControl() {
+        tableView.refreshControl = refreshControl
     }
     
     // MARK: - Tableview Datasource
     
     open func numberOfSections(in tableView: UITableView) -> Int {
-        fatalError("subclass must override")
+        return 1
     }
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         fatalError("subclass must override")

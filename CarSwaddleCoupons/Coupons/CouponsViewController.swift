@@ -22,6 +22,13 @@ class CouponsViewController: FetchedResultsTableViewController<Coupon> {
         tableView.register(CouponCell.self)
         
         requestData()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(didTapCreate))
+    }
+    
+    @objc private func didTapCreate() {
+        let coupon = CreateCouponViewController().inNavigationController()
+        present(coupon, animated: true, completion: nil)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -33,9 +40,9 @@ class CouponsViewController: FetchedResultsTableViewController<Coupon> {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func didRefresh() {
+    override func didPullToRefresh() {
         requestData { [weak self] in
-            self?.refreshControl.endRefreshing()
+            self?.refreshControl?.endRefreshing()
         }
     }
     
