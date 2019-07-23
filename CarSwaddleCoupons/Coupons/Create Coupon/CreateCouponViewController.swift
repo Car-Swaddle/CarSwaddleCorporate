@@ -44,9 +44,6 @@ class CreateCouponViewController: TableViewController {
     private var isCorporate: Bool = true
     private var maxRedemptions: Int?
     
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,7 +59,6 @@ class CreateCouponViewController: TableViewController {
         tableView.tableFooterView = UIView()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(didTapCancel))
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(didTapCreate))
     }
     
     @objc private func didTapCancel() {
@@ -81,7 +77,6 @@ class CreateCouponViewController: TableViewController {
         
         createActionButton.isLoading = true
         store.privateContext { [weak self] privateContext in
-//            guard let self = self else { return }
             self?.couponNetwork.createCoupon(id: couponID, discount: discount, maxRedemptions: maxRedemptions, name: name, redeemBy: redeemByDate, discountBookingFee: discountBookingFee, isCorporate: isCorporate, in: privateContext) { couponObjectID, error in
                 DispatchQueue.main.async {
                     guard let self = self else { return }
@@ -96,11 +91,6 @@ class CreateCouponViewController: TableViewController {
             }
         }
     }
-    
-//    private var discount: CouponNetwork.CouponDiscount? {
-////        if let
-//        return nil
-//    }
     
     private func registerCells() {
         tableView.register(LabeledTextFieldCell.self)
