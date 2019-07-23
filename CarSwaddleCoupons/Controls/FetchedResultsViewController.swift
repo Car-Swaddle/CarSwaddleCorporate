@@ -224,7 +224,7 @@ open class TableViewController: UIViewController, UITableViewDataSource, UITable
         return nil
     }
     open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return false
     }
     open func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return false

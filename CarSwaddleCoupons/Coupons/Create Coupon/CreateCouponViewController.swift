@@ -8,6 +8,7 @@
 
 import CarSwaddleUI
 import CarSwaddleData
+import CarSwaddleNetworkRequest
 
 class CreateCouponViewController: TableViewController {
     
@@ -18,11 +19,23 @@ class CreateCouponViewController: TableViewController {
         case discountBookingFee
         case isCorporate
         case maxRedemptions
+        case discount
     }
     
     private var couponNetwork: CouponNetwork = CouponNetwork(serviceRequest: serviceRequest)
     
+    private lazy var createActionButton: ActionButton = {
+        let button = ActionButton()
+        button.setTitle(NSLocalizedString("Create Coupon", comment: ""), for: .normal)
+        button.addTarget(self, action: #selector(didTapCreate), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var adjuster: ContentInsetAdjuster = ContentInsetAdjuster(tableView: tableView, actionButton: createActionButton)
+    
     private var rows: [Row] = Row.allCases
+    
+    private var discount: CouponNetwork.CouponDiscount = .amountOff(value: 0)
     
     private var couponID: String?
     private var name: String?
@@ -30,15 +43,26 @@ class CreateCouponViewController: TableViewController {
     private var discountBookingFee: Bool = false
     private var isCorporate: Bool = true
     private var maxRedemptions: Int?
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(createActionButton)
 
+        adjuster.includeTabBarInKeyboardCalculation = false
+        adjuster.positionActionButton()
+        
         tableView.keyboardDismissMode = .interactive
+        
         registerCells()
+        
         tableView.tableFooterView = UIView()
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(didTapCancel))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(didTapCreate))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(didTapCreate))
     }
     
     @objc private func didTapCancel() {
@@ -46,20 +70,43 @@ class CreateCouponViewController: TableViewController {
     }
     
     @objc private func didTapCreate() {
-//        guard let couponID = couponID,
-//            let discount =
-//        couponNetwork.createCoupon(id: <#T##String#>, discount: <#T##CouponNetwork.CouponDiscount#>, maxRedemptions: <#T##Int?#>, name: <#T##String#>, redeemBy: <#T##Date#>, discountBookingFee: <#T##Bool#>, isCorporate: <#T##Bool#>, in: <#T##NSManagedObjectContext#>, completion: <#T##(NSManagedObjectID?, Error?) -> Void#>)
+        guard let couponID = couponID,
+            let maxRedemptions = maxRedemptions,
+            let name = name else { return }
+        
+        let discount = self.discount
+        let discountBookingFee = self.discountBookingFee
+        let isCorporate = self.isCorporate
+        let redeemByDate = self.redeemByDate
+        
+        createActionButton.isLoading = true
+        store.privateContext { [weak self] privateContext in
+//            guard let self = self else { return }
+            self?.couponNetwork.createCoupon(id: couponID, discount: discount, maxRedemptions: maxRedemptions, name: name, redeemBy: redeemByDate, discountBookingFee: discountBookingFee, isCorporate: isCorporate, in: privateContext) { couponObjectID, error in
+                DispatchQueue.main.async {
+                    guard let self = self else { return }
+                    self.createActionButton.isLoading = false
+                    if let error = error {
+                        print("error: \(error)")
+                    } else {
+                        print("success")
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
     }
     
-    private var discount: CouponNetwork.CouponDiscount? {
-//        if let
-        return nil
-    }
+//    private var discount: CouponNetwork.CouponDiscount? {
+////        if let
+//        return nil
+//    }
     
     private func registerCells() {
         tableView.register(LabeledTextFieldCell.self)
         tableView.register(DatePickerCell.self)
         tableView.register(SwitchCell.self)
+        tableView.register(CouponDiscountCell.self)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,6 +119,10 @@ class CreateCouponViewController: TableViewController {
             let cell: LabeledTextFieldCell = tableView.dequeueCell()
             cell.labeledTextField.textField.text = couponID
             cell.labeledTextField.labelText = NSLocalizedString("Coupon Code", comment: "")
+            cell.labeledTextField.textField.autocorrectionType = .no
+            cell.labeledTextField.textField.autocapitalizationType = .none
+            cell.labeledTextField.textField.spellCheckingType = .no
+            
             cell.textChanged = { [weak self] newText in
                 self?.couponID = newText
             }
@@ -119,8 +170,23 @@ class CreateCouponViewController: TableViewController {
             let cell: LabeledTextFieldCell = tableView.dequeueCell()
             cell.labeledTextField.textField.text = maxRedemptions?.stringValue
             cell.labeledTextField.labelText = NSLocalizedString("Max redemptions", comment: "")
+            
+            cell.labeledTextField.textField.autocorrectionType = .no
+            cell.labeledTextField.textField.autocapitalizationType = .none
+            cell.labeledTextField.textField.spellCheckingType = .no
+            cell.labeledTextField.textField.keyboardType = .numberPad
+            
             cell.textChanged = { [weak self] newText in
                 self?.maxRedemptions = newText?.intValue
+            }
+            return cell
+        case .discount:
+            let cell: CouponDiscountCell = tableView.dequeueCell()
+            cell.configure(with: discount)
+            cell.discountDidChange = { [weak self] discount in
+                if let discount = discount {
+                    self?.discount = discount
+                }
             }
             return cell
         }

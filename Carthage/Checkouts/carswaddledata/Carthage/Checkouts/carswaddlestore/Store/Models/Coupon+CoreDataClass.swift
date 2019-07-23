@@ -66,6 +66,7 @@ final public class Coupon: NSManagedObject, NSManagedObjectFetchable, JSONInitab
         amountOff = codable.amountOff
         creationDate = codable.creationDate
         createdByUserID = codable.createdByUserID
+        createdByMechanicID = codable.createdByMechanicID
         discountBookingFee = codable.discountBookingFee
         isCorporate = codable.isCorporate
         maxRedemptions = codable.maxRedemptions

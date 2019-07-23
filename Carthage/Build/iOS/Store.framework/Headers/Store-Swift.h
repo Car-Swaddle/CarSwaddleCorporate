@@ -327,6 +327,8 @@ SWIFT_CLASS_NAMED("AutoService")
 @property (nonatomic, strong) Review * _Nullable reviewFromMechanic;
 @property (nonatomic, copy) NSSet<ServiceEntity *> * _Nonnull serviceEntities;
 @property (nonatomic, copy) NSString * _Nullable balanceTransactionID;
+@property (nonatomic, copy) NSString * _Nullable chargeID;
+@property (nonatomic, copy) NSString * _Nullable transferID;
 @property (nonatomic, copy) NSString * _Nullable couponID;
 @property (nonatomic, strong) Coupon * _Nullable coupon;
 @end
@@ -379,6 +381,7 @@ SWIFT_CLASS_NAMED("Coupon")
 @property (nonatomic, copy) NSString * _Nonnull identifier;
 @property (nonatomic, copy) NSDate * _Nonnull creationDate;
 @property (nonatomic, copy) NSString * _Nonnull createdByUserID;
+@property (nonatomic, copy) NSString * _Nullable createdByMechanicID;
 @property (nonatomic) BOOL discountBookingFee;
 @property (nonatomic) BOOL isCorporate;
 @property (nonatomic, copy) NSString * _Nonnull name;
@@ -1152,6 +1155,8 @@ SWIFT_CLASS_NAMED("AutoService")
 @property (nonatomic, strong) Review * _Nullable reviewFromMechanic;
 @property (nonatomic, copy) NSSet<ServiceEntity *> * _Nonnull serviceEntities;
 @property (nonatomic, copy) NSString * _Nullable balanceTransactionID;
+@property (nonatomic, copy) NSString * _Nullable chargeID;
+@property (nonatomic, copy) NSString * _Nullable transferID;
 @property (nonatomic, copy) NSString * _Nullable couponID;
 @property (nonatomic, strong) Coupon * _Nullable coupon;
 @end
@@ -1204,6 +1209,7 @@ SWIFT_CLASS_NAMED("Coupon")
 @property (nonatomic, copy) NSString * _Nonnull identifier;
 @property (nonatomic, copy) NSDate * _Nonnull creationDate;
 @property (nonatomic, copy) NSString * _Nonnull createdByUserID;
+@property (nonatomic, copy) NSString * _Nullable createdByMechanicID;
 @property (nonatomic) BOOL discountBookingFee;
 @property (nonatomic) BOOL isCorporate;
 @property (nonatomic, copy) NSString * _Nonnull name;

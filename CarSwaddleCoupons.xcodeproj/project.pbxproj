@@ -101,6 +101,8 @@
 		99F08C8822E5A4C200317EEA /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C8622E5A4C200317EEA /* DatePickerCell.swift */; };
 		99F08C8922E5A4C200317EEA /* DatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C8722E5A4C200317EEA /* DatePickerCell.xib */; };
 		99F08C8C22E5B04800317EEA /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C8B22E5B04800317EEA /* DateExtension.swift */; };
+		99F08C8F22E6CE4A00317EEA /* CouponDiscountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C8D22E6CE4A00317EEA /* CouponDiscountCell.swift */; };
+		99F08C9022E6CE4A00317EEA /* CouponDiscountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C8E22E6CE4A00317EEA /* CouponDiscountCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +224,8 @@
 		99F08C8622E5A4C200317EEA /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
 		99F08C8722E5A4C200317EEA /* DatePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerCell.xib; sourceTree = "<group>"; };
 		99F08C8B22E5B04800317EEA /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		99F08C8D22E6CE4A00317EEA /* CouponDiscountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponDiscountCell.swift; sourceTree = "<group>"; };
+		99F08C8E22E6CE4A00317EEA /* CouponDiscountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponDiscountCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -512,6 +516,8 @@
 				99F08C8322E59B9E00317EEA /* SwitchCell.xib */,
 				99F08C8622E5A4C200317EEA /* DatePickerCell.swift */,
 				99F08C8722E5A4C200317EEA /* DatePickerCell.xib */,
+				99F08C8D22E6CE4A00317EEA /* CouponDiscountCell.swift */,
+				99F08C8E22E6CE4A00317EEA /* CouponDiscountCell.xib */,
 			);
 			path = "Create Coupon";
 			sourceTree = "<group>";
@@ -649,6 +655,7 @@
 				9989851222A387D500E4B25A /* Montserrat-MediumItalic.otf in Resources */,
 				9989853022A387D500E4B25A /* MontserratAlternates-Regular.otf in Resources */,
 				9989851522A387D500E4B25A /* MontserratAlternates-Black.otf in Resources */,
+				99F08C9022E6CE4A00317EEA /* CouponDiscountCell.xib in Resources */,
 				9989852D22A387D500E4B25A /* Montserrat-ExtraLightItalic.otf in Resources */,
 				9989853922A38AE000E4B25A /* AuthoritiesViewController.storyboard in Resources */,
 				9998610222852D4900113536 /* LaunchScreen.storyboard in Resources */,
@@ -776,6 +783,7 @@
 				99F08C8422E59B9E00317EEA /* SwitchCell.swift in Sources */,
 				9989854422A623F500E4B25A /* AuthorityNameCell.swift in Sources */,
 				9989856B22C1E82500E4B25A /* RequestAuthorityViewController.swift in Sources */,
+				99F08C8F22E6CE4A00317EEA /* CouponDiscountCell.swift in Sources */,
 				99F08C7722DC2C3700317EEA /* CouponCell.swift in Sources */,
 				9998613A2285408C00113536 /* LoginViewController.swift in Sources */,
 				9989857022C1EC2300E4B25A /* RequestAuthorityCell.swift in Sources */,

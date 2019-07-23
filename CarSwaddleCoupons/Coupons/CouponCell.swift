@@ -52,6 +52,8 @@ final class CouponCell: UITableViewCell, NibRegisterable {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        selectionStyle = .none
+        
         couponCodeLabel.font = .large
         couponCodeLabel.textColor = .selectionColor
         discountLabel.font = .large
@@ -122,6 +124,10 @@ final class CouponCell: UITableViewCell, NibRegisterable {
     }
     
     @objc private func didTapCouponLabel(_ tapGesture: UITapGestureRecognizer) {
+        showCopyMenu()
+    }
+    
+    public func showCopyMenu() {
         let menu = UIMenuController.shared
         menu.setTargetRect(couponCodeLabel.frame, in: couponCodeLabel)
         menu.setMenuVisible(true, animated: true)
@@ -171,6 +177,14 @@ public extension Int {
     
     var centsToDollars: NSDecimalNumber {
         return NSDecimalNumber(value: Float(self) / 100.0)
+    }
+    
+}
+
+public extension Int {
+    
+    var dollarsToCents: Int {
+        return self * 100
     }
     
 }
