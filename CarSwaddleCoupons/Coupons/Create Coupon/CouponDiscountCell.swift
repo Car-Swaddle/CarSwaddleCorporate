@@ -16,7 +16,10 @@ private let percentSymbol = NSLocalizedString("%", comment: "Percent symbol")
 class CouponDiscountCell: UITableViewCell, NibRegisterable {
     
     public var discountDidChange: (_ discount: CouponNetwork.CouponDiscount?) -> Void = { _ in }
-//    public var discount: CouponNetwork.CouponDiscount = .amountOff(value: 0)
+    
+    func makeTextFieldFirstResponder() {
+        textField.becomeFirstResponder()
+    }
 
     @IBOutlet private weak var symbolLabel: UILabel!
     @IBOutlet private weak var textField: UITextField!

@@ -92,6 +92,10 @@ class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
         
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if let action = self.rowAction(for: indexPath) {
             return UISwipeActionsConfiguration(actions: [action])

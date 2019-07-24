@@ -24,12 +24,21 @@ class DatePickerCell: UITableViewCell, NibRegisterable {
     public var didChangeDate: ( _ date: Date) -> Void = { _ in }
     public var willUpdateHeight: () -> Void = {}
     public var didUpdateHeight: () -> Void = {}
+    public var didShowDatePicker: () -> Void = {}
     
     public var selectedDate: Date = Date.distantFuture {
         didSet {
             updateDatePickerWithSelectedDate()
             didChangeDate(datePicker.date)
         }
+    }
+    
+    public func hideDatePicker() {
+        isShowingDatePicker = false
+    }
+    
+    public func showDatePicker() {
+        isShowingDatePicker = true
     }
 
     @IBOutlet private weak var dateLabel: UILabel!
@@ -42,6 +51,9 @@ class DatePickerCell: UITableViewCell, NibRegisterable {
     private var isShowingDatePicker: Bool = false {
         didSet {
             updateUIForIsShowingDatePicker()
+            if isShowingDatePicker {
+                didShowDatePicker()
+            }
         }
     }
     

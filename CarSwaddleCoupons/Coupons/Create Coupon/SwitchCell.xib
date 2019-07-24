@@ -26,25 +26,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4hj-7A-RW3">
-                        <rect key="frame" x="16" y="8" width="295" height="74.5"/>
+                        <rect key="frame" x="16" y="16" width="295" height="58.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLy-Nf-tsI">
-                                <rect key="frame" x="0.0" y="27" width="238" height="21"/>
+                                <rect key="frame" x="0.0" y="19" width="238" height="21"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUX-35-bCw">
-                                <rect key="frame" x="246" y="22" width="51" height="31"/>
+                                <rect key="frame" x="246" y="14" width="51" height="31"/>
                                 <color key="onTintColor" name="secondary"/>
                             </switch>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="4hj-7A-RW3" secondAttribute="bottom" constant="8" id="Maw-5I-6YL"/>
+                    <constraint firstAttribute="bottom" secondItem="4hj-7A-RW3" secondAttribute="bottom" constant="16" id="Maw-5I-6YL"/>
                     <constraint firstItem="4hj-7A-RW3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gHs-K6-g3n"/>
-                    <constraint firstItem="4hj-7A-RW3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="i8Y-OT-Wah"/>
+                    <constraint firstItem="4hj-7A-RW3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="i8Y-OT-Wah"/>
                     <constraint firstAttribute="trailing" secondItem="4hj-7A-RW3" secondAttribute="trailing" constant="16" id="l4A-nr-pyg"/>
                 </constraints>
             </tableViewCellContentView>

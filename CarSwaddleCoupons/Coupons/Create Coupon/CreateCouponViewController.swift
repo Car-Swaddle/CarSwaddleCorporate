@@ -47,6 +47,8 @@ class CreateCouponViewController: TableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = NSLocalizedString("Coupon Creation", comment: "Title of screen where user can create a coupon")
+        
         view.addSubview(createActionButton)
 
         adjuster.includeTabBarInKeyboardCalculation = false
@@ -108,21 +110,40 @@ class CreateCouponViewController: TableViewController {
         case .couponID:
             let cell: LabeledTextFieldCell = tableView.dequeueCell()
             cell.labeledTextField.textField.text = couponID
-            cell.labeledTextField.labelText = NSLocalizedString("Coupon Code", comment: "")
+            cell.labeledTextField.labelText = NSLocalizedString("Code", comment: "")
             cell.labeledTextField.textField.autocorrectionType = .no
             cell.labeledTextField.textField.autocapitalizationType = .none
             cell.labeledTextField.textField.spellCheckingType = .no
+            cell.labeledTextField.textField.returnKeyType = .next
             
+            cell.didBeginEditing = { [weak self] in
+                self?.dismissDatePicker()
+            }
             cell.textChanged = { [weak self] newText in
                 self?.couponID = newText
+            }
+            cell.didTapReturn = { [weak self] in
+                guard let self = self else { return }
+                let cell: LabeledTextFieldCell? = self.cellAtIndex(after: indexPath)
+                cell?.labeledTextField.textField.becomeFirstResponder()
             }
             return cell
         case .name:
             let cell: LabeledTextFieldCell = tableView.dequeueCell()
             cell.labeledTextField.textField.text = name
-            cell.labeledTextField.labelText = NSLocalizedString("Coupon Name", comment: "")
+            cell.labeledTextField.labelText = NSLocalizedString("Name", comment: "")
+            cell.labeledTextField.textField.returnKeyType = .next
+            
             cell.textChanged = { [weak self] newText in
                 self?.name = newText
+            }
+            cell.didBeginEditing = { [weak self] in
+                self?.dismissDatePicker()
+            }
+            cell.didTapReturn = { [weak self] in
+                guard let self = self else { return }
+                let cell: DatePickerCell? = self.cellAtIndex(after: indexPath)
+                cell?.showDatePicker()
             }
             return cell
         case .redeemByDate:
@@ -136,6 +157,9 @@ class CreateCouponViewController: TableViewController {
             }
             cell.didUpdateHeight = { [weak self] in
                 self?.tableView.endUpdates()
+            }
+            cell.didShowDatePicker = { [weak self] in
+                self?.dismissKeyboard()
             }
             return cell
         case .discountBookingFee:
@@ -165,9 +189,18 @@ class CreateCouponViewController: TableViewController {
             cell.labeledTextField.textField.autocapitalizationType = .none
             cell.labeledTextField.textField.spellCheckingType = .no
             cell.labeledTextField.textField.keyboardType = .numberPad
+            cell.labeledTextField.textField.returnKeyType = .next
             
             cell.textChanged = { [weak self] newText in
                 self?.maxRedemptions = newText?.intValue
+            }
+            cell.didBeginEditing = { [weak self] in
+                self?.dismissDatePicker()
+            }
+            cell.didTapReturn = { [weak self] in
+                guard let self = self else { return }
+                let cell: CouponDiscountCell? = self.cellAtIndex(after: indexPath)
+                cell?.makeTextFieldFirstResponder()
             }
             return cell
         case .discount:
@@ -182,6 +215,23 @@ class CreateCouponViewController: TableViewController {
         }
     }
     
+    private func cellAtIndex<T: UITableViewCell>(after indexPath: IndexPath) -> T? {
+        if let cell = tableView.cellForRow(at: IndexPath(row: indexPath.row+1, section: 0)) {
+            return cell as? T
+        }
+        return nil
+    }
+    
+    private func dismissDatePicker() {
+        tableView.firstVisibleCell(of: DatePickerCell.self)?.hideDatePicker()
+    }
+    
+    private func dismissKeyboard() {
+        for cell in tableView.allVisibleCells(of: LabeledTextFieldCell.self) {
+            cell.labeledTextField.textField.resignFirstResponder()
+        }
+    }
+    
 }
 
 
@@ -193,3 +243,23 @@ extension String {
     }
     
 }
+
+
+extension UITableView {
+    
+    public func firstVisibleCell<T: UITableViewCell>(of type: T.Type) -> T? {
+        let cell = visibleCells.first { cell -> Bool in
+            return cell is T
+        } as? T
+        return cell
+    }
+    
+    public func allVisibleCells<T: UITableViewCell>(of type: T.Type) -> [T] {
+        let cells = visibleCells.filter { cell -> Bool in
+            return cell is T
+        } as? [T]
+        return cells ?? []
+    }
+    
+}
+
