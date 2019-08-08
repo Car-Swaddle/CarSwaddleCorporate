@@ -15,6 +15,7 @@ private let subduedBackgroundColor: UIColor = .gray1
 private let regularBackgroundColor: UIColor = .white
 
 private let currentUserHasAuthorityString = NSLocalizedString("You already have this authority", comment: "The current user has the authority displayed nearby")
+private let currentUserHasRequestedAuthorityString = NSLocalizedString("You have requested this authority", comment: "The current user has the authority displayed nearby")
 
 class RequestAuthorityCell: UITableViewCell, NibRegisterable {
 
@@ -26,6 +27,27 @@ class RequestAuthorityCell: UITableViewCell, NibRegisterable {
         detailTextLabel?.font = .detail
         selectionStyle = .none
         detailTextLabel?.textColor = .gray4
+    }
+    
+    public var isRequesting: Bool = false {
+        didSet {
+            if isRequesting {
+                accessoryView = activityIndicatorView()
+            } else {
+                accessoryView = nil
+            }
+        }
+    }
+    
+    private func activityIndicatorView() -> UIActivityIndicatorView {
+        let view = UIActivityIndicatorView(style: .gray)
+        view.startAnimating()
+        return view
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        isRequesting = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -43,7 +65,7 @@ class RequestAuthorityCell: UITableViewCell, NibRegisterable {
     }
     
     private func textLabelFont(for authority: Authority.Name) -> UIFont {
-        if authority.currentUserHasAuthority(in: store.mainContext) {
+        if currentUserCannotRequest(authority: authority) {
             return .title
         } else {
             return .large
@@ -53,13 +75,15 @@ class RequestAuthorityCell: UITableViewCell, NibRegisterable {
     private func detailText(for authority: Authority.Name) -> String? {
         if authority.currentUserHasAuthority(in: store.mainContext) {
             return currentUserHasAuthorityString
+        } else if AuthorityRequest.currentUserHasUnexpiredRequestedAuthority(with: authority, in: store.mainContext) {
+            return currentUserHasRequestedAuthorityString
         } else {
             return nil
         }
     }
     
     private func backgroundColor(for authority: Authority.Name) -> UIColor {
-        if authority.currentUserHasAuthority(in: store.mainContext) {
+        if currentUserCannotRequest(authority: authority) {
             return subduedBackgroundColor
         } else {
             return regularBackgroundColor
@@ -67,12 +91,17 @@ class RequestAuthorityCell: UITableViewCell, NibRegisterable {
     }
     
     private func titleTextColor(for authority: Authority.Name) -> UIColor {
-        if authority.currentUserHasAuthority(in: store.mainContext) {
+        if currentUserCannotRequest(authority: authority) {
             return .gray4
         } else {
             return .black
         }
     }
+    
+    private func currentUserCannotRequest(authority: Authority.Name) -> Bool {
+        return authority.currentUserHasAuthority(in: store.mainContext) || AuthorityRequest.currentUserHasUnexpiredRequestedAuthority(with: authority, in: store.mainContext)
+    }
+    
     
 }
 

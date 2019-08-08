@@ -17,15 +17,14 @@ private let localDomain = "127.0.0.1"
 private let localDomain = "Kyles-MacBook-Pro.local"
 #endif
 
-private let productionDomain = "www.carswaddle.com"
-private let productionHerokuDomain = "www.car-swaddle.herokuapp.com"
-private let stagingDomain = "safe-ridge-47447.herokuapp.com"
+private let productionDomain = "api.carswaddle.com"
+private let stagingDomain = "api.staging.carswaddle.com"
 
 private let domainUserDefaultsKey = "domain"
 
 extension Tweak {
     
-    private static let domainOptions = Tweak.Options.string(values: [localDomain, productionDomain, stagingDomain, productionHerokuDomain])
+    private static let domainOptions = Tweak.Options.string(values: [localDomain, productionDomain, stagingDomain])
     static let domain: Tweak = {
         let valueDidChange: (_ tweak: Tweak) -> Void = { tweak in
             _serviceRequest = nil

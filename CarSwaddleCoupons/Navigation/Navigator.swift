@@ -311,7 +311,7 @@ final class Navigator: NSObject, NotificationObserver {
 
         let authoritiesViewController = AuthoritiesViewController.viewControllerFromStoryboard()
         let title = NSLocalizedString("Authorities", comment: "Title of tab item.")
-        authoritiesViewController.tabBarItem = UITabBarItem(title: title, image: nil, selectedImage: nil)
+        authoritiesViewController.tabBarItem = UITabBarItem(title: title, image: #imageLiteral(resourceName: "authority"), selectedImage: #imageLiteral(resourceName: "authority-selected"))
         _authoritiesViewController = authoritiesViewController
         return authoritiesViewController
     }
@@ -338,7 +338,7 @@ final class Navigator: NSObject, NotificationObserver {
         
         let couponsViewController = CouponsViewController()
         let title = NSLocalizedString("Coupons", comment: "Title of tab item.")
-        couponsViewController.tabBarItem = UITabBarItem(title: title, image: nil, selectedImage: nil)
+        couponsViewController.tabBarItem = UITabBarItem(title: title, image: #imageLiteral(resourceName: "coupon"), selectedImage: #imageLiteral(resourceName: "coupon-opaque-selected"))
         _couponsViewController = couponsViewController
         return couponsViewController
     }

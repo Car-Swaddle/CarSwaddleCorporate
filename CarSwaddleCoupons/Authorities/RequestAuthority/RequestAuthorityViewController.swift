@@ -10,6 +10,7 @@ import UIKit
 import CarSwaddleUI
 import Store
 import CarSwaddleData
+import CoreData
 
 final class RequestAuthorityViewController: UIViewController, StoryboardInstantiating {
 
@@ -32,9 +33,6 @@ final class RequestAuthorityViewController: UIViewController, StoryboardInstanti
 
         tableView.register(RequestAuthorityCell.self)
         tableView.tableFooterView = UIView()
-        
-        confirmButton.addTarget(self, action: #selector(RequestAuthorityViewController.didTapConfirm), for: .touchUpInside)
-        adjuster.positionActionButton()
         
         requestAuthorityNames()
         updateButtonEnabledness()
@@ -64,25 +62,17 @@ final class RequestAuthorityViewController: UIViewController, StoryboardInstanti
     private func updateButtonEnabledness() {
         confirmButton.isEnabled = isButtonEnabled
     }
-    
-    @objc private func didTapConfirm() {
-        guard let selectedIndex = selectedRow() else { return }
-        confirmButton.isLoading = true
-        let authorityString = authorityNames[selectedIndex].rawValue
+
+    private func requestAuthority(_ authority: Authority.Name, completion: @escaping () -> Void) {
         store.privateContext { [weak self] privateContext in
-            self?.authorityNetwork.createAuthorityRequest(authority: authorityString, in: privateContext) { authorityRequestID, error in
+            self?.authorityNetwork.createAuthorityRequest(authority: authority.rawValue, in: privateContext) { authorityRequestID, error in
                 DispatchQueue.main.async {
-                    self?.confirmButton.isLoading = false
-                    if error == nil {
-                        self?.dismiss(animated: true, completion: nil)
-                    } else {
-                        
-                    }
+                    completion()
                 }
             }
         }
     }
-
+    
 }
 
 
@@ -111,13 +101,65 @@ extension RequestAuthorityViewController: UITableViewDataSource {
         return name.currentUserHasAuthority(in: store.mainContext)
     }
     
+    func currentUserHasRequestedAuthority(at indexPath: IndexPath) -> Bool {
+        let name = authorityNames[indexPath.row]
+        return AuthorityRequest.currentUserHasUnexpiredRequestedAuthority(with: name, in: store.mainContext)
+    }
+    
 }
 
 extension RequestAuthorityViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        updateButtonEnabledness()
+        let name = authorityNames[indexPath.row]
+        let cell = tableView.cellForRow(at: indexPath) as? RequestAuthorityCell
+        cell?.isRequesting = true
+        requestAuthority(name) { [weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                let cell = self.tableView.cellForRow(at: indexPath) as? RequestAuthorityCell
+                cell?.isRequesting = false
+                self.tableView.reloadData()
+            }
+        }
     }
     
 }
 
+
+extension AuthorityRequest {
+    
+    public static func currentUserHasUnexpiredRequestedAuthority(with name: Authority.Name, in context: NSManagedObjectContext) -> Bool {
+        return fetchCurrentUserAuthorityRequest(withName: name.rawValue, in: context) != nil
+    }
+    
+    public static func currentUserHasUnexpiredRequestedAuthority(withName name: String, in context: NSManagedObjectContext) -> Bool {
+        return fetchCurrentUserAuthorityRequest(withName: name, in: context) != nil
+    }
+    
+    public static func fetchCurrentUserUnexpiredAuthorityRequest(with name: Authority.Name, in context: NSManagedObjectContext) -> AuthorityRequest? {
+        return fetchCurrentUserAuthorityRequest(withName: name.rawValue, in: context)
+    }
+    
+    public static func fetchCurrentUserAuthorityRequest(withName name: String, in context: NSManagedObjectContext) -> AuthorityRequest? {
+        guard let userID = User.currentUserID else { return nil }
+        let fetchRequest: NSFetchRequest<AuthorityRequest> = AuthorityRequest.fetchRequest()
+        let predicates = [AuthorityRequest.predicateForRequester(withUserID: userID), AuthorityRequest.predicateForAuthorityRequest(withName: name), AuthorityRequest.predicateForEpirationDate(greaterThan: Date())]
+        fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        fetchRequest.sortDescriptors = [AuthorityRequest.creationDateSortDescriptor]
+        return try? context.fetch(fetchRequest).first
+    }
+    
+    public static func predicateForAuthorityRequest(withName name: String) -> NSPredicate {
+        return NSPredicate(format: "%K == %@", #keyPath(AuthorityRequest.authorityName), name)
+    }
+    
+    public static func predicateForRequester(withUserID userID: String) -> NSPredicate {
+        return NSPredicate(format: "%K == %@", #keyPath(AuthorityRequest.requester.identifier), userID)
+    }
+    
+    public static func predicateForEpirationDate(greaterThan date: Date) -> NSPredicate {
+        return NSPredicate(format: "%K > %@", #keyPath(AuthorityRequest.expirationDate), date as NSDate)
+    }
+    
+}
