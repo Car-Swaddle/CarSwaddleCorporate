@@ -25,7 +25,6 @@ class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
         super.viewDidLoad()
         tableView.register(MechanicListCell.self)
         requestData()
-//        tableView.delegate = self
     }
     
     private var mechanicNetwork: MechanicNetwork = MechanicNetwork(serviceRequest: serviceRequest)
@@ -64,7 +63,11 @@ class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
     }
     
     private func requestData(resetOffset: Bool = false, completion: @escaping () -> Void = {}) {
-        guard !isRequesting && !reachedPagingEnd else { return }
+        if (isRequesting || reachedPagingEnd) && resetOffset == false {
+            completion()
+            return
+        }
+        
         isRequesting = true
         if resetOffset {
             currentOffset = 0
@@ -73,6 +76,7 @@ class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
         store.privateContext { [weak self] context in
             self?.mechanicNetwork.getMechanics(limit: pageLimit, offset: offset, sortType: .descending, in: context) { mechanicIDs, error in
                 guard let self = self else { return }
+                self.isRequesting = false
                 self.currentOffset += mechanicIDs.count
                 if mechanicIDs.count == 0 {
                     self.reachedPagingEnd = true
