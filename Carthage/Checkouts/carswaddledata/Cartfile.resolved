@@ -3,3 +3,4 @@ git "git@bitbucket.org:kkendall33/carswaddlenetworkrequest.git" "b3d892403a1bb8c
 git "git@bitbucket.org:kkendall33/carswaddlestore.git" "5782b017e104c95536f384524f1c05edbebb0d92"
 git "git@bitbucket.org:kkendall33/networkrequest.git" "43091192fd88d5751aab5ce163ac393b07860f4b"
 github "kishikawakatsumi/KeychainAccess" "v3.2.0"
+github "kkendall33/Disk" "2279ffdb64bc76135f94898c31cdd50bd71c6109"

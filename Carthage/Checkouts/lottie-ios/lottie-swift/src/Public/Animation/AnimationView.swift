@@ -16,17 +16,19 @@ public enum LottieBackgroundBehavior {
   case pause
   /// Pause the animation and restart it when the application moves to the foreground. The completion block is stored and called when the animation completes.
   case pauseAndRestore
+  /// Stops the animation and sets it to the end of its current play time. The completion block is called.
+  case forceFinish
 }
 
 /// Defines animation loop behavior
 public enum LottieLoopMode {
   /// Animation is played once then stops.
   case playOnce
-  /// Animation will loop from end to beginning until stopped.
+  /// Animation will loop from beginning to end until stopped.
   case loop
   /// Animation will play forward, then backwards and loop until stopped.
   case autoReverse
-  /// Animation will loop from end to beginning up to defined amount of times.
+  /// Animation will loop from beginning to end up to defined amount of times.
   case `repeat`(Float)
   /// Animation will play forward, then backwards a defined amount of times.
   case repeatBackwards(Float)
@@ -92,7 +94,17 @@ final public class AnimationView: LottieView {
       reloadImages()
     }
   }
-  
+  /**
+   Sets the text provider for animation view. A text provider provides the
+   animation with values for text layers
+   */
+   public var textProvider: AnimationTextProvider {
+     didSet {
+       animationLayer?.textProvider = textProvider
+     }
+  }
+    
+    
   /// Returns `true` if the animation is currently playing.
   public var isAnimationPlaying: Bool {
     return animationLayer?.animation(forKey: activeAnimationName) != nil
@@ -263,8 +275,8 @@ final public class AnimationView: LottieView {
   /**
    Plays the animation from a start frame to an end frame in the animation's framerate.
    
-   - Parameter fromProgress: The start progress of the animation. If `nil` the animation will start at the current progress.
-   - Parameter toProgress: The end progress of the animation.
+   - Parameter fromFrame: The start frame of the animation. If `nil` the animation will start at the current frame.
+   - Parameter toFrame: The end frame of the animation.
    - Parameter loopMode: The loop behavior of the animation. If `nil` the view's `loopMode` property will be used.
    - Parameter completion: An optional completion closure to be called when the animation stops.
    */
@@ -292,9 +304,9 @@ final public class AnimationView: LottieView {
    
    NOTE: If markers are not found the play command will exit.
    
-   - Parameter fromProgress: The start marker for the animation playback. If `nil` the
+   - Parameter fromMarker: The start marker for the animation playback. If `nil` the
    animation will start at the current progress.
-   - Parameter toProgress: The end marker for the animation playback.
+   - Parameter toMarker: The end marker for the animation playback.
    - Parameter loopMode: The loop behavior of the animation. If `nil` the view's `loopMode` property will be used.
    - Parameter completion: An optional completion closure to be called when the animation stops.
    */
@@ -349,7 +361,7 @@ final public class AnimationView: LottieView {
   public func reloadImages() {
     animationLayer?.reloadImages()
   }
-  
+    
   /// Forces the AnimationView to redraw its contents.
   public func forceDisplayUpdate() {
     animationLayer?.forceDisplayUpdate()
@@ -524,9 +536,10 @@ final public class AnimationView: LottieView {
   // MARK: - Public (Initializers)
   
   /// Initializes a LottieView with an animation.
-  public init(animation: Animation?, imageProvider: AnimationImageProvider? = nil) {
+  public init(animation: Animation?, imageProvider: AnimationImageProvider? = nil, textProvider: AnimationTextProvider = DefaultTextProvider()) {
     self.animation = animation
     self.imageProvider = imageProvider ?? BundleImageProvider(bundle: Bundle.main, searchPath: nil)
+    self.textProvider = textProvider
     super.init(frame: .zero)
     commonInit()
     makeAnimationLayer()
@@ -538,6 +551,7 @@ final public class AnimationView: LottieView {
   public init() {
     self.animation = nil
     self.imageProvider = BundleImageProvider(bundle: Bundle.main, searchPath: nil)
+    self.textProvider = DefaultTextProvider()
     super.init(frame: .zero)
     commonInit()
   }
@@ -545,12 +559,14 @@ final public class AnimationView: LottieView {
   public override init(frame: CGRect) {
     self.animation = nil
     self.imageProvider = BundleImageProvider(bundle: Bundle.main, searchPath: nil)
+    self.textProvider = DefaultTextProvider()
     super.init(frame: .zero)
     commonInit()
   }
   
   required public init?(coder aDecoder: NSCoder) {
     self.imageProvider = BundleImageProvider(bundle: Bundle.main, searchPath: nil)
+    self.textProvider = DefaultTextProvider()
     super.init(coder: aDecoder)
     commonInit()
   }
@@ -644,7 +660,7 @@ final public class AnimationView: LottieView {
     let duration: Double
     let timingFunction: CAMediaTimingFunction
     /// Check if any animation exist on the view's layer, and grab the duration and timing functions of the animation.
-    if let key = layer.animationKeys()?.first, let animation = layer.animation(forKey: key) {
+    if let key = viewLayer?.animationKeys()?.first, let animation = viewLayer?.animation(forKey: key) {
       duration = animation.duration
       timingFunction = animation.timingFunction ?? CAMediaTimingFunction(name: .linear)
     } else {
@@ -692,7 +708,7 @@ final public class AnimationView: LottieView {
       return
     }
     
-    let animationLayer = AnimationContainer(animation: animation, imageProvider: imageProvider)
+    let animationLayer = AnimationContainer(animation: animation, imageProvider: imageProvider, textProvider: textProvider)
     animationLayer.renderScale = self.screenScale
     viewLayer?.addSublayer(animationLayer)
     self.animationLayer = animationLayer
@@ -718,7 +734,9 @@ final public class AnimationView: LottieView {
     CATransaction.setDisableActions(true)
     animationLayer?.currentFrame = newFrame
     CATransaction.commit()
-    animationLayer?.forceDisplayUpdate()
+    CATransaction.setCompletionBlock {
+        self.animationLayer?.forceDisplayUpdate()
+    }
   }
   
   @objc override func animationWillMoveToBackground() {
@@ -750,6 +768,9 @@ final public class AnimationView: LottieView {
         removeCurrentAnimation()
         /// Keep the stale context around for when the app enters the foreground.
         self.animationContext = currentContext
+      case .forceFinish:
+        removeCurrentAnimation()
+        updateAnimationFrame(currentContext.playTo)
       }
     }
   }

@@ -34,6 +34,8 @@ final class MechanicListCell: UITableViewCell, NibRegisterable {
         mechanicEmailLabel.font = .detail
         isMechanicAllowedLabel.font = .detail
         mechanicImageView.layer.cornerRadius = 8
+        
+        selectionStyle = .none
     }
     
     override func prepareForReuse() {
@@ -51,13 +53,15 @@ final class MechanicListCell: UITableViewCell, NibRegisterable {
     func configure(with mechanic: Mechanic) {
         let mechanicID = mechanic.identifier
         self.mechanicID = mechanicID
-        if let image = profileImageStore.getImage(forMechanicWithID: mechanicID) {
+        if let image = profileImageStore.getImage(forMechanicWithID: mechanicID, in: store.mainContext) {
             mechanicImageView.image = image
         } else {
-            mechanicNetwork.getProfileImage(mechanicID: mechanicID) { [weak self] url, error in
-                guard mechanicID == self?.mechanicID else { return }
-                DispatchQueue.main.async {
-                    self?.mechanicImageView.image = profileImageStore.getImage(forMechanicWithID: mechanicID)
+            store.privateContext { [weak self] privateContext in
+                self?.mechanicNetwork.getProfileImage(mechanicID: mechanicID, in: privateContext) { [weak self] url, error in
+                    guard mechanicID == self?.mechanicID else { return }
+                    DispatchQueue.main.async {
+                        self?.mechanicImageView.image = profileImageStore.getImage(forMechanicWithID: mechanicID, in: store.mainContext)
+                    }
                 }
             }
         }

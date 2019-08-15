@@ -3,7 +3,7 @@
   "iOS" : [
     {
       "name" : "Store",
-      "hash" : "209f4dd4e58b2ac432ff17f2b30dd92bc54c4fed153007e68b31431c77264b97",
+      "hash" : "29ae5131f34abb7954abe4297e90bc9f95f4c80159e8743b6bbf4619d728a896",
       "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
     }
   ]

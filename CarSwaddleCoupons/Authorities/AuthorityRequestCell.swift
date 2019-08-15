@@ -54,7 +54,7 @@ final class AuthorityRequestCell: UITableViewCell, NibRegisterable {
     }
     
     private func getImage(withUserID userID: String, completion: @escaping (_ image: UIImage?) -> Void) {
-        if let image = profileImageStore.getImage(forUserWithID: userID) {
+        if let image = profileImageStore.getImage(forUserWithID: userID, in: store.mainContext) {
             completion(image)
         }
 //        userNetwork.getProfileImage(userID: userID) { imageURL, error in
