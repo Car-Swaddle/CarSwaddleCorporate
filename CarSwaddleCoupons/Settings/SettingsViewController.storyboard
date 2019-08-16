@@ -17,7 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="hxr-gQ-kWb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhv-14-NUe">
+                                <rect key="frame" x="20" y="115" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hhv-14-NUe" firstAttribute="top" secondItem="mng-pN-ta4" secondAttribute="top" constant="27" id="KJB-2c-bmy"/>
+                            <constraint firstItem="mng-pN-ta4" firstAttribute="trailing" secondItem="Hhv-14-NUe" secondAttribute="trailing" constant="20" id="QhS-qo-zpS"/>
+                            <constraint firstItem="Hhv-14-NUe" firstAttribute="leading" secondItem="mng-pN-ta4" secondAttribute="leading" constant="20" id="Uop-p7-ewm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mng-pN-ta4"/>
                     </view>
                     <navigationItem key="navigationItem" id="B07-S5-16K">
@@ -27,10 +40,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailLabel" destination="Hhv-14-NUe" id="lGS-kh-QuH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NT4-jW-Y57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="141"/>
+            <point key="canvasLocation" x="815.94202898550736" y="140.625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KvM-C3-nin">

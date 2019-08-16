@@ -108,26 +108,40 @@ extension AuthorityRequestListViewController: UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         guard let secretID = fetchedResultsController.object(at: indexPath).secretID else {
-            return []
+            return nil
         }
-        let rejectAction = UITableViewRowAction(style: .destructive, title: rejectTitle) { action, indexPath in
+        let rejectAction = UIContextualAction(style: .destructive, title: rejectTitle) { action, view, completion in
             store.privateContext{ privateContext in
                 self.authorityRequest.rejectAuthorityRequest(secretID: secretID, in: privateContext) { confirmationID, error in
-//                    print("confirmation: \(confirmationID)")
+                    //                    print("confirmation: \(confirmationID)")
+                    if let error = error {
+                        print("error: \(error)")
+                    }
+                    DispatchQueue.main.async {
+                        completion(error == nil)
+                    }
                 }
             }
         }
-        let approveAction = UITableViewRowAction(style: .normal, title: approveTitle) { action, indexPath in
+        let approveAction = UIContextualAction(style: .normal, title: approveTitle) { action, view, completion in
             store.privateContext{ privateContext in
                 self.authorityRequest.approveAuthorityRequest(secretID: secretID, in: privateContext) { confirmationID, error in
-//                    print("confirmation: \(confirmationID)")
+                    //                    print("confirmation: \(confirmationID)")
+                    if let error = error {
+                        print("error: \(error)")
+                    }
+                    DispatchQueue.main.async {
+                        completion(error == nil)
+                    }
                 }
             }
         }
-        approveAction.backgroundColor = .blue3
-        return [approveAction, rejectAction]
+        approveAction.backgroundColor = .blue4
+        
+        return UISwipeActionsConfiguration(actions: [approveAction, rejectAction])
     }
     
 }

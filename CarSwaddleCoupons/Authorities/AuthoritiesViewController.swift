@@ -11,6 +11,7 @@ import CarSwaddleUI
 import CarSwaddleData
 import CoreData
 import Store
+import CarSwaddleNetworkRequest
 
 class AuthoritiesViewController: UIViewController, StoryboardInstantiating {
 
@@ -18,6 +19,8 @@ class AuthoritiesViewController: UIViewController, StoryboardInstantiating {
     @IBOutlet private weak var requestButton: ActionButton!
     
     private var authorityRequest = AuthorityNetwork(serviceRequest: serviceRequest)
+    
+    private var yo = AuthorityService(serviceRequest: serviceRequest)
     
     override func viewDidLoad() {
         super.viewDidLoad()

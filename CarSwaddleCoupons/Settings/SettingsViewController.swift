@@ -8,19 +8,26 @@
 
 import UIKit
 import CarSwaddleUI
+import Store
 
 final class SettingsViewController: UIViewController, StoryboardInstantiating {
-
+    
+    @IBOutlet private weak var emailLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        emailLabel.text = User.currentUser(context: store.mainContext)?.email
+        
+        emailLabel.font = .title
+        emailLabel.textColor = .titleTextColor
     }
     
-
     @IBAction private func didTapLogout() {
         logout.logout()
     }
+    
     /*
     // MARK: - Navigation
 
