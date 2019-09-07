@@ -16,12 +16,10 @@ class CouponsViewController: FetchedResultsTableViewController<Coupon> {
     
     private var couponNetwork: CouponNetwork = CouponNetwork(serviceRequest: serviceRequest)
     
+    override var cellTypes: [NibRegisterable.Type] { return [CouponCell.self] }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.register(CouponCell.self)
-        
-        requestData()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .done, target: self, action: #selector(didTapCreate))
     }
@@ -36,15 +34,7 @@ class CouponsViewController: FetchedResultsTableViewController<Coupon> {
         title = NSLocalizedString("Coupons", comment: "Coupons title")
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func didPullToRefresh() {
-        requestData { [weak self] in
-            self?.refreshControl?.endRefreshing()
-        }
-    }
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     override var fetchRequest: NSFetchRequest<Coupon>! {
         let fetchRequest: NSFetchRequest<Coupon> = Coupon.fetchRequest()
@@ -53,31 +43,27 @@ class CouponsViewController: FetchedResultsTableViewController<Coupon> {
         return fetchRequest
     }
     
-    override var context: NSManagedObjectContext! {
-        return store.mainContext
-    }
+    override var context: NSManagedObjectContext! { return store.mainContext }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    final public override func cell(for coupon: Coupon, indexPath: IndexPath) -> UITableViewCell {
         let cell: CouponCell = tableView.dequeueCell()
-        cell.configure(with: object(at: indexPath))
+        cell.configure(with: coupon)
         return cell
     }
     
-    private func requestData(completion: @escaping () -> Void = {}) {
+    override func requestData(offset: Int, count: Int, completion: @escaping (Int?) -> Void) {
         store.privateContext { [weak self] context in
-            self?.couponNetwork.getCoupons(limit: 30, offset: 0, in: context) { couponIDs, error in
+            self?.couponNetwork.getCoupons(limit: count, offset: offset, in: context) { couponIDs, error in
                 DispatchQueue.main.async {
-                    completion()
+                    completion(couponIDs.count)
                 }
             }
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if let cell = tableView.cellForRow(at: indexPath) as? CouponCell {
-            cell.showCopyMenu()
-        }
+        tableView.firstVisibleCell(of: CouponCell.self)?.showCopyMenu()
     }
         
 }

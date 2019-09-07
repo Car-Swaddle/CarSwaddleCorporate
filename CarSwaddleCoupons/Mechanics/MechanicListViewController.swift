@@ -20,18 +20,9 @@ private let pageLimit: Int = 30
 private let pageIndexOffset = 4
 
 class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.register(MechanicListCell.self)
-        requestData()
-    }
     
     private var mechanicNetwork: MechanicNetwork = MechanicNetwork(serviceRequest: serviceRequest)
-    
-    private var currentOffset: Int = 0
-    private var isRequesting: Bool = false
-    private var reachedPagingEnd: Bool = false
+    private var task: URLSessionDataTask?
     
     override var fetchRequest: NSFetchRequest<Mechanic>! {
         return createFetchRequest()
@@ -44,56 +35,27 @@ class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
         return fetchRequest
     }
     
+    override var cellTypes: [NibRegisterable.Type] {
+        return [MechanicListCell.self]
+    }
+    
     override var context: NSManagedObjectContext! {
         return store.mainContext
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func cell(for mechanic: Mechanic, indexPath: IndexPath) -> UITableViewCell {
         let cell: MechanicListCell = tableView.dequeueCell()
-        cell.configure(with: object(at: indexPath))
+        cell.configure(with: mechanic)
         return cell
     }
     
-    override func didPullToRefresh() {
-        requestData(resetOffset: true) { [weak self] in
-            DispatchQueue.main.async {
-                self?.refreshControl?.endRefreshing()
-            }
-        }
-    }
-    
-    private func requestData(resetOffset: Bool = false, completion: @escaping () -> Void = {}) {
-        if (isRequesting || reachedPagingEnd) && resetOffset == false {
-            completion()
-            return
-        }
-        
-        isRequesting = true
-        if resetOffset {
-            currentOffset = 0
-        }
-        let offset = self.currentOffset
+    override func requestData(offset: Int, count: Int, completion: @escaping (Int?) -> Void) {
+        task?.cancel()
         store.privateContext { [weak self] context in
-            self?.mechanicNetwork.getMechanics(limit: pageLimit, offset: offset, sortType: .descending, in: context) { mechanicIDs, error in
-                guard let self = self else { return }
-                self.isRequesting = false
-                self.currentOffset += mechanicIDs.count
-                if mechanicIDs.count == 0 {
-                    self.reachedPagingEnd = true
-                }
-                completion()
+            self?.task = self?.mechanicNetwork.getMechanics(limit: count, offset: offset, sortType: .descending, in: context) { mechanicIDs, error in
+                completion(mechanicIDs.count)
             }
         }
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !isRequesting && !reachedPagingEnd && indexPath.row >= currentOffset - pageIndexOffset {
-            requestData()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -130,7 +92,7 @@ class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
         let mechanicID = object(at: indexPath).identifier
         let action = UIContextualAction(style: .normal, title: title) { [weak self] action, view, completion in
             store.privateContext{ privateContext in
-                self?.mechanicNetwork.updateMechanicCorperate(mechanicID: mechanicID, isAllowed: isAllowed, in: privateContext) { mechanicObjectID, error in
+                self?.mechanicNetwork.updateMechanicCorporate(mechanicID: mechanicID, isAllowed: isAllowed, in: privateContext) { mechanicObjectID, error in
                     DispatchQueue.main.async {
                         completion(error == nil)
                     }

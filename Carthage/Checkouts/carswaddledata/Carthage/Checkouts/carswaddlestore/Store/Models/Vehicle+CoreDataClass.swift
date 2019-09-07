@@ -11,7 +11,7 @@ import CoreData
 
 private let tempID = "vehicleTempID"
 
-typealias VehicleValues = (identifier: String, name: String, licensePlate: String?, vin: String?)
+typealias VehicleValues = (identifier: String, name: String, licensePlate: String?, state: String?, vin: String?)
 
 @objc(Vehicle)
 public final class Vehicle: NSManagedObject, NSManagedObjectFetchable, JSONInitable {
@@ -34,12 +34,13 @@ public final class Vehicle: NSManagedObject, NSManagedObjectFetchable, JSONInita
         
         let licensePlate = json["licensePlate"] as? String
         let vin = json["vin"] as? String
+        let state = json["state"] as? String
         
-        if licensePlate == nil && vin == nil {
+        if (licensePlate == nil && state == nil) && vin == nil {
             return nil
         }
         
-        return (identifier, name, licensePlate, vin)
+        return (identifier, name, licensePlate, state, vin)
     }
     
     private func configure(with values: VehicleValues, json: JSONObject) {
@@ -47,7 +48,10 @@ public final class Vehicle: NSManagedObject, NSManagedObjectFetchable, JSONInita
         self.creationDate = json["creationDate"] as? Date ?? Date()
         self.name = values.name
         self.licensePlate = values.licensePlate
+        self.state = values.state
         self.vin = values.vin
+        self.state = values.state
+        
         if let userID = json["userID"] as? String,
             let context = managedObjectContext,
             let user = User.fetch(with: userID, in: context) {
@@ -55,13 +59,24 @@ public final class Vehicle: NSManagedObject, NSManagedObjectFetchable, JSONInita
         }
     }
     
-    public convenience init(name: String, licensePlate: String, user: User, context: NSManagedObjectContext) {
+    public convenience init(name: String, licensePlate: String, state: String, user: User, context: NSManagedObjectContext) {
         self.init(context: context)
         self.identifier = tempID
         self.creationDate = Date()
         self.name = name
         self.licensePlate = licensePlate
         self.user = user
+        self.state = state
+    }
+    
+    public var localizedDescription: String {
+        if let state = state {
+            let vehicleFormatString = NSLocalizedString("%@ • %@ • %@", comment: "Vehicle format string: 'vehicle name' • 'license plate number' • state of vehicle")
+            return String(format: vehicleFormatString, name, licensePlate ?? "", state)
+        } else {
+            let vehicleFormatString = NSLocalizedString("%@ • %@", comment: "Vehicle format string: 'vehicle name' • 'license plate number'")
+            return String(format: vehicleFormatString, name, licensePlate ?? "")
+        }
     }
     
 }

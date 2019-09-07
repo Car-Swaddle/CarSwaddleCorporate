@@ -60,8 +60,8 @@ final class CouponCell: UITableViewCell, NibRegisterable {
         discountLabel.textColor = .largeTextColor
         couponNameLabel.font = .title
         couponNameLabel.textColor = .titleTextColor
-        removeBookingFeeLabel.font = .title
-        removeBookingFeeLabel.textColor = .titleTextColor
+        removeBookingFeeLabel.font = .detail
+        removeBookingFeeLabel.textColor = .detailTextColor
         redemptionsLabel.font = .detail
         redemptionsLabel.textColor = .detailTextColor
         expirationDateLabel.font = .detail

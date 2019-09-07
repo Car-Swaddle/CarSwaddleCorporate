@@ -72,7 +72,7 @@ private let localDomain = "Kyles-MacBook-Pro.local"
 private let marksLocalDomain = "msg-macbook.local"
 #endif
 
-private let productionDomain = "api.carswaddle.com"
+//private let productionDomain = "api.carswaddle.com"
 private let stagingDomain = "api.staging.carswaddle.com"
 
 private var useLocalDomain = false
@@ -85,7 +85,7 @@ public let serviceRequest: Request = {
         request.defaultScheme = .http
         return request
     } else {
-        let request = Request(domain: productionDomain)
+        let request = Request(domain: stagingDomain)
 //        request.port = 3000
         request.timeout = 15
         request.defaultScheme = .https

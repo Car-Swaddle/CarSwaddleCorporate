@@ -10,9 +10,13 @@ import CarSwaddleUI
 import CarSwaddleData
 import CarSwaddleNetworkRequest
 
-class CreateCouponViewController: TableViewController {
+final class CreateCouponViewController: TableViewSchemaButtonViewController {
     
-    private enum Row: CaseIterable {
+    private enum Row: String, CaseIterable, TableViewControllerRow {
+        var identifier: String {
+            return self.rawValue
+        }
+        
         case couponID
         case name
         case redeemByDate
@@ -24,16 +28,12 @@ class CreateCouponViewController: TableViewController {
     
     private var couponNetwork: CouponNetwork = CouponNetwork(serviceRequest: serviceRequest)
     
-    private lazy var createActionButton: ActionButton = {
-        let button = ActionButton()
-        button.setTitle(NSLocalizedString("Create Coupon", comment: ""), for: .normal)
-        button.addTarget(self, action: #selector(didTapCreate), for: .touchUpInside)
-        return button
-    }()
+    public init() {
+        super.init(schema: [TableViewSchemaController.Section(rows: Row.allCases)])
+        title = NSLocalizedString("Coupon Creation", comment: "")
+    }
     
-    private lazy var adjuster: ContentInsetAdjuster = ContentInsetAdjuster(tableView: tableView, actionButton: createActionButton)
-    
-    private var rows: [Row] = Row.allCases
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     private var discount: CouponNetwork.CouponDiscount = .amountOff(value: 0)
     
@@ -48,17 +48,11 @@ class CreateCouponViewController: TableViewController {
         super.viewDidLoad()
         
         title = NSLocalizedString("Coupon Creation", comment: "Title of screen where user can create a coupon")
+        actionButton.setTitle(NSLocalizedString("Create Coupon", comment: ""), for: .normal)
         
-        view.addSubview(createActionButton)
-
-        adjuster.includeTabBarInKeyboardCalculation = false
-        adjuster.positionActionButton()
+        adjuster?.includeTabBarInKeyboardCalculation = false
         
         tableView.keyboardDismissMode = .interactive
-        
-        registerCells()
-        
-        tableView.tableFooterView = UIView()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(didTapCancel))
     }
@@ -67,7 +61,7 @@ class CreateCouponViewController: TableViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @objc private func didTapCreate() {
+    override func didSelectActionButton() {
         guard let couponID = couponID,
             let maxRedemptions = maxRedemptions,
             let name = name else { return }
@@ -77,12 +71,12 @@ class CreateCouponViewController: TableViewController {
         let isCorporate = self.isCorporate
         let redeemByDate = self.redeemByDate
         
-        createActionButton.isLoading = true
+        actionButton.isLoading = true
         store.privateContext { [weak self] privateContext in
             self?.couponNetwork.createCoupon(id: couponID, discount: discount, maxRedemptions: maxRedemptions, name: name, redeemBy: redeemByDate, discountBookingFee: discountBookingFee, isCorporate: isCorporate, in: privateContext) { couponObjectID, error in
                 DispatchQueue.main.async {
                     guard let self = self else { return }
-                    self.createActionButton.isLoading = false
+                    self.actionButton.isLoading = false
                     if let error = error {
                         print("error: \(error)")
                     } else {
@@ -94,19 +88,13 @@ class CreateCouponViewController: TableViewController {
         }
     }
     
-    private func registerCells() {
-        tableView.register(LabeledTextFieldCell.self)
-        tableView.register(DatePickerCell.self)
-        tableView.register(SwitchCell.self)
-        tableView.register(CouponDiscountCell.self)
+    override var cellTypes: [NibRegisterable.Type] {
+        return [LabeledTextFieldCell.self, DatePickerCell.self, SwitchCell.self, CouponDiscountCell.self]
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rows.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch rows[indexPath.row] {
+    override func cell(for controllerRow: TableViewControllerRow, indexPath: IndexPath) -> UITableViewCell {
+        guard let row = controllerRow as? Row else { fatalError() }
+        switch row {
         case .couponID:
             let cell: LabeledTextFieldCell = tableView.dequeueCell()
             cell.labeledTextField.textField.text = couponID
@@ -240,25 +228,6 @@ extension String {
     
     public var intValue: Int? {
         return Int(self)
-    }
-    
-}
-
-
-extension UITableView {
-    
-    public func firstVisibleCell<T: UITableViewCell>(of type: T.Type) -> T? {
-        let cell = visibleCells.first { cell -> Bool in
-            return cell is T
-        } as? T
-        return cell
-    }
-    
-    public func allVisibleCells<T: UITableViewCell>(of type: T.Type) -> [T] {
-        let cells = visibleCells.filter { cell -> Bool in
-            return cell is T
-        } as? [T]
-        return cells ?? []
     }
     
 }

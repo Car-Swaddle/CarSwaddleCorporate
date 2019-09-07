@@ -128,9 +128,9 @@ final class Navigator: NSObject, NotificationObserver {
         
         CustomAlertAction.cancelTitle = NSLocalizedString("Cancel", comment: "Cancel button title")
         
-        LabeledTextField.defaultTextFieldFont = UIFont.appFont(type: .regular, size: 15)
-        LabeledTextField.defaultLabelNotExistsFont = UIFont.appFont(type: .semiBold, size: 15)
-        LabeledTextField.defaultLabelFont = UIFont.appFont(type: .regular, size: 15)
+        defaultLabeledTextFieldTextFieldFont = UIFont.appFont(type: .regular, size: 15)
+        defaultLabeledTextFieldLabelNotExistsFont = UIFont.appFont(type: .semiBold, size: 15)
+        defaultLabeledTextFieldLabelFont = UIFont.appFont(type: .regular, size: 15)
         
         let labeledTextFieldAppearance = LabeledTextField.appearance()
         labeledTextFieldAppearance.underlineColor = .secondary
@@ -309,7 +309,7 @@ final class Navigator: NSObject, NotificationObserver {
             return _authoritiesViewController
         }
 
-        let authoritiesViewController = AuthoritiesViewController.viewControllerFromStoryboard()
+        let authoritiesViewController = AuthoritiesViewController()
         let title = NSLocalizedString("Authorities", comment: "Title of tab item.")
         authoritiesViewController.tabBarItem = UITabBarItem(title: title, image: #imageLiteral(resourceName: "authority"), selectedImage: #imageLiteral(resourceName: "authority-selected"))
         _authoritiesViewController = authoritiesViewController

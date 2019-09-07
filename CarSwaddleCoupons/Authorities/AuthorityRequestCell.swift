@@ -31,10 +31,10 @@ final class AuthorityRequestCell: UITableViewCell, NibRegisterable {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        authorityName.font = .large
-        nameLabel.font = .title
-        emailLabel.font = .title
-        expirationDateLabel.font = .detail
+        authorityName.largeStyled()
+        nameLabel.titleStyled()
+        emailLabel.titleStyled()
+        expirationDateLabel.detailStyled()
         
         requesterImageView.layer.cornerRadius = requesterImageView.frame.height/2
         requesterImageView.isHiddenInStackView = true
