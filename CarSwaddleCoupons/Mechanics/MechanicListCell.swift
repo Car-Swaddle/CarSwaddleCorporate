@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Store
+import CarSwaddleStore
 import CarSwaddleData
 import CarSwaddleNetworkRequest
 import CarSwaddleUI
@@ -34,6 +34,7 @@ final class MechanicListCell: UITableViewCell, NibRegisterable {
         mechanicEmailLabel.font = .detail
         isMechanicAllowedLabel.font = .detail
         mechanicImageView.layer.cornerRadius = 8
+        mechanicImageView.backgroundColor = .neutral2
         
         selectionStyle = .none
     }

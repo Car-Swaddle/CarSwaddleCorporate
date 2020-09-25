@@ -10,7 +10,7 @@ import UIKit
 import CarSwaddleUI
 import CarSwaddleData
 import CoreData
-import Store
+import CarSwaddleStore
 import CarSwaddleNetworkRequest
 
 final class AuthoritiesViewController: FetchedResultsTableButtonViewController<Authority> {

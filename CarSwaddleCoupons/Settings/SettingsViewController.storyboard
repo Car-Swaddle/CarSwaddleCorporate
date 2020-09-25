@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NOx-kU-ihq">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NOx-kU-ihq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,13 +24,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mng-pN-ta4"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="Hhv-14-NUe" firstAttribute="top" secondItem="mng-pN-ta4" secondAttribute="top" constant="27" id="KJB-2c-bmy"/>
                             <constraint firstItem="mng-pN-ta4" firstAttribute="trailing" secondItem="Hhv-14-NUe" secondAttribute="trailing" constant="20" id="QhS-qo-zpS"/>
                             <constraint firstItem="Hhv-14-NUe" firstAttribute="leading" secondItem="mng-pN-ta4" secondAttribute="leading" constant="20" id="Uop-p7-ewm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="mng-pN-ta4"/>
                     </view>
                     <navigationItem key="navigationItem" id="B07-S5-16K">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="lXQ-pc-g4h">
@@ -67,4 +66,9 @@
             <point key="canvasLocation" x="63.768115942028992" y="140.625"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="background">
+            <color white="0.96470588445663452" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+    </resources>
 </document>

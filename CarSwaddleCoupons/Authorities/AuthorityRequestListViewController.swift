@@ -10,7 +10,7 @@ import UIKit
 import CarSwaddleUI
 import CarSwaddleData
 import CoreData
-import Store
+import CarSwaddleStore
 
 private let rejectTitle = NSLocalizedString("Reject", comment: "reject title")
 private let approveTitle = NSLocalizedString("Approve", comment: "reject title")

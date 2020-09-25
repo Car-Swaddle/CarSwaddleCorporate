@@ -10,7 +10,7 @@ import UIKit
 import CarSwaddleUI
 import CarSwaddleData
 import CarSwaddleNetworkRequest
-import Store
+import CarSwaddleStore
 
 var monthDayYearFormatter: DateFormatter = {
     let formatter = DateFormatter()

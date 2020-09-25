@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9905ED71251DC56100231C89 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9905ED70251DC56100231C89 /* Colors.xcassets */; };
+		9905ED76251DC57C00231C89 /* SemanticColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9905ED75251DC57C00231C89 /* SemanticColors.xcassets */; };
+		9905ED7B251DC58D00231C89 /* SemanticColors+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905ED7A251DC58D00231C89 /* SemanticColors+UIColor.swift */; };
 		998984E322A385B300E4B25A /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998984E222A385B300E4B25A /* Navigator.swift */; };
 		998984E522A385D700E4B25A /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998984E422A385D700E4B25A /* Logout.swift */; };
 		998984E722A3864700E4B25A /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998984E622A3864700E4B25A /* PushNotificationController.swift */; };
@@ -77,19 +80,13 @@
 		9998610222852D4900113536 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9998610022852D4900113536 /* LaunchScreen.storyboard */; };
 		9998610D22852D4900113536 /* CarSwaddleCouponsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998610C22852D4900113536 /* CarSwaddleCouponsTests.swift */; };
 		9998611822852D4900113536 /* CarSwaddleCouponsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998611722852D4900113536 /* CarSwaddleCouponsUITests.swift */; };
-		999861282285381300113536 /* CarSwaddleData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999861272285381300113536 /* CarSwaddleData.framework */; };
-		999861302285382200113536 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999861292285382200113536 /* Lottie.framework */; };
-		999861312285382200113536 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998612A2285382200113536 /* KeychainAccess.framework */; };
-		999861322285382200113536 /* CarSwaddleNetworkRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998612B2285382200113536 /* CarSwaddleNetworkRequest.framework */; };
-		999861332285382200113536 /* Store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998612C2285382200113536 /* Store.framework */; };
-		999861342285382200113536 /* CarSwaddleUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998612D2285382200113536 /* CarSwaddleUI.framework */; };
-		999861352285382300113536 /* Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998612E2285382200113536 /* Authentication.framework */; };
-		999861362285382300113536 /* NetworkRequest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9998612F2285382200113536 /* NetworkRequest.framework */; };
 		99986138228538C200113536 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99986137228538C200113536 /* ServiceRequest.swift */; };
 		9998613A2285408C00113536 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999861392285408C00113536 /* LoginViewController.swift */; };
 		9998613C2285409900113536 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9998613B2285409900113536 /* LoginViewController.storyboard */; };
 		9998613E2285456900113536 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998613D2285456900113536 /* Store.swift */; };
 		999861402286B27100113536 /* TweakValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998613F2286B27100113536 /* TweakValues.swift */; };
+		99B47CBC251DA78A00F57F61 /* CarSwaddleData in Frameworks */ = {isa = PBXBuildFile; productRef = 99B47CBB251DA78A00F57F61 /* CarSwaddleData */; };
+		99B47CC2251DAA4B00F57F61 /* CarSwaddleUI in Frameworks */ = {isa = PBXBuildFile; productRef = 99B47CC1251DAA4B00F57F61 /* CarSwaddleUI */; };
 		99F08C7722DC2C3700317EEA /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C7522DC2C3700317EEA /* CouponCell.swift */; };
 		99F08C7822DC2C3700317EEA /* CouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C7622DC2C3700317EEA /* CouponCell.xib */; };
 		99F08C7A22DD86A700317EEA /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C7922DD83E200317EEA /* Localizable.stringsdict */; };
@@ -123,6 +120,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9905ED70251DC56100231C89 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		9905ED75251DC57C00231C89 /* SemanticColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SemanticColors.xcassets; sourceTree = "<group>"; };
+		9905ED7A251DC58D00231C89 /* SemanticColors+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SemanticColors+UIColor.swift"; sourceTree = "<group>"; };
 		998984E122A332D700E4B25A /* CarSwaddleCoupons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarSwaddleCoupons.entitlements; sourceTree = "<group>"; };
 		998984E222A385B300E4B25A /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		998984E422A385D700E4B25A /* Logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
@@ -200,14 +200,6 @@
 		9998611322852D4900113536 /* CarSwaddleCouponsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarSwaddleCouponsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9998611722852D4900113536 /* CarSwaddleCouponsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSwaddleCouponsUITests.swift; sourceTree = "<group>"; };
 		9998611922852D4900113536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		999861272285381300113536 /* CarSwaddleData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarSwaddleData.framework; path = Carthage/Build/iOS/CarSwaddleData.framework; sourceTree = "<group>"; };
-		999861292285382200113536 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
-		9998612A2285382200113536 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
-		9998612B2285382200113536 /* CarSwaddleNetworkRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarSwaddleNetworkRequest.framework; path = Carthage/Build/iOS/CarSwaddleNetworkRequest.framework; sourceTree = "<group>"; };
-		9998612C2285382200113536 /* Store.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Store.framework; path = Carthage/Build/iOS/Store.framework; sourceTree = "<group>"; };
-		9998612D2285382200113536 /* CarSwaddleUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarSwaddleUI.framework; path = Carthage/Build/iOS/CarSwaddleUI.framework; sourceTree = "<group>"; };
-		9998612E2285382200113536 /* Authentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Authentication.framework; path = Carthage/Build/iOS/Authentication.framework; sourceTree = "<group>"; };
-		9998612F2285382200113536 /* NetworkRequest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkRequest.framework; path = Carthage/Build/iOS/NetworkRequest.framework; sourceTree = "<group>"; };
 		99986137228538C200113536 /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		999861392285408C00113536 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9998613B2285409900113536 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
@@ -233,14 +225,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				999861282285381300113536 /* CarSwaddleData.framework in Frameworks */,
-				999861302285382200113536 /* Lottie.framework in Frameworks */,
-				999861312285382200113536 /* KeychainAccess.framework in Frameworks */,
-				999861322285382200113536 /* CarSwaddleNetworkRequest.framework in Frameworks */,
-				999861332285382200113536 /* Store.framework in Frameworks */,
-				999861342285382200113536 /* CarSwaddleUI.framework in Frameworks */,
-				999861352285382300113536 /* Authentication.framework in Frameworks */,
-				999861362285382300113536 /* NetworkRequest.framework in Frameworks */,
+				99B47CBC251DA78A00F57F61 /* CarSwaddleData in Frameworks */,
+				99B47CC2251DAA4B00F57F61 /* CarSwaddleUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +305,6 @@
 				9998610B22852D4900113536 /* CarSwaddleCouponsTests */,
 				9998611622852D4900113536 /* CarSwaddleCouponsUITests */,
 				999860F222852D4800113536 /* Products */,
-				999861262285381300113536 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -374,21 +359,6 @@
 				9998611922852D4900113536 /* Info.plist */,
 			);
 			path = CarSwaddleCouponsUITests;
-			sourceTree = "<group>";
-		};
-		999861262285381300113536 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9998612E2285382200113536 /* Authentication.framework */,
-				9998612B2285382200113536 /* CarSwaddleNetworkRequest.framework */,
-				9998612D2285382200113536 /* CarSwaddleUI.framework */,
-				9998612A2285382200113536 /* KeychainAccess.framework */,
-				999861292285382200113536 /* Lottie.framework */,
-				9998612F2285382200113536 /* NetworkRequest.framework */,
-				9998612C2285382200113536 /* Store.framework */,
-				999861272285381300113536 /* CarSwaddleData.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		99F08C5222D4478300317EEA /* Authorities */ = {
@@ -470,7 +440,10 @@
 		99F08C5922D4613B00317EEA /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				9905ED70251DC56100231C89 /* Colors.xcassets */,
 				998984E822A3868F00E4B25A /* UIColorExtension.swift */,
+				9905ED75251DC57C00231C89 /* SemanticColors.xcassets */,
+				9905ED7A251DC58D00231C89 /* SemanticColors+UIColor.swift */,
 				9989857622C73D1F00E4B25A /* FetchedResultsViewController.swift */,
 				998984EA22A3879A00E4B25A /* FontExtension.swift */,
 			);
@@ -540,13 +513,16 @@
 				999860ED22852D4800113536 /* Sources */,
 				999860EE22852D4800113536 /* Frameworks */,
 				999860EF22852D4800113536 /* Resources */,
-				999861252285376E00113536 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CarSwaddleCoupons;
+			packageProductDependencies = (
+				99B47CBB251DA78A00F57F61 /* CarSwaddleData */,
+				99B47CC1251DAA4B00F57F61 /* CarSwaddleUI */,
+			);
 			productName = CarSwaddleCoupons;
 			productReference = 999860F122852D4800113536 /* CarSwaddleCoupons.app */;
 			productType = "com.apple.product-type.application";
@@ -630,6 +606,10 @@
 				Base,
 			);
 			mainGroup = 999860E822852D4800113536;
+			packageReferences = (
+				99B47CBA251DA78A00F57F61 /* XCRemoteSwiftPackageReference "CarSwaddleData" */,
+				99B47CC0251DAA4B00F57F61 /* XCRemoteSwiftPackageReference "CarSwaddleUI" */,
+			);
 			productRefGroup = 999860F222852D4800113536 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -659,6 +639,7 @@
 				9989852D22A387D500E4B25A /* Montserrat-ExtraLightItalic.otf in Resources */,
 				9989853922A38AE000E4B25A /* AuthoritiesViewController.storyboard in Resources */,
 				9998610222852D4900113536 /* LaunchScreen.storyboard in Resources */,
+				9905ED71251DC56100231C89 /* Colors.xcassets in Resources */,
 				9989857122C1EC2300E4B25A /* RequestAuthorityCell.xib in Resources */,
 				9989851E22A387D500E4B25A /* MontserratAlternates-BlackItalic.otf in Resources */,
 				99F08C7A22DD86A700317EEA /* Localizable.stringsdict in Resources */,
@@ -701,6 +682,7 @@
 				9989852422A387D500E4B25A /* MontserratAlternates-SemiBoldItalic.otf in Resources */,
 				9989851922A387D500E4B25A /* Montserrat-Light.otf in Resources */,
 				9989857D22C74B9B00E4B25A /* MechanicListCell.xib in Resources */,
+				9905ED76251DC57C00231C89 /* SemanticColors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,44 +702,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		999861252285376E00113536 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/NetworkRequest.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Authentication.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CarSwaddleNetworkRequest.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Store.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CarSwaddleUI.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CarSwaddleData.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Disk.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NetworkRequest.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Authentication.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CarSwaddleNetworkRequest.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Store.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CarSwaddleUI.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CarSwaddleData.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Lottie.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Disk.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		999860ED22852D4800113536 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -768,6 +712,7 @@
 				999860FD22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld in Sources */,
 				998984E522A385D700E4B25A /* Logout.swift in Sources */,
 				9989856622BC7AC100E4B25A /* AuthorityRequestCell.swift in Sources */,
+				9905ED7B251DC58D00231C89 /* SemanticColors+UIColor.swift in Sources */,
 				99986138228538C200113536 /* ServiceRequest.swift in Sources */,
 				9989853F22A39E9000E4B25A /* UserActivityHandler.swift in Sources */,
 				99F08C8022E5916F00317EEA /* LabeledTextFieldCell.swift in Sources */,
@@ -891,7 +836,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -946,7 +891,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1124,6 +1069,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		99B47CBA251DA78A00F57F61 /* XCRemoteSwiftPackageReference "CarSwaddleData" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Car-Swaddle/CarSwaddleData";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		99B47CC0251DAA4B00F57F61 /* XCRemoteSwiftPackageReference "CarSwaddleUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Car-Swaddle/CarSwaddleUI";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99B47CBB251DA78A00F57F61 /* CarSwaddleData */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99B47CBA251DA78A00F57F61 /* XCRemoteSwiftPackageReference "CarSwaddleData" */;
+			productName = CarSwaddleData;
+		};
+		99B47CC1251DAA4B00F57F61 /* CarSwaddleUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99B47CC0251DAA4B00F57F61 /* XCRemoteSwiftPackageReference "CarSwaddleUI" */;
+			productName = CarSwaddleUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		999860FB22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld */ = {

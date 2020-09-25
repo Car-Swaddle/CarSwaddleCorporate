@@ -9,6 +9,7 @@
 import CarSwaddleUI
 import CarSwaddleData
 import CarSwaddleNetworkRequest
+import UIKit
 
 final class CreateCouponViewController: TableViewSchemaButtonViewController {
     
@@ -33,7 +34,9 @@ final class CreateCouponViewController: TableViewSchemaButtonViewController {
         title = NSLocalizedString("Coupon Creation", comment: "")
     }
     
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private var discount: CouponNetwork.CouponDiscount = .amountOff(value: 0)
     

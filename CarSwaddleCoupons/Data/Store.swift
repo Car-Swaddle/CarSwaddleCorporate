@@ -6,7 +6,7 @@
 //  Copyright © 2019 Kyle. All rights reserved.
 //
 
-import Store
+import CarSwaddleStore
 
-let store = PersistentStore(bundle: Bundle(identifier: "CS.Store")!, storeName: "CarSwaddleStore", containerName: "StoreContainer")
+let store = PersistentStore(containerName: "StoreContainer")
 

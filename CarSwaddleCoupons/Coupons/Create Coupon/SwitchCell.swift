@@ -7,6 +7,7 @@
 //
 
 import CarSwaddleUI
+import UIKit
 
 class SwitchCell: UITableViewCell, NibRegisterable {
     

@@ -8,7 +8,7 @@
 
 import UIKit
 import CarSwaddleUI
-import Store
+import CarSwaddleStore
 import CarSwaddleData
 import CoreData
 
@@ -142,7 +142,7 @@ extension AuthorityRequest {
     }
     
     public static func fetchCurrentUserAuthorityRequest(withName name: String, in context: NSManagedObjectContext) -> AuthorityRequest? {
-        guard let userID = User.currentUserID else { return nil }
+        guard let userID = User.currentUser(context: context)?.identifier else { return nil }
         let fetchRequest: NSFetchRequest<AuthorityRequest> = AuthorityRequest.fetchRequest()
         let predicates = [AuthorityRequest.predicateForRequester(withUserID: userID), AuthorityRequest.predicateForAuthorityRequest(withName: name), AuthorityRequest.predicateForEpirationDate(greaterThan: Date())]
         fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)

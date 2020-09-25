@@ -8,7 +8,7 @@
 
 import UIKit
 import CarSwaddleUI
-import Store
+import CarSwaddleStore
 import CoreData
 
 private let subduedBackgroundColor: UIColor = .gray1
@@ -40,7 +40,7 @@ class RequestAuthorityCell: UITableViewCell, NibRegisterable {
     }
     
     private func activityIndicatorView() -> UIActivityIndicatorView {
-        let view = UIActivityIndicatorView(style: .gray)
+        let view = UIActivityIndicatorView(style: .medium)
         view.startAnimating()
         return view
     }
@@ -84,17 +84,17 @@ class RequestAuthorityCell: UITableViewCell, NibRegisterable {
     
     private func backgroundColor(for authority: Authority.Name) -> UIColor {
         if currentUserCannotRequest(authority: authority) {
-            return subduedBackgroundColor
+            return .neutral3
         } else {
-            return regularBackgroundColor
+            return .content
         }
     }
     
     private func titleTextColor(for authority: Authority.Name) -> UIColor {
         if currentUserCannotRequest(authority: authority) {
-            return .gray4
+            return .secondaryText
         } else {
-            return .black
+            return .text
         }
     }
     

@@ -9,6 +9,7 @@
 import CarSwaddleUI
 import CarSwaddleNetworkRequest
 import CarSwaddleData
+import UIKit
 
 private let dollarSymbol = NSLocalizedString("$", comment: "Dollary sign")
 private let percentSymbol = NSLocalizedString("%", comment: "Percent symbol")

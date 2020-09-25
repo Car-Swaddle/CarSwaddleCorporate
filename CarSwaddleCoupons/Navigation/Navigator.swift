@@ -10,7 +10,7 @@
 import UIKit
 import Authentication
 import CarSwaddleUI
-import Store
+import CarSwaddleStore
 
 extension Navigator {
     
@@ -57,9 +57,9 @@ final class Navigator: NSObject, NotificationObserver {
     }
     
     @objc private func currentUserAuthoritiesDidChange() {
-        DispatchQueue.main.async {
-            self.resetLoggedInUIIfNeeded()
-        }
+//        DispatchQueue.main.async {
+//            self.resetLoggedInUIIfNeeded()
+//        }
     }
     
     public func setupWindow() {
@@ -90,10 +90,25 @@ final class Navigator: NSObject, NotificationObserver {
         actionButton.defaultTitleFont = UIFont.appFont(type: .semiBold, size: 20)
         actionButton.setTitleColor(.gray3, for: .disabled)
         
-        let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.appFont(type: .semiBold, size: 20) as Any]
-        UINavigationBar.appearance().titleTextAttributes = attributes
-        UINavigationBar.appearance().barTintColor = .veryLightGray
-        UINavigationBar.appearance().isTranslucent = false
+//        let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.appFont(type: .semiBold, size: 20) as Any]
+//        UINavigationBar.appearance().titleTextAttributes = attributes
+//        UINavigationBar.appearance().barTintColor = .
+//        UINavigationBar.appearance().isTranslucent = false
+        
+        let barButtonTextAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.action as Any]
+        
+        let style = UINavigationBarAppearance()
+        style.buttonAppearance.normal.titleTextAttributes = barButtonTextAttributes
+        style.doneButtonAppearance.normal.titleTextAttributes = [.font: UIFont.action as Any, .foregroundColor: UIColor.action as Any]
+        
+        style.titleTextAttributes = [.font: UIFont.extralarge]
+        
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.standardAppearance = style
+        navigationBar.scrollEdgeAppearance = style
+        navigationBar.compactAppearance = style
+        
+        
         UITextField.appearance().tintColor = .secondary
         
         let selectedTabBarAttributes: [NSAttributedString.Key: Any] = [
@@ -113,7 +128,7 @@ final class Navigator: NSObject, NotificationObserver {
         UISwitch.appearance().onTintColor = .secondary
         UINavigationBar.appearance().tintColor = .secondary
         
-        let barButtonTextAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.appFont(type: .semiBold, size: 17) as Any]
+//        let barButtonTextAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.appFont(type: .semiBold, size: 17) as Any]
         
         for state in [UIControl.State.normal, .highlighted, .selected, .disabled, .focused, .reserved] {
             UIBarButtonItem.appearance().setTitleTextAttributes(barButtonTextAttributes, for: state)
@@ -168,7 +183,7 @@ final class Navigator: NSObject, NotificationObserver {
         let tabController = UITabBarController()
         tabController.viewControllers = viewControllers
         tabController.delegate = self
-        tabController.view.backgroundColor = .white
+        tabController.view.backgroundColor = .background
         
         self._tabBarController = tabController
         
@@ -228,15 +243,34 @@ final class Navigator: NSObject, NotificationObserver {
             let rootViewController = window.rootViewController else { return }
         
         var shouldReset: Bool = false
+//        for v in tabBarController.viewControllers ?? [] {
+//            guard let tab = tab(from: v) else {
+//                shouldReset = true
+//                break
+//            }
+//            if !tabIsAllowed(tab: tab) {
+//                shouldReset = true
+//            }
+//        }
+        
+        var tabWasAllowed: [Tab:Bool] = [:]
         for v in tabBarController.viewControllers ?? [] {
             guard let tab = tab(from: v) else {
                 shouldReset = true
                 break
             }
-            if !tabIsAllowed(tab: tab) {
-                shouldReset = true
-            }
+            tabWasAllowed[tab] = true
         }
+        
+        var tabIsNowAllowed: [Tab:Bool] = [:]
+        for tab in Tab.allCases {
+            tabIsNowAllowed[tab] = tabIsAllowed(tab: tab)
+        }
+        
+        if tabWasAllowed != tabIsNowAllowed {
+            shouldReset = true
+        }
+        
         
         guard shouldReset else { return }
         

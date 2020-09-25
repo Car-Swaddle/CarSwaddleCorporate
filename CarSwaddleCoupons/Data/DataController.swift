@@ -8,8 +8,9 @@
 
 import Foundation
 import CarSwaddleData
-import Store
+import CarSwaddleStore
 import CoreData
+import UIKit
 
 extension Notification.Name {
     static let didUpdateAllAppData = Notification.Name("DataController.didUpdateAllData")
@@ -35,12 +36,12 @@ class DataController: NSObject, NotificationObserver {
     }
     
     @objc private func didLaunchApp() {
-        guard User.currentUserID == nil else { return }
+        guard User.currentUser(context: store.mainContext) != nil else { return }
         updateAllData()
     }
     
     @objc private func didOpenApp() {
-        guard User.currentUserID == nil else { return }
+        guard User.currentUser(context: store.mainContext) != nil else { return }
         updateAllData()
     }
     

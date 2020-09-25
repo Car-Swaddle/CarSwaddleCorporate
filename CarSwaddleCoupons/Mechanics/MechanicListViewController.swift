@@ -9,7 +9,7 @@
 import UIKit
 import CarSwaddleData
 import CarSwaddleUI
-import Store
+import CarSwaddleStore
 import CoreData
 
 
@@ -62,7 +62,7 @@ class MechanicListViewController: FetchedResultsTableViewController<Mechanic> {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if let action = self.rowAction(for: indexPath) {
             return UISwipeActionsConfiguration(actions: [action])
         } else {
