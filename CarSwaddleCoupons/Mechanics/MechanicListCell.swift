@@ -51,7 +51,7 @@ final class MechanicListCell: UITableViewCell, NibRegisterable {
     }
     
     
-    func configure(with mechanic: Mechanic) {
+    func configure(with mechanic: CarSwaddleStore.Mechanic) {
         let mechanicID = mechanic.identifier
         self.mechanicID = mechanicID
         if let image = profileImageStore.getImage(forMechanicWithID: mechanicID, in: store.mainContext) {
@@ -73,7 +73,7 @@ final class MechanicListCell: UITableViewCell, NibRegisterable {
         isMechanicAllowedLabel.textColor = permissionColor(with: mechanic)
     }
     
-    private func permissionColor(with mechanic: Mechanic) -> UIColor {
+    private func permissionColor(with mechanic: CarSwaddleStore.Mechanic) -> UIColor {
         if mechanic.isAllowed {
             return .green5
         } else {
@@ -81,7 +81,7 @@ final class MechanicListCell: UITableViewCell, NibRegisterable {
         }
     }
     
-    private func permissionText(with mechanic: Mechanic) -> String {
+    private func permissionText(with mechanic: CarSwaddleStore.Mechanic) -> String {
         if mechanic.isAllowed {
             return isAllowedText
         } else {
