@@ -41,128 +41,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "435E6D78-727B-4EC0-9305-A58603E3AC27"
+            uuid = "421B6F77-4189-48B7-BF7F-07AB8237BDF9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CarSwaddleCoupons/Navigation/Navigator.swift"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/CarSwaddleCoupons-efathfrxodqhuebidpxjwmmxdkcq/SourcePackages/checkouts/CarSwaddleStore/Sources/CarSwaddleStore/Models/Authority+CoreDataClass.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
-            landmarkName = "resetLoggedInUIIfNeeded()"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "configure(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3454D3D2-1301-493A-BF72-D928AC2758AA"
+            uuid = "B329D97A-D7F9-4FB8-8FE6-99A99BF7D6EC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CarSwaddleCoupons/Navigation/Navigator.swift"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/CarSwaddleCoupons-efathfrxodqhuebidpxjwmmxdkcq/SourcePackages/checkouts/CarSwaddleStore/Sources/CarSwaddleStore/Models/Authority+CoreDataClass.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "didUpdateCurrentUserAuthorities(_:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "values(from:in:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0756630F-A75F-45D2-ABA6-DC480D2E9A8A"
+            uuid = "3DD5CD96-2D72-431D-B297-2AC44E7E4211"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CarSwaddleCoupons/Navigation/Navigator.swift"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/CarSwaddleCoupons-efathfrxodqhuebidpxjwmmxdkcq/SourcePackages/checkouts/CarSwaddleNetworkRequest/Sources/CarSwaddleNetworkRequest/Services/AuthorityService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
-            landmarkName = "resetLoggedInUIIfNeeded()"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "approveAuthorityRequest(secretID:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DB070FBC-B249-4A90-AFB2-E53E1F7E6817"
+            uuid = "D60502B2-025B-48A8-9726-C4E87AEDFD1F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CarSwaddleCoupons/Navigation/Navigator.swift"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/CarSwaddleCoupons-efathfrxodqhuebidpxjwmmxdkcq/SourcePackages/checkouts/CarSwaddleNetworkRequest/Sources/CarSwaddleNetworkRequest/Services/AuthorityService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "resetLoggedInUIIfNeeded()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "685FABEE-5410-440A-8B19-BC8748879F30"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CarSwaddleCoupons/Navigation/Navigator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
-            landmarkName = "resetLoggedInUIIfNeeded()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DAF55AD8-1D50-4519-8652-CCBD054B66E2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CarSwaddleCoupons/Navigation/Navigator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
-            landmarkName = "resetLoggedInUIIfNeeded()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4835DEBD-129E-4164-B0A9-D32780172D98"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CarSwaddleCoupons/Data/DataController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "updateAllData(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F4E3F7B0-9754-426A-A172-C1266458614D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CarSwaddleCoupons/Data/DataController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "updateAllData(completion:)"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
+            landmarkName = "approveAuthorityRequest(secretID:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
