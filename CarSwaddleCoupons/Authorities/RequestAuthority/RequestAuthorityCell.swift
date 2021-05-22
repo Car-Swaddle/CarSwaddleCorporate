@@ -124,6 +124,10 @@ extension Authority.Name {
             return NSLocalizedString("Edit Mechanics", comment: "An authority")
         case .editCorporateCoupons:
             return NSLocalizedString("Edit Corporate Car Swaddle Coupon", comment: "An authority")
+        case .readReferrers:
+            return NSLocalizedString("Read Referrers", comment: "An authority")
+        case .editReferrers:
+            return NSLocalizedString("Edit Referrers", comment: "An authority")
         default:
             let formatString = NSLocalizedString("Unrecognized Authority: %@", comment: "An authority")
             return String(format: formatString, rawValue)
@@ -137,6 +141,8 @@ extension Authority.Name {
     static let editAuthorities = Authority.Name(rawValue: "editAuthorities")
     static let editMechanics = Authority.Name(rawValue: "editMechanics")
     static let readMechanics = Authority.Name(rawValue: "readMechanics")
+    static let readReferrers = Authority.Name(rawValue: "readReferrers")
+    static let editReferrers = Authority.Name(rawValue: "editReferrers")
     
     
     public func currentUserHasAuthority(in context: NSManagedObjectContext) -> Bool {

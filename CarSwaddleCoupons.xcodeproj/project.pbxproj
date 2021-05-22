@@ -10,6 +10,11 @@
 		9905ED71251DC56100231C89 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9905ED70251DC56100231C89 /* Colors.xcassets */; };
 		9905ED76251DC57C00231C89 /* SemanticColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9905ED75251DC57C00231C89 /* SemanticColors.xcassets */; };
 		9905ED7B251DC58D00231C89 /* SemanticColors+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905ED7A251DC58D00231C89 /* SemanticColors+UIColor.swift */; };
+		99317E56264E67DE000BE9FB /* ReferrerListHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99317E55264E67DE000BE9FB /* ReferrerListHostViewController.swift */; };
+		99317E58264E6C5E000BE9FB /* SwiftUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99317E57264E6C5E000BE9FB /* SwiftUIFont.swift */; };
+		99317E5B264E7D60000BE9FB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99317E5A264E7D60000BE9FB /* RootView.swift */; };
+		99317E5F264E7DB4000BE9FB /* ReferrerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99317E5E264E7DB4000BE9FB /* ReferrerView.swift */; };
+		998663BB262AC94200A8233A /* ReferrerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998663BA262AC94200A8233A /* ReferrerListView.swift */; };
 		998984E322A385B300E4B25A /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998984E222A385B300E4B25A /* Navigator.swift */; };
 		998984E522A385D700E4B25A /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998984E422A385D700E4B25A /* Logout.swift */; };
 		998984E722A3864700E4B25A /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998984E622A3864700E4B25A /* PushNotificationController.swift */; };
@@ -123,6 +128,11 @@
 		9905ED70251DC56100231C89 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		9905ED75251DC57C00231C89 /* SemanticColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SemanticColors.xcassets; sourceTree = "<group>"; };
 		9905ED7A251DC58D00231C89 /* SemanticColors+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SemanticColors+UIColor.swift"; sourceTree = "<group>"; };
+		99317E55264E67DE000BE9FB /* ReferrerListHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferrerListHostViewController.swift; sourceTree = "<group>"; };
+		99317E57264E6C5E000BE9FB /* SwiftUIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFont.swift; sourceTree = "<group>"; };
+		99317E5A264E7D60000BE9FB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		99317E5E264E7DB4000BE9FB /* ReferrerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferrerView.swift; sourceTree = "<group>"; };
+		998663BA262AC94200A8233A /* ReferrerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferrerListView.swift; sourceTree = "<group>"; };
 		998984E122A332D700E4B25A /* CarSwaddleCoupons.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CarSwaddleCoupons.entitlements; sourceTree = "<group>"; };
 		998984E222A385B300E4B25A /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		998984E422A385D700E4B25A /* Logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
@@ -247,6 +257,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99317E59264E7D54000BE9FB /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				99317E5A264E7D60000BE9FB /* RootView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		998663B9262AC49F00A8233A /* Referrers */ = {
+			isa = PBXGroup;
+			children = (
+				998663BA262AC94200A8233A /* ReferrerListView.swift */,
+				99317E55264E67DE000BE9FB /* ReferrerListHostViewController.swift */,
+				99317E57264E6C5E000BE9FB /* SwiftUIFont.swift */,
+				99317E5E264E7DB4000BE9FB /* ReferrerView.swift */,
+			);
+			path = Referrers;
+			sourceTree = "<group>";
+		};
 		998984EC22A387D500E4B25A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +350,8 @@
 		999860F322852D4800113536 /* CarSwaddleCoupons */ = {
 			isa = PBXGroup;
 			children = (
+				99317E59264E7D54000BE9FB /* SwiftUI */,
+				998663B9262AC49F00A8233A /* Referrers */,
 				99F08C8A22E5B03C00317EEA /* Extensions */,
 				99F08C5822D4612E00317EEA /* Navigation */,
 				99F08C5922D4613B00317EEA /* Controls */,
@@ -708,9 +739,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9989856122BC787700E4B25A /* AuthorityRequestListViewController.swift in Sources */,
+				99317E5F264E7DB4000BE9FB /* ReferrerView.swift in Sources */,
+				998663BB262AC94200A8233A /* ReferrerListView.swift in Sources */,
+				99317E58264E6C5E000BE9FB /* SwiftUIFont.swift in Sources */,
 				99F08C8C22E5B04800317EEA /* DateExtension.swift in Sources */,
 				999860FD22852D4800113536 /* CarSwaddleCoupons.xcdatamodeld in Sources */,
 				998984E522A385D700E4B25A /* Logout.swift in Sources */,
+				99317E56264E67DE000BE9FB /* ReferrerListHostViewController.swift in Sources */,
 				9989856622BC7AC100E4B25A /* AuthorityRequestCell.swift in Sources */,
 				9905ED7B251DC58D00231C89 /* SemanticColors+UIColor.swift in Sources */,
 				99986138228538C200113536 /* ServiceRequest.swift in Sources */,
@@ -736,6 +771,7 @@
 				9989857022C1EC2300E4B25A /* RequestAuthorityCell.swift in Sources */,
 				9989857922C7484800E4B25A /* MechanicListViewController.swift in Sources */,
 				99F08C7D22E4376200317EEA /* CreateCouponViewController.swift in Sources */,
+				99317E5B264E7D60000BE9FB /* RootView.swift in Sources */,
 				9989853B22A38B4D00E4B25A /* CouponsViewController.swift in Sources */,
 				9989857722C73D1F00E4B25A /* FetchedResultsViewController.swift in Sources */,
 				999860F522852D4800113536 /* AppDelegate.swift in Sources */,
@@ -836,7 +872,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -891,7 +927,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -11,6 +11,7 @@ import UIKit
 import Authentication
 import CarSwaddleUI
 import CarSwaddleStore
+import SwiftUI
 
 extension Navigator {
     
@@ -18,20 +19,8 @@ extension Navigator {
         case coupons
         case authorities
         case mechanics
+        case referrerList
         case settings
-        
-        fileprivate var name: String {
-            switch self {
-            case .coupons:
-                return "Coupons"
-            case .authorities:
-                return "Authorities"
-            case .settings:
-                return "Settings"
-            case .mechanics:
-                return "Mechanics"
-            }
-        }
         
     }
     
@@ -203,6 +192,8 @@ final class Navigator: NSObject, NotificationObserver {
             return true
         case .mechanics:
             return  Authority.currentUser(has: .readMechanics, in: store.mainContext) || Authority.currentUser(has: .editMechanics, in: store.mainContext)
+        case .referrerList:
+            return  Authority.currentUser(has: .readReferrers, in: store.mainContext) || Authority.currentUser(has: .editReferrers, in: store.mainContext)
         }
     }
     
@@ -271,7 +262,6 @@ final class Navigator: NSObject, NotificationObserver {
             shouldReset = true
         }
         
-        
         guard shouldReset else { return }
         
         removeUI()
@@ -294,6 +284,7 @@ final class Navigator: NSObject, NotificationObserver {
         _couponsViewController = nil
         _settingsViewController = nil
         _mechanicsViewController = nil
+        _referrersViewController = nil
     }
     
     private func showRequiredScreensIfNeeded() {
@@ -390,6 +381,22 @@ final class Navigator: NSObject, NotificationObserver {
         return settingsViewController
     }
     
+    private var _referrersViewController: UIHostingController<RootView<ReferrerListView>>?
+    private var referrersViewController: UIHostingController<RootView<ReferrerListView>> {
+        if let _referrersViewController = _referrersViewController {
+            return _referrersViewController
+        }
+        
+        let referrerListView = ReferrerListView()
+        let rootView = RootView(rootView: referrerListView)
+        let referrersViewController = UIHostingController(rootView: rootView)
+        let title = NSLocalizedString("Referrers", comment: "Title of tab item.")
+        referrersViewController.tabBarItem = UITabBarItem(title: title, image: nil, selectedImage: nil)
+        referrersViewController.title = title
+        _referrersViewController = referrersViewController
+        return referrersViewController
+    }
+    
     private func viewController(for tab: Tab) -> UIViewController {
         switch tab {
         case .coupons:
@@ -400,6 +407,8 @@ final class Navigator: NSObject, NotificationObserver {
             return settingsViewController
         case .mechanics:
             return mechanicsViewController
+        case .referrerList:
+            return referrersViewController
         }
     }
     
