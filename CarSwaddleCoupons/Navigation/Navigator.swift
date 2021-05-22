@@ -40,9 +40,9 @@ final class Navigator: NSObject, NotificationObserver {
     }
     
     @objc private func didUpdateCurrentUserAuthorities(_ notification: Notification) {
-        DispatchQueue.main.async {
-            self.resetLoggedInUIIfNeeded()
-        }
+//        DispatchQueue.main.async {
+//            self.resetLoggedInUIIfNeeded()
+//        }
     }
     
     @objc private func currentUserAuthoritiesDidChange() {
@@ -230,6 +230,7 @@ final class Navigator: NSObject, NotificationObserver {
     }
     
     private func resetLoggedInUIIfNeeded() {
+        
         guard let window = appDelegate.window,
             let rootViewController = window.rootViewController else { return }
         
