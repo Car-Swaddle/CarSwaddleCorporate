@@ -12,7 +12,7 @@
       },
       {
         "package": "CarSwaddleData",
-        "repositoryURL": "https://github.com/Car-Swaddle/CarSwaddleData",
+        "repositoryURL": "git@github.com:Car-Swaddle/CarSwaddleData.git",
         "state": {
           "branch": "master",
           "revision": "50051fafc34080c6ef6305ee069198cbe103a26f",
@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/Car-Swaddle/CarSwaddleNetworkRequest",
         "state": {
           "branch": "master",
-          "revision": "e3313ca9ec09ac4f01483f060e3ea6535d6f2f9d",
+          "revision": "22f8c09f58906305a16933c3b3332f66a303451f",
           "version": null
         }
       },
@@ -33,13 +33,13 @@
         "repositoryURL": "https://github.com/Car-Swaddle/CarSwaddleStore",
         "state": {
           "branch": "master",
-          "revision": "54fd207c5e641fa08655b8f7dbe7e75fd555b883",
+          "revision": "2c2882e23a19852a7a2363ead18cd3679afadc82",
           "version": null
         }
       },
       {
         "package": "CarSwaddleUI",
-        "repositoryURL": "https://github.com/Car-Swaddle/CarSwaddleUI",
+        "repositoryURL": "git@github.com:Car-Swaddle/CarSwaddleUI.git",
         "state": {
           "branch": "master",
           "revision": "1269ea6ebd34e0dbd0a68cf5ddda464ed3c3e0bc",
@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/airbnb/lottie-ios.git",
         "state": {
           "branch": null,
-          "revision": "4e5877425dae5c10792fc9d22d53dc6bf6824dc1",
-          "version": "3.1.8"
+          "revision": "79a0b70547f7c40ea54c67487f935fa2f2eaaadc",
+          "version": "3.2.3"
         }
       },
       {

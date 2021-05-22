@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import CarSwaddleData
+import CarSwaddleStore
 
 struct ReferrerView: View {
     
@@ -20,6 +20,7 @@ struct ReferrerView: View {
 
 struct ReferrerView_Previews: PreviewProvider {
     static var previews: some View {
-        ReferrerView()
+        let ref = Referrer(context: store.mainContext)
+        ReferrerView(referrer: ref)
     }
 }

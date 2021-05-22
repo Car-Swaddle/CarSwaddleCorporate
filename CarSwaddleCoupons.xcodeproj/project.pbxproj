@@ -10,6 +10,8 @@
 		9905ED71251DC56100231C89 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9905ED70251DC56100231C89 /* Colors.xcassets */; };
 		9905ED76251DC57C00231C89 /* SemanticColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9905ED75251DC57C00231C89 /* SemanticColors.xcassets */; };
 		9905ED7B251DC58D00231C89 /* SemanticColors+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9905ED7A251DC58D00231C89 /* SemanticColors+UIColor.swift */; };
+		992849B32658DD6F00831E39 /* CarSwaddleData in Frameworks */ = {isa = PBXBuildFile; productRef = 992849B22658DD6F00831E39 /* CarSwaddleData */; };
+		992849B62658DD9D00831E39 /* CarSwaddleUI in Frameworks */ = {isa = PBXBuildFile; productRef = 992849B52658DD9D00831E39 /* CarSwaddleUI */; };
 		99317E56264E67DE000BE9FB /* ReferrerListHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99317E55264E67DE000BE9FB /* ReferrerListHostViewController.swift */; };
 		99317E58264E6C5E000BE9FB /* SwiftUIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99317E57264E6C5E000BE9FB /* SwiftUIFont.swift */; };
 		99317E5B264E7D60000BE9FB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99317E5A264E7D60000BE9FB /* RootView.swift */; };
@@ -90,8 +92,6 @@
 		9998613C2285409900113536 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9998613B2285409900113536 /* LoginViewController.storyboard */; };
 		9998613E2285456900113536 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998613D2285456900113536 /* Store.swift */; };
 		999861402286B27100113536 /* TweakValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998613F2286B27100113536 /* TweakValues.swift */; };
-		99B47CBC251DA78A00F57F61 /* CarSwaddleData in Frameworks */ = {isa = PBXBuildFile; productRef = 99B47CBB251DA78A00F57F61 /* CarSwaddleData */; };
-		99B47CC2251DAA4B00F57F61 /* CarSwaddleUI in Frameworks */ = {isa = PBXBuildFile; productRef = 99B47CC1251DAA4B00F57F61 /* CarSwaddleUI */; };
 		99F08C7722DC2C3700317EEA /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C7522DC2C3700317EEA /* CouponCell.swift */; };
 		99F08C7822DC2C3700317EEA /* CouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C7622DC2C3700317EEA /* CouponCell.xib */; };
 		99F08C7A22DD86A700317EEA /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C7922DD83E200317EEA /* Localizable.stringsdict */; };
@@ -235,8 +235,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99B47CBC251DA78A00F57F61 /* CarSwaddleData in Frameworks */,
-				99B47CC2251DAA4B00F57F61 /* CarSwaddleUI in Frameworks */,
+				992849B62658DD9D00831E39 /* CarSwaddleUI in Frameworks */,
+				992849B32658DD6F00831E39 /* CarSwaddleData in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,8 +551,8 @@
 			);
 			name = CarSwaddleCoupons;
 			packageProductDependencies = (
-				99B47CBB251DA78A00F57F61 /* CarSwaddleData */,
-				99B47CC1251DAA4B00F57F61 /* CarSwaddleUI */,
+				992849B22658DD6F00831E39 /* CarSwaddleData */,
+				992849B52658DD9D00831E39 /* CarSwaddleUI */,
 			);
 			productName = CarSwaddleCoupons;
 			productReference = 999860F122852D4800113536 /* CarSwaddleCoupons.app */;
@@ -601,7 +601,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = Kyle;
 				TargetAttributes = {
 					999860F022852D4800113536 = {
@@ -638,8 +638,8 @@
 			);
 			mainGroup = 999860E822852D4800113536;
 			packageReferences = (
-				99B47CBA251DA78A00F57F61 /* XCRemoteSwiftPackageReference "CarSwaddleData" */,
-				99B47CC0251DAA4B00F57F61 /* XCRemoteSwiftPackageReference "CarSwaddleUI" */,
+				992849B12658DD6F00831E39 /* XCRemoteSwiftPackageReference "CarSwaddleData" */,
+				992849B42658DD9D00831E39 /* XCRemoteSwiftPackageReference "CarSwaddleUI" */,
 			);
 			productRefGroup = 999860F222852D4800113536 /* Products */;
 			projectDirPath = "";
@@ -847,6 +847,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -908,6 +909,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1111,17 +1113,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		99B47CBA251DA78A00F57F61 /* XCRemoteSwiftPackageReference "CarSwaddleData" */ = {
+		992849B12658DD6F00831E39 /* XCRemoteSwiftPackageReference "CarSwaddleData" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Car-Swaddle/CarSwaddleData";
+			repositoryURL = "git@github.com:Car-Swaddle/CarSwaddleData.git";
 			requirement = {
 				branch = master;
 				kind = branch;
 			};
 		};
-		99B47CC0251DAA4B00F57F61 /* XCRemoteSwiftPackageReference "CarSwaddleUI" */ = {
+		992849B42658DD9D00831E39 /* XCRemoteSwiftPackageReference "CarSwaddleUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Car-Swaddle/CarSwaddleUI";
+			repositoryURL = "git@github.com:Car-Swaddle/CarSwaddleUI.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -1130,14 +1132,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		99B47CBB251DA78A00F57F61 /* CarSwaddleData */ = {
+		992849B22658DD6F00831E39 /* CarSwaddleData */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 99B47CBA251DA78A00F57F61 /* XCRemoteSwiftPackageReference "CarSwaddleData" */;
+			package = 992849B12658DD6F00831E39 /* XCRemoteSwiftPackageReference "CarSwaddleData" */;
 			productName = CarSwaddleData;
 		};
-		99B47CC1251DAA4B00F57F61 /* CarSwaddleUI */ = {
+		992849B52658DD9D00831E39 /* CarSwaddleUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 99B47CC0251DAA4B00F57F61 /* XCRemoteSwiftPackageReference "CarSwaddleUI" */;
+			package = 992849B42658DD9D00831E39 /* XCRemoteSwiftPackageReference "CarSwaddleUI" */;
 			productName = CarSwaddleUI;
 		};
 /* End XCSwiftPackageProductDependency section */

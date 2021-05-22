@@ -11,13 +11,13 @@ import CarSwaddleStore
 
 struct ReferrerListView: View {
     
-    @FetchRequest(
-        entity: Referrer.entity(),
-        sortDescriptors: [
-            NSSortDescriptor(key: \Referrer.createdAt, ascending: true),
-        ],
-        predicate: nil
-    ) var users: FetchedResults<Referrer>
+//    @FetchRequest(
+//        entity: Referrer.entity(),
+//        sortDescriptors: [
+//            NSSortDescriptor(key: \Referrer.createdAt, ascending: true),
+//        ],
+//        predicate: nil
+//    ) var users: FetchedResults<Referrer>
     
     var body: some View {
         Text("Yo wassup")
