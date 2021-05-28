@@ -9,18 +9,41 @@
 import SwiftUI
 import CarSwaddleStore
 
+private var userDict: [String:User] = [:]
+
 struct ReferrerListView: View {
     
-//    @FetchRequest(
-//        entity: Referrer.entity(),
-//        sortDescriptors: [
-//            NSSortDescriptor(key: \Referrer.createdAt, ascending: true),
-//        ],
-//        predicate: nil
-//    ) var users: FetchedResults<Referrer>
+//    var sortDescriptor: NSSortDescriptor = NSSortDescriptor(keyPath: \Referrer.createdAt, ascending: true)
+    
+    @Environment(\.managedObjectContext) var moc
+    
+    @FetchRequest(
+        entity: Referrer.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Referrer.createdAt, ascending: true),
+        ],
+        predicate: nil
+    ) var referrers: FetchedResults<Referrer>
+    
+    private func fetchUser(userID: String) -> User? {
+        if let cachedUser = userDict[userID] {
+            return cachedUser
+        }
+        let user = User.fetch(with: userID, in: moc)
+        userDict[userID] = user
+        return user
+    }
     
     var body: some View {
-        Text("Yo wassup")
+        VStack {
+            List {
+                ForEach(referrers, id: \.id) { referrer in
+                    if let user = fetchUser(userID: referrer.userID) {
+                        ReferrerItemView(referrer: referrer, user: user)
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -29,9 +52,10 @@ struct ReferrerListView: View {
 
 
 struct ReferrerListView_Previews: PreviewProvider {
+    
+    @Environment(\.managedObjectContext) var context
+    
     static var previews: some View {
-        Group {
-            RootView(rootView: ReferrerListView())
-        }
+        return ReferrerListView()
     }
 }

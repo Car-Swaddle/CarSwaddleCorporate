@@ -13,5 +13,6 @@ struct RootView<Root: View>: View {
     var body: some View {
         rootView
             .environment(\.font, Font.font(size: 12))
+            .environment(\.managedObjectContext, store.mainContext)
     }
 }

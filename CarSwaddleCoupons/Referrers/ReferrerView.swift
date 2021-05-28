@@ -9,18 +9,44 @@
 import SwiftUI
 import CarSwaddleStore
 
-struct ReferrerView: View {
+struct ReferrerItemView: View {
     
     var referrer: Referrer
+    var user: User
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(user.displayName)
+        }
     }
 }
 
 struct ReferrerView_Previews: PreviewProvider {
+    
     static var previews: some View {
         let ref = Referrer(context: store.mainContext)
-        ReferrerView(referrer: ref)
+        let user = User(context: store.mainContext)
+        ReferrerItemView(referrer: ref, user: user)
     }
 }
+
+
+/*
+ 
+ identifier: String
+ // Pseudo-enum for source: user, email, ad, campaign, etc
+ sourceType: String
+ // Internal metadata - id for ad campaign, email template
+ externalID: String
+ createdAt: Date
+ updatedAt: Date
+ referrerDescription: String?
+ stripeExpressAccountID: String
+ vanityID: String
+ activeCouponID: String?
+ activePayStructureID: String?
+ userID: String
+ couponID: String?
+ payStructureID: String?
+ 
+ */

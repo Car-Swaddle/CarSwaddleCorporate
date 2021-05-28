@@ -92,6 +92,7 @@
 		9998613C2285409900113536 /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9998613B2285409900113536 /* LoginViewController.storyboard */; };
 		9998613E2285456900113536 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998613D2285456900113536 /* Store.swift */; };
 		999861402286B27100113536 /* TweakValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998613F2286B27100113536 /* TweakValues.swift */; };
+		99ABF226265A22AC00ADCF5B /* ReferrerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ABF225265A22AC00ADCF5B /* ReferrerScreen.swift */; };
 		99F08C7722DC2C3700317EEA /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F08C7522DC2C3700317EEA /* CouponCell.swift */; };
 		99F08C7822DC2C3700317EEA /* CouponCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C7622DC2C3700317EEA /* CouponCell.xib */; };
 		99F08C7A22DD86A700317EEA /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 99F08C7922DD83E200317EEA /* Localizable.stringsdict */; };
@@ -215,6 +216,7 @@
 		9998613B2285409900113536 /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		9998613D2285456900113536 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9998613F2286B27100113536 /* TweakValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweakValues.swift; sourceTree = "<group>"; };
+		99ABF225265A22AC00ADCF5B /* ReferrerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferrerScreen.swift; sourceTree = "<group>"; };
 		99F08C7522DC2C3700317EEA /* CouponCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCell.swift; sourceTree = "<group>"; };
 		99F08C7622DC2C3700317EEA /* CouponCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponCell.xib; sourceTree = "<group>"; };
 		99F08C7922DD83E200317EEA /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				99317E55264E67DE000BE9FB /* ReferrerListHostViewController.swift */,
 				99317E57264E6C5E000BE9FB /* SwiftUIFont.swift */,
 				99317E5E264E7DB4000BE9FB /* ReferrerView.swift */,
+				99ABF225265A22AC00ADCF5B /* ReferrerScreen.swift */,
 			);
 			path = Referrers;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99ABF226265A22AC00ADCF5B /* ReferrerScreen.swift in Sources */,
 				9989856122BC787700E4B25A /* AuthorityRequestListViewController.swift in Sources */,
 				99317E5F264E7DB4000BE9FB /* ReferrerView.swift in Sources */,
 				998663BB262AC94200A8233A /* ReferrerListView.swift in Sources */,
@@ -1117,16 +1121,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:Car-Swaddle/CarSwaddleData.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 		992849B42658DD9D00831E39 /* XCRemoteSwiftPackageReference "CarSwaddleUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:Car-Swaddle/CarSwaddleUI.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
